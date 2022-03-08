@@ -3,21 +3,44 @@
     width: 100%;
     height: 70px;
     white-space: nowrap;
-    display: flex;
     padding-left: 10px;
+    display: grid;
+    grid-template-columns: 40% auto 30%;
+    grid-template-rows: 70px;
+}
+
+#title{
+    grid-column:1;
+    grid-row: 1;
+    display: inline-block;
+    box-sizing: border-box;
 }
 
 .name {
     font-family: 'Patrick Hand SC', cursive;
-    font-size: 40px;
+    font-size: 2em;
     letter-spacing: 7px;
     color: white;
     padding: 2.5px;
+    width: auto;
+    display:inline-block;
     /* margin-right: auto; */
 }
 
-#chewser {
-    margin-right:auto;
+#logo {
+    height: 40px;
+    margin-top: 12px;
+    margin-right: 2.5px;
+    margin-left: 2px;
+    display:inline-block;
+}
+
+#menu {
+    grid-column: 3;
+    grid-row:1;
+    box-sizing: border-box;
+    float: right;
+    justify-self: end;
 }
 
 .button {
@@ -30,6 +53,7 @@
     margin: 15px;
     border-style: none;
     position: relative;
+    display: inline-block;
 }
 
 .button:hover {
@@ -50,11 +74,4 @@
 
 .button:hover::before {
     width: 100%;
-}
-
-#logo {
-    height: 40px;
-    margin-top: 12px;
-    margin-right: 2.5px;
-    margin-left: 2px;
 }
