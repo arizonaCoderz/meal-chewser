@@ -28,12 +28,13 @@
 }
 
 .button:hover {
-  color: #c0dcf2;
+  color: white;
 }
 
 .button::before {
   content: "";
   background-color: white;
+  /* background-image: linear-gradient(to right, white, #C5C3E2); */
   position: absolute;
   left: 0;
   bottom:0;
