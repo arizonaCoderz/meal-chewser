@@ -7,8 +7,9 @@
 }
 
 .name {
-  font-family: 'Patrick Hand', cursive;
+  font-family: 'Patrick Hand SC', cursive;
   font-size: 40px;
+  letter-spacing: 7px;
   color: white;
   padding: 2.5px;
   margin-right: auto;
@@ -16,11 +17,12 @@
 
 .button {
   font-family: 'Martel Sans', sans-serif;
-  font-size: 20px;
+  font-size: 25px;
   color: white;
   background-color: #5c7cbe;
   padding-top: 5px;
-  margin: 10px;
+  padding-bottom: 0px;
+  margin: 15px;
   border-style: none;
   position: relative;
 }
@@ -29,20 +31,17 @@
   color: #c0dcf2;
 }
 
-.button:hover::before {
+.button::before {
   content: "";
   background-color: white;
   position: absolute;
-  transform: scaleX(0);
   left: 0;
   bottom:0;
-  width: 100%;
+  width: 0;
   height: 2px;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
+  transition: width 0.25s ease-out;
 }
 
 .button:hover::before {
-  transform: scaleX(1);
-  transform-origin: bottom left;
+  width: 100%;
 }
