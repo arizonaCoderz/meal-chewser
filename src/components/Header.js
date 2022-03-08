@@ -7,9 +7,9 @@ const Header = props => {
     return (
         <div className='header'>
             <img></img>
-            <p>Meal Chewser</p>
-            <button>Home</button>
-            <button>About</button>
+            <p className='name'>MEAL CHEWSER</p>
+            <button className='button'>Home</button>
+            <button className='button'>About</button>
         </div>
     );
 }
