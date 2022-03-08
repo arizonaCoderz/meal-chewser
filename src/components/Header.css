@@ -33,18 +33,19 @@
 }
 
 .button:hover {
-    color: #c0dcf2;
+  color: white;
 }
 
 .button::before {
-    content: "";
-    background-color: white;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 2px;
-    transition: width 0.25s ease-out;
+  content: "";
+  background-color: white; 
+  /* background-image: linear-gradient(to right, white, #C5C3E2); */
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  transition: width 0.25s ease-out;
 }
 
 .button:hover::before {
