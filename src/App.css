@@ -47,6 +47,7 @@ html,body {
 
 .App {
   height: 100%;
+  font-family: 'Martel Sans', sans-serif;
 }
 
 /* A elements that don't have a class get default styles */
