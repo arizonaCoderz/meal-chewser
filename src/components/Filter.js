@@ -4,7 +4,9 @@ import './Filter.css';
 
 const Filter = props => {
     return (
-        <div className="filter"></div>
+        <div className="filter">
+            <p>Filter</p>
+        </div>
     );
 }
 

@@ -4,7 +4,9 @@ import './Results.css';
 
 const Results = props => {
     return (
-        <div className="results"></div>
+        <div className="results">
+            <p>Results</p>
+        </div>
     );
 }
 

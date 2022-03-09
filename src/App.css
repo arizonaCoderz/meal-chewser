@@ -37,6 +37,18 @@ body {
   line-height: 1.5;
 }
 
+html,body { 
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+.App {
+  height: 100%;
+}
+
 /* A elements that don't have a class get default styles */
 a:not([class]) {
   text-decoration-skip-ink: auto;

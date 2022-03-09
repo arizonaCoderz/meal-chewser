@@ -1,0 +1,12 @@
+.leftside {
+    height: 100%;
+    width: 400px;
+    background-color: #C0DCF3;
+}
+
+.tabs {
+    height: 40px;
+    width: 400px;
+    display: flex;
+    background-color: white;
+}
