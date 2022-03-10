@@ -20,8 +20,6 @@ const Slider = (props) => {
         class="slider"
         onChange={sliderChange}
       ></input>
-
-      <p>Slide value {slideValue}</p>
     </div>
   );
 };
