@@ -7,9 +7,7 @@ const Header = props => {
     return (
         <div className='header'>
             <div id="title">
-                <p className='name' > MEAL </p>
-                <img id="logo" src="/assets/Logos/MealChewser_Logo1.png" alt="this is a egg shaped like a location pin" />
-                <p className='name' id="chewser" > CHEWSER </p>
+                <img id="logo" src="/assets/Logos/MealChewser_Logo6.png" alt="this is a egg shaped like a location pin with Meal Chewser" />        
             </div>
             <div id="menu">
                 <button className='button' > Home </button>

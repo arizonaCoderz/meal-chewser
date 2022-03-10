@@ -16,19 +16,8 @@
     box-sizing: border-box;
 }
 
-.name {
-    font-family: 'Patrick Hand SC', cursive;
-    font-size: 2em;
-    letter-spacing: 7px;
-    color: white;
-    padding: 2.5px;
-    width: auto;
-    display:inline-block;
-    /* margin-right: auto; */
-}
-
 #logo {
-    height: 40px;
+    height: 70%;
     margin-top: 12px;
     margin-right: 2.5px;
     margin-left: 2px;
