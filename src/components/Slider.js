@@ -6,8 +6,8 @@ const Slider = (props) => {
   const [slideValue, setSlideValue] = useState(25);
 
   const sliderChange = event => {
-      setSlideValue(event.value);
-      this.props.onSliderChangeC(slideValue);
+      setSlideValue(event.target.value);
+      props.onSliderChangeC(event.target.value);
   }
   
   return (
@@ -20,6 +20,8 @@ const Slider = (props) => {
         class="slider"
         onChange={sliderChange}
       ></input>
+
+      <p>Slide value {slideValue}</p>
     </div>
   );
 };

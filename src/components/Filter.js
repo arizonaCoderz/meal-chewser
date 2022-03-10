@@ -6,8 +6,8 @@ import PriceButton from "./PriceButton";
 
 const Filter = (props) => {
   const [sliderV, setSliderV] = useState(25);
-  const onSliderChangeP = (event) => {
-    setSliderV(event.value);
+  const onSliderChangeP = (value) => {
+    setSliderV(value);
   };
 
   return (
