@@ -25,4 +25,18 @@
 #cuisine {
   width: 100%;
   display: flex;
+  padding-bottom: 80px;
+}
+
+#chewsbuttondiv {
+  width: 100%;
+  display: flex;
+}
+
+#chewsbutton {
+  width: 50%;
+  height: 50px;
+  margin: auto;
+  border-radius: 25px;
+  border-style: none;
 }

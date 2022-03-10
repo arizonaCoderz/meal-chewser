@@ -7,7 +7,7 @@ const PriceButton = (props) => {
   const [bcolor, setBorderColor] = useState("transparent");
 
   const pbuttonClicked = event => {
-    if (clicked == 0) {
+    if (clicked === 0) {
         setClicked(1);
         setBorderColor("#5c7cbe");
     }
