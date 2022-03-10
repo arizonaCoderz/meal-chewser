@@ -1,0 +1,15 @@
+.priceButton {
+    display: flex;
+    margin: auto;
+}
+
+.pbutton {
+  width: 60px;
+  padding-top: 5px;
+  margin: auto;
+  margin-bottom: 30px;
+  border-radius: 20%;
+  background-color: white;
+  text-align: center;
+  border-style: solid;
+}

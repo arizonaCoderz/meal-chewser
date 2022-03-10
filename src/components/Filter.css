@@ -2,6 +2,7 @@
   margin: auto;
   width: 80%;
   padding-top: 20px;
+  border-style: none;
 }
 
 #input {
@@ -11,6 +12,17 @@
 }
 
 #distance {
+  width: 100%;
+  display: flex;
+}
+
+#prices {
+  width: 100%;
+  display: flex;
+  margin: auto;
+}
+
+#cuisine {
   width: 100%;
   display: flex;
 }
