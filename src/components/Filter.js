@@ -17,6 +17,7 @@ const Filter = (props) => {
       <div id="distance">
         <p style={{ marginRight: "10px" }}>Max Distance:</p>
         <p>{sliderV}</p>
+        <p style={{ marginLeft: "5px" }}>Miles</p>
       </div>
       <Slider onSliderChangeC={onSliderChangeP} />
       <p>Price</p>
