@@ -15,8 +15,47 @@
     left: 35%;
     width: 30%;
     z-index: 11;
-    background: white;
+    background: #c0dcf3;
     border-radius: 25px;
+    padding: 30px;
+}
+
+.location {
     display: flex;
-    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.resultbuttons {
+    width: 100%;
+    margin: auto;
+    display: flex;
+}
+
+.resultbutton {
+    width: 150px;
+    padding-top: 5px;
+    margin: auto;
+    box-shadow: 2px 2px 4px #4d4c4c;
+    border-radius: 10px;
+    border-style: none;
+}
+
+.resultbutton:active {
+    transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+#resultname {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#resultaddress {
+    margin-right: auto;
+}
+
+#tags {
+    text-align: center;
+    margin-bottom: 100px;
 }
