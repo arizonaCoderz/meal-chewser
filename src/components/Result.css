@@ -1,0 +1,29 @@
+#outer{
+    /* background-color: #5c7cbe; */
+    border-color: #5c7cbe;
+    border-style: solid;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+#tags{
+    text-align: left;
+    margin: 0 auto;
+}
+
+.tag{
+    font-size: small;
+    display: inline-block;
+    /* border-color: #5c7cbe; */
+    background-color: white;
+    /* border-style: solid; */
+    border-radius: 20px;
+    padding:1px 30px;
+    margin-right: 5px;
+    margin-bottom:5px;
+}
+
+#location{
+    display:grid;
+    grid-template-columns: 80% auto;
+}
