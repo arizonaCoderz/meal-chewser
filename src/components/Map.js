@@ -1,14 +1,13 @@
-import React from 'react';
+import React from "react";
 
-import './Map.css';
+import "./Map.css";
 
-const Map = props => {
-
-    return (
-        <div className='map'>
-            <p>Map goes here!</p>
-        </div>
-    );
-}
+const Map = (props) => {
+  return (
+    <div className="map">
+      <p>Map goes here!</p>
+    </div>
+  );
+};
 
 export default Map;
