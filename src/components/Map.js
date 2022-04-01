@@ -6,7 +6,7 @@ const Map = props => {
 
     return (
         <div className='map'>
-            <p>hello</p>
+            <p>Map goes here!</p>
         </div>
     );
 }
