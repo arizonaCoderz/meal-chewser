@@ -94,3 +94,7 @@ select {
   bottom: 0px;
   padding-top: 70px;
 }
+
+button:hover {
+  cursor: pointer;
+}
