@@ -17,7 +17,7 @@ const Slider = (props) => {
         min="1"
         max="50"
         value={slideValue}
-        class="slider"
+        className="slider"
         onChange={sliderChange}
       ></input>
     </div>
