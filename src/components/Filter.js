@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 import "./Filter.css";
-import Slider from "./Slider";
-import PriceButton from "./PriceButton";
+import Slider from "./Internals/Slider";
+import PriceButton from "./Internals/PriceButton";
 import Overlay from "./Overlay";
 
 const Filter = (props) => {

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import "./Leftside.css";
-import Tab from "./Tab";
+import Tab from "./Internals/Tab";
 import Filter from "./Filter.js";
 import Results from "./Results.js";
 
