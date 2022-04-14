@@ -23,7 +23,7 @@ const Filter = (props) => {
     setPrice(value);
   }
 
-  const onKeyWordChange = event => {
+  const onKeywordChange = event => {
     setKeyword(event.target.value);
   }
   
@@ -40,20 +40,28 @@ const Filter = (props) => {
 
     return (
       <div className="filter">
+
         <p>Address</p>
         <input id="input" onChange={onAddressChange}></input>
+
         <div id="distance">
           <p style={{ marginRight: "10px" }}>Max Distance:</p>
           <p>{sliderV}</p>
           <p style={{ marginLeft: "5px" }}>Miles</p>
         </div>
         <Slider onSliderChangeC={onSliderChangeP} />
+
         <p>Price</p>
         <div id="prices">
           <PriceButton bstatus={buttonHandler}></PriceButton>
         </div>
-        <p>Cuisine</p>
-        <div id="cuisine"></div>
+
+        <div className="keyworddiv">
+          <p>Keyword</p>
+          <input id="keywordinput" onChange={onKeywordChange}></input>
+          <p>*If you have multiple keywords, separate by commas</p>
+        </div>
+
         <div id="chewsbuttondiv">
           <button id="chewsbutton" onClick={onChewsen}>
             <img id="mcbutton" src="/assets/Logos/mcbutton.png" alt="this is the meal chewser button" />   
