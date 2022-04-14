@@ -9,7 +9,7 @@ const Filter = (props) => {
   const [sliderV, setSliderV] = useState(25);
   const [address, setAddress] = useState("");
   const [price, setPrice] = useState([0,0]);
-  const [keyword, setKeyword] = useState("dessert");
+  const [keyword, setKeyword] = useState("dessert, icecream, scooptacular");
 
   const onSliderChangeP = (value) => {
     setSliderV(value);
