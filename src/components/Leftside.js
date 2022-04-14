@@ -22,6 +22,10 @@ const Leftside = (props) => {
     setResultsColor("#C0DCF3");
   };
 
+  const onChews = value => {
+    props.cdataHandler(value);
+  }
+
   if (tab == 0) {
     return (
       <div className="leftside">
@@ -37,7 +41,7 @@ const Leftside = (props) => {
             onClick={clickedResultsTab}
           />
         </div>
-        <Filter></Filter>
+        <Filter chews={onChews}></Filter>
       </div>
     );
   }

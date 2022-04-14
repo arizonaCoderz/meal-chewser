@@ -8,10 +8,12 @@ const PriceButton = (props) => {
 
   const pbuttonClicked = event => {
     if (clicked === 0) {
+        props.bstatus(1);
         setClicked(1);
         setBorderColor("#5c7cbe");
     }
     else {
+        props.bstatus(0);
         setClicked(0);
         setBorderColor("transparent");
     }
