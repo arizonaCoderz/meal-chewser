@@ -11,6 +11,8 @@ const Filter = (props) => {
   const [price, setPrice] = useState([0,1]);
   const [keyword, setKeyword] = useState("");
 
+  var chewsdata = [address, price, sliderV, keyword];
+
   const onSliderChangeP = (value) => {
     setSliderV(value);
   };
@@ -26,8 +28,6 @@ const Filter = (props) => {
   const onKeywordChange = event => {
     setKeyword(event.target.value);
   }
-  
-  var chewsdata = ["0", [0,0], 0, "0"];
 
   const onChewsen = event => {
     chewsdata[0] = address;
