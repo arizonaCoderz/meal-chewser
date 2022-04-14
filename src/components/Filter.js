@@ -38,8 +38,9 @@ const Filter = (props) => {
     console.log(address)
   }
 
+
     return (
-      <div className="filter">
+      <div className={props.showFilter ? "filter": "disappear"}>
 
         <p>Address</p>
         <input id="input" onChange={onAddressChange}></input>
