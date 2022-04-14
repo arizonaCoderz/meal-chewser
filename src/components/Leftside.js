@@ -6,12 +6,12 @@ import Filter from "./Filter.js";
 import Results from "./Results.js";
 
 const Leftside = (props) => {
-  const [showFilter, setShowFilter] = useState(true);
+  const [showFilter, setShowFilter] = useState(true); //changed this to boolean
   const [filterColor, setFilterColor] = useState("#C0DCF3");
   const [resultsColor, setResultsColor] = useState("#8CB0DD");
 
   const clickedFilterTab = (event) => {
-   setShowFilter(true);
+   setShowFilter(true); //if you click filter tab, you should show filter. 
     setFilterColor("#C0DCF3");
     setResultsColor("#8CB0DD");
   };
@@ -40,7 +40,7 @@ const Leftside = (props) => {
             onClick={clickedResultsTab}
           />
         </div>
-        <Filter chews={onChews} showFilter={showFilter}></Filter>
+        <Filter chews={onChews} showFilter={showFilter}></Filter> 
       </div>
     );
   }
