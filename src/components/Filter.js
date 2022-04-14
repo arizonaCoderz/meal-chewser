@@ -60,7 +60,7 @@ const Filter = (props) => {
         <div className="keyworddiv">
           <p>Keyword</p>
           <input id="keywordinput" onChange={onKeywordChange}></input>
-          <p>*If you have multiple keywords, separate by commas</p>
+          <p id="note">*If you have multiple keywords, separate by commas</p>
         </div>
 
         <div id="chewsbuttondiv">
