@@ -54,10 +54,10 @@ const Map = (props) => {
         "&type=food&" +
         "keyword=" +
         tempkeyword +
-        "&openNow=true" +
-        "&minPriceLevel=" +
+        "&opennow=true" +
+        "&minprice=" +
         tempprice[0] +
-        "&maxPriceLevel=" +
+        "&maxprice=" +
         tempprice[1] +
         "&key=AIzaSyA9oUuwu2IcJiytz70UxvzQIAtIWD_Pskc";
 
