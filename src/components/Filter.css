@@ -34,15 +34,19 @@
 }
 
 #chewsbutton {
-  width: 50%;
-  height: 50px;
+  width: 100%;
   margin: auto;
-  border-radius: 25px;
   border-style: none;
-  box-shadow: 2px 2px 4px #4d4c4c;
+  border-radius: 5px;
+  box-shadow: 5px 5px 0px #5C7CBE;
+  padding: 0;
 }
 
 #chewsbutton:active {
   transform: scale(0.98);
-  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  box-shadow: 3px 2px 15px 1px #5C7CBE;
+}
+
+#mcbutton {
+  width: 100%;
 }

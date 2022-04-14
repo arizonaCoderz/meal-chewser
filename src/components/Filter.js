@@ -9,7 +9,7 @@ const Filter = (props) => {
   const [sliderV, setSliderV] = useState(25);
   const [address, setAddress] = useState("");
   const [price, setPrice] = useState([0,0]);
-  const [keyword, setKeyword] = useState("dessert, icecream, scooptacular");
+  const [keyword, setKeyword] = useState("");
 
   const onSliderChangeP = (value) => {
     setSliderV(value);
@@ -36,15 +36,15 @@ const Filter = (props) => {
   }
   
 
-  const [overlay, setOverlay] = useState(false);
-  // const pullOverlay = (event) => {
-  //   //pulls up the randomized result
-  //   setOverlay(true);
+  // const [overlay, setOverlay] = useState(false);
+  // // const pullOverlay = (event) => {
+  // //   //pulls up the randomized result
+  // //   setOverlay(true);
+  // // };
+  // const removeOverlay = (event) => {
+  //   //removes the overlay and backdrop
+  //   setOverlay(false);
   // };
-  const removeOverlay = (event) => {
-    //removes the overlay and backdrop
-    setOverlay(false);
-  };
   
   var chewsdata = ["0", [0,0], 0, "0"];
 
@@ -54,7 +54,7 @@ const Filter = (props) => {
     chewsdata[2] = sliderV;
     chewsdata[3] = keyword;
     props.chews(chewsdata);
-    setOverlay(true);
+    // setOverlay(true);
     console.log(address)
   }
 
@@ -106,7 +106,7 @@ const Filter = (props) => {
         <div id="cuisine"></div>
         <div id="chewsbuttondiv">
           <button id="chewsbutton" onClick={onChewsen}>
-            Chews My Meal
+            <img id="mcbutton" src="/assets/Logos/mcbutton.png" alt="this is the meal chewser button" />   
           </button>
         </div>
       </div>
