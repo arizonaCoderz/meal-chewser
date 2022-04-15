@@ -12,16 +12,14 @@ const Content = (props) => {
   };
 
   return (
-    <div>
-      <div id="content">
-        <Leftside cdataHandler={pdataHandler}></Leftside>
-        <Map
-          address={data[0]}
-          price={data[1]}
-          distance={data[2]}
-          keyword={data[3]}
-        ></Map>
-      </div>
+    <div className="content">
+      <Leftside cdataHandler={pdataHandler}></Leftside>
+      <Map
+        address={data[0]}
+        price={data[1]}
+        distance={data[2]}
+        keyword={data[3]}
+      ></Map>
     </div>
   );
 };
