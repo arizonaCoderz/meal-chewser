@@ -62,6 +62,10 @@
 
 #mcbutton {
   width: 100%;
+  border-style: solid;
+  border-color: #5C7CBE;
+  border-radius: 5px;
+  border-width: 2px;
 }
 
 .keyworddiv {

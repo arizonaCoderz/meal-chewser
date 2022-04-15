@@ -12,8 +12,8 @@ const Leftside = (props) => {
 
   const clickedFilterTab = (event) => {
    setShowFilter(true); //if you click filter tab, you should show filter. 
-    setFilterColor("#C0DCF3");
-    setResultsColor("#8CB0DD");
+    setFilterColor("#ffffff");
+    setResultsColor("#ffffff");
   };
 
   const clickedResultsTab = (event) => {
