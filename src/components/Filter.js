@@ -40,7 +40,7 @@ const Filter = (props) => {
 
 
     return (
-      <div className={props.showFilter ? "filter": "disappear"}>
+      <div className={props.showFilter ? "filter": "disappear"}> {/* Ternary to pick className, disappear has a styling to display:none*/}
 
         <p>ADDRESS</p>
         <input id="input" onChange={onAddressChange} placeholder="Street, City, Zip"></input>
