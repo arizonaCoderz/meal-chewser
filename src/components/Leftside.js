@@ -12,14 +12,14 @@ const Leftside = (props) => {
 
   const clickedFilterTab = (event) => {
    setShowFilter(true);
-    setFilterColor("#C0DCF3");
-    setResultsColor("#8CB0DD");
+    setFilterColor("#ffffff");
+    setResultsColor("#ffffff");
   };
 
   const clickedResultsTab = (event) => {
    setShowFilter(false);
-    setFilterColor("#8CB0DD");
-    setResultsColor("#C0DCF3");
+    setFilterColor("#ffffff");
+    setResultsColor("#ffffff");
   };
 
   const onChews = value => {
@@ -30,12 +30,12 @@ const Leftside = (props) => {
       <div className="leftside">
         <div className="tabs">
           <Tab
-            title="Filter"
+            title="FILTER"
             coloring={filterColor}
             onClick={clickedFilterTab}
           />
           <Tab
-            title="Results"
+            title="RESULTS"
             coloring={resultsColor}
             onClick={clickedResultsTab}
           />

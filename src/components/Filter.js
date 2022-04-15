@@ -42,24 +42,24 @@ const Filter = (props) => {
     return (
       <div className={props.showFilter ? "filter": "disappear"}>
 
-        <p>Address</p>
-        <input id="input" onChange={onAddressChange}></input>
+        <p>ADDRESS</p>
+        <input id="input" onChange={onAddressChange} placeholder="Street, City, Zip"></input>
 
         <div id="distance">
-          <p style={{ marginRight: "10px" }}>Max Distance:</p>
+          <p style={{ marginRight: "10px" }}>MAX DISTANCE:</p>
           <p>{sliderV}</p>
-          <p style={{ marginLeft: "5px" }}>Miles</p>
+          <p style={{ marginLeft: "5px" }}>MILES</p>
         </div>
         <Slider onSliderChangeC={onSliderChangeP} />
 
-        <p>Price</p>
+        <p>PRICE</p>
         <div id="prices">
           <PriceButton bstatus={buttonHandler}></PriceButton>
         </div>
 
         <div className="keyworddiv">
-          <p>Keyword</p>
-          <input id="keywordinput" onChange={onKeywordChange}></input>
+          <p>KEYWORD</p>
+          <input id="keywordinput" onChange={onKeywordChange} placeholder="dinner, pizza, etc"></input>
           <p id="note">*If you have multiple keywords, separate by commas</p>
         </div>
 

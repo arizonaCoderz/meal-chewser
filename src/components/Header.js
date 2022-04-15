@@ -11,7 +11,7 @@ const Header = props => {
             </div>
             <div id="menu">
                 <button className='button' > Home </button>
-                <button className='button' > About </button>
+                <button className='button' > Chewser </button>
             </div>
         </div>
     );
