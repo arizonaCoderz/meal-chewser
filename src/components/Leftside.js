@@ -8,18 +8,18 @@ import Results from "./Results.js";
 const Leftside = (props) => {
   const [showFilter, setShowFilter] = useState(true); //changed this to boolean
   const [filterColor, setFilterColor] = useState("#C0DCF3");
-  const [resultsColor, setResultsColor] = useState("#8CB0DD");
+  const [resultsColor, setResultsColor] = useState("#ffffff");
 
   const clickedFilterTab = (event) => {
    setShowFilter(true); //if you click filter tab, you should show filter. 
-    setFilterColor("#ffffff");
+    setFilterColor("#C0DCF3");
     setResultsColor("#ffffff");
   };
 
   const clickedResultsTab = (event) => {
    setShowFilter(false);
     setFilterColor("#ffffff");
-    setResultsColor("#ffffff");
+    setResultsColor("#C0DCF3");
   };
 
   const onChews = value => {
