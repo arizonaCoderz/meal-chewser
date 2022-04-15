@@ -5,7 +5,7 @@
 }
 
 .tabs {
-    height: 5%;
+    height: 30px;
     width: 400px;
     display: flex;
     background-color: white;
