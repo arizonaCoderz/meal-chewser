@@ -10,8 +10,8 @@ const Header = props => {
                 <img id="logo" src="/assets/Logos/MealChewser_Logo6.png" alt="this is a egg shaped like a location pin with Meal Chewser" />        
             </div>
             <div id="menu">
-                <button className='button' > Home </button>
-                <button className='button' > Plate </button>
+                <button className='button' > HOME </button>
+                <button className='button' > PLATE </button>
             </div>
         </div>
     );
