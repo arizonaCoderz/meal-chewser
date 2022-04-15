@@ -65,7 +65,7 @@ const Filter = (props) => {
 
         <div id="chewsbuttondiv">
           <button id="chewsbutton" onClick={onChewsen}>
-            <img id="mcbutton" src="/assets/Logos/mcbutton.png" alt="this is the meal chewser button" />   
+            <img id="mcbutton" src="/assets/Logos/mcbuttoninv.png" alt="this is the meal chewser button" />   
           </button>
         </div>
       </div>

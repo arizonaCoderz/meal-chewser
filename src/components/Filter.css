@@ -51,7 +51,7 @@
   margin: auto;
   border-style: none;
   border-radius: 5px;
-  box-shadow: 5px 5px 0px #5C7CBE;
+  /* box-shadow: 5px 5px 0px #5C7CBE; */
   padding: 0;
 }
 
@@ -62,10 +62,6 @@
 
 #mcbutton {
   width: 100%;
-  border-style: solid;
-  border-color: #5C7CBE;
-  border-radius: 5px;
-  border-width: 2px;
 }
 
 .keyworddiv {
