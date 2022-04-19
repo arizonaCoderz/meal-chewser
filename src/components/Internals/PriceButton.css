@@ -23,3 +23,19 @@
   background-color: transparent;
   margin: 0 5px 0 5px;
 }
+
+.allbutton {
+  filter: invert(98%) sepia(0%) saturate(609%) hue-rotate(171deg) brightness(81%) contrast(92%);
+  position: relative;
+  margin: 0 10px;
+  transform: translateY(50%);
+  font-weight: bolder;
+}
+
+.pressedallbutton {
+  filter: invert(54%) sepia(6%) saturate(3736%) hue-rotate(182deg) brightness(86%) contrast(86%);
+  position: relative;
+  margin: 0 10px;
+  transform: translateY(50%);
+  font-weight: bolder;
+}

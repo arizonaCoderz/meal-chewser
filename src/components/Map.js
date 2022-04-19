@@ -51,8 +51,8 @@ const Map = (props) => {
         templng +
         "&radius=" +
         tempdist +
-        "&type=food&" +
-        "keyword=" +
+        "&type=food" +
+        "&keyword=food," +
         tempkeyword +
         "&opennow=true" +
         "&minprice=" +

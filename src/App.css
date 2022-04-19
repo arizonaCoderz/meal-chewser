@@ -89,3 +89,7 @@ select {
 button:hover {
   cursor: pointer;
 }
+
+.disappear {
+  display:none;
+}

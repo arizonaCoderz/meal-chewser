@@ -6,24 +6,29 @@ const IntroPB = props => {
     
   const [clicked, setClicked] = useState(0);
 
+  const allclicked = event => {
+    setClicked(0);
+    props.bstatus([0,4,0]);
+  }
+
   const p1clicked = event => {
     setClicked(1);
-    props.bstatus([0,1]);
+    props.bstatus([0,1,1]);
   }
 
   const p2clicked = event => {
     setClicked(2);
-    props.bstatus([1,2]);
+    props.bstatus([1,2,2]);
   }
 
   const p3clicked = event => {
     setClicked(3);
-    props.bstatus([2,3]);
+    props.bstatus([2,3,3]);
   }
 
   const p4clicked = event => {
     setClicked(4);
-    props.bstatus([3,4]);
+    props.bstatus([3,4,4]);
   }
 
   // const p5clicked = event => {
@@ -35,6 +40,7 @@ const IntroPB = props => {
     return (
       <div className="pricebuttons">
         <button className="pricebutton">
+          <p className="ipressedallbutton" onClick={allclicked}>ALL</p>
           <img className="ipbutton" src="/assets/Logos/dollarsign.svg" alt="this is a dollarsign icon" onClick={p1clicked}/>
           <img className="ipbutton" src="/assets/Logos/dollarsign.svg" alt="this is a dollarsign icon" onClick={p2clicked}/>
           <img className="ipbutton" src="/assets/Logos/dollarsign.svg" alt="this is a dollarsign icon" onClick={p3clicked}/>
@@ -46,6 +52,7 @@ const IntroPB = props => {
     return (
       <div className="pricebuttons">
         <button className="pricebutton">
+          <p className="iallbutton" onClick={allclicked}>ALL</p>
           <img className="whitebutton" src="/assets/Logos/dollarsign.svg" alt="this is a dollarsign icon" onClick={p1clicked}/>
           <img className="ipbutton" src="/assets/Logos/dollarsign.svg" alt="this is a dollarsign icon" onClick={p2clicked}/>
           <img className="ipbutton" src="/assets/Logos/dollarsign.svg" alt="this is a dollarsign icon" onClick={p3clicked}/>
@@ -57,6 +64,7 @@ const IntroPB = props => {
     return (
       <div className="pricebuttons">
         <button className="pricebutton">
+          <p className="iallbutton" onClick={allclicked}>ALL</p>
           <img className="whitebutton" src="/assets/Logos/dollarsign.svg" alt="this is a dollarsign icon" onClick={p1clicked}/>
           <img className="whitebutton" src="/assets/Logos/dollarsign.svg" alt="this is a dollarsign icon" onClick={p2clicked}/>
           <img className="ipbutton" src="/assets/Logos/dollarsign.svg" alt="this is a dollarsign icon" onClick={p3clicked}/>
@@ -68,6 +76,7 @@ const IntroPB = props => {
     return (
       <div className="pricebuttons">
         <button className="pricebutton">
+          <p className="iallbutton" onClick={allclicked}>ALL</p>
           <img className="whitebutton" src="/assets/Logos/dollarsign.svg" alt="this is a dollarsign icon" onClick={p1clicked}/>
           <img className="whitebutton" src="/assets/Logos/dollarsign.svg" alt="this is a dollarsign icon" onClick={p2clicked}/>
           <img className="whitebutton" src="/assets/Logos/dollarsign.svg" alt="this is a dollarsign icon" onClick={p3clicked}/>
@@ -80,6 +89,7 @@ const IntroPB = props => {
     return (
       <div className="pricebuttons">
         <button className="pricebutton">
+          <p className="iallbutton" onClick={allclicked}>ALL</p>
           <img className="whitebutton" src="/assets/Logos/dollarsign.svg" alt="this is a dollarsign icon" onClick={p1clicked}/>
           <img className="whitebutton" src="/assets/Logos/dollarsign.svg" alt="this is a dollarsign icon" onClick={p2clicked}/>
           <img className="whitebutton" src="/assets/Logos/dollarsign.svg" alt="this is a dollarsign icon" onClick={p3clicked}/>

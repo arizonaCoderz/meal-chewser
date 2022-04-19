@@ -6,7 +6,7 @@ import Slider from "./Slider";
 
 const IntroFilter = (props) => {
   const [sliderV, setSliderV] = useState(25);
-  const [price, setPrice] = useState([0,4]);
+  const [price, setPrice] = useState([0,4,0]);
   const [keyword, setKeyword] = useState("");
 
   const onSliderChangeP = value => {

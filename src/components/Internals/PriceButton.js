@@ -4,7 +4,12 @@ import "./PriceButton.css";
 
 const PriceButton = (props) => {
 
-  const [clicked, setClicked] = useState(props.value[1]);
+  const [clicked, setClicked] = useState(props.value[2]);
+
+  const allclicked = event => {
+    setClicked(0);
+    props.bstatus([0,4]);
+  }
 
   const p1clicked = event => {
     setClicked(1);
@@ -35,6 +40,7 @@ const PriceButton = (props) => {
     return (
       <div className="pricebuttons">
         <button className="pricebutton">
+          <p className="pressedallbutton" onClick={allclicked}>ALL</p>
           <img className="pbutton" src="/assets/Logos/dollarsign.svg" alt="this is a dollarsign icon" onClick={p1clicked}/>
           <img className="pbutton" src="/assets/Logos/dollarsign.svg" alt="this is a dollarsign icon" onClick={p2clicked}/>
           <img className="pbutton" src="/assets/Logos/dollarsign.svg" alt="this is a dollarsign icon" onClick={p3clicked}/>
@@ -46,6 +52,7 @@ const PriceButton = (props) => {
     return (
       <div className="pricebuttons">
         <button className="pricebutton">
+          <p className="allbutton" onClick={allclicked}>ALL</p>
           <img className="bluebutton" src="/assets/Logos/dollarsign.svg" alt="this is a dollarsign icon" onClick={p1clicked}/>
           <img className="pbutton" src="/assets/Logos/dollarsign.svg" alt="this is a dollarsign icon" onClick={p2clicked}/>
           <img className="pbutton" src="/assets/Logos/dollarsign.svg" alt="this is a dollarsign icon" onClick={p3clicked}/>
@@ -57,6 +64,7 @@ const PriceButton = (props) => {
     return (
       <div className="pricebuttons">
         <button className="pricebutton">
+          <p className="allbutton" onClick={allclicked}>ALL</p>
           <img className="bluebutton" src="/assets/Logos/dollarsign.svg" alt="this is a dollarsign icon" onClick={p1clicked}/>
           <img className="bluebutton" src="/assets/Logos/dollarsign.svg" alt="this is a dollarsign icon" onClick={p2clicked}/>
           <img className="pbutton" src="/assets/Logos/dollarsign.svg" alt="this is a dollarsign icon" onClick={p3clicked}/>
@@ -68,6 +76,7 @@ const PriceButton = (props) => {
     return (
       <div className="pricebuttons">
         <button className="pricebutton">
+          <p className="allbutton" onClick={allclicked}>ALL</p>
           <img className="bluebutton" src="/assets/Logos/dollarsign.svg" alt="this is a dollarsign icon" onClick={p1clicked}/>
           <img className="bluebutton" src="/assets/Logos/dollarsign.svg" alt="this is a dollarsign icon" onClick={p2clicked}/>
           <img className="bluebutton" src="/assets/Logos/dollarsign.svg" alt="this is a dollarsign icon" onClick={p3clicked}/>
@@ -80,6 +89,7 @@ const PriceButton = (props) => {
     return (
       <div className="pricebuttons">
         <button className="pricebutton">
+          <p className="allbutton" onClick={allclicked}>ALL</p>
           <img className="bluebutton" src="/assets/Logos/dollarsign.svg" alt="this is a dollarsign icon" onClick={p1clicked}/>
           <img className="bluebutton" src="/assets/Logos/dollarsign.svg" alt="this is a dollarsign icon" onClick={p2clicked}/>
           <img className="bluebutton" src="/assets/Logos/dollarsign.svg" alt="this is a dollarsign icon" onClick={p3clicked}/>
