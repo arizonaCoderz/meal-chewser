@@ -11,10 +11,16 @@ const Header = props => {
         props.clickedPlate();
     }
 
+    const clickedLogo = event => {
+        props.clickedLogo();
+    }
+
     return (
         <div className='header'>
             <div id="title">
-                <img id="logo" src="/assets/Logos/MealChewser_Logo6.png" alt="this is a egg shaped like a location pin with Meal Chewser" />        
+                <button className="logobutton" onClick={clickedLogo}>
+                    <img id="logo" src="/assets/Logos/MealChewser_Logo6.png" alt="this is a egg shaped like a location pin with Meal Chewser"/>  
+                </button>      
             </div>
             <div id="menu">
                 <button className='button' onClick={clickedHome}> HOME </button>

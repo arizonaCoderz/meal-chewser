@@ -38,6 +38,10 @@ function App() {
     setShowAbout(true);
   }
 
+  const clickedLogo = event => {
+    setPage(0);
+  }
+
   if (page == 0) {
     return (
       <div className="App">
@@ -48,11 +52,11 @@ function App() {
   } else {
     return (
       <div className="App">
-        <Header clickedHome={clickedHome} clickedPlate={clickedPlate}></Header>
+        <Header clickedHome={clickedHome} clickedPlate={clickedPlate} clickedLogo={clickedLogo}></Header>
         <Content showHome={showHome} data={data}></Content>
         <p>Plate</p>
         <p>About</p>
-        <Footer clickedHome={clickedHome} clickedAbout={clickedAbout}></Footer>
+        <Footer clickedHome={clickedHome} clickedAbout={clickedAbout} clickedLogo={clickedLogo}></Footer>
       </div>
     );
   }
