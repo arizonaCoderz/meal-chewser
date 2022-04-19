@@ -10,6 +10,8 @@ const Slider = (props) => {
       props.onSliderChangeC(event.target.value);
   }
   
+  const backcolor = props.bcolor;
+
   return (
     <div>
       <input
@@ -19,6 +21,7 @@ const Slider = (props) => {
         value={slideValue}
         className="slider"
         onChange={sliderChange}
+        style={{backgroundColor: backcolor}}
       ></input>
     </div>
   );

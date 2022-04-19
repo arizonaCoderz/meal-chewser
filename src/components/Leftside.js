@@ -11,13 +11,13 @@ const Leftside = (props) => {
   const [resultsColor, setResultsColor] = useState("#C0DCF3");
 
   const clickedFilterTab = (event) => {
-   setShowFilter(true); //if you click filter tab, you should show filter. 
+    setShowFilter(true); //if you click filter tab, you should show filter. 
     setFilterColor("#ffffff");
     setResultsColor("#C0DCF3");
   };
 
   const clickedResultsTab = (event) => {
-   setShowFilter(false);
+    setShowFilter(false);
     setFilterColor("#C0DCF3");
     setResultsColor("#ffffff");
   };

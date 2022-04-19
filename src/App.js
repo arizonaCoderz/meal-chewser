@@ -7,7 +7,11 @@ import Footer from "./components/Footer";
 import Intro from "./components/Intro";
 
 function App() {
-  const page = 1;
+  const [page, setPage] = useState(1);
+
+  const clickedChews = event => {
+    setPage(0);
+  }
 
   if (page == 0) {
     return (
@@ -20,7 +24,7 @@ function App() {
   } else {
     return (
       <div className="App">
-        <Intro></Intro>
+        <Intro clickedChews={clickedChews}></Intro>
         <Footer></Footer>
       </div>
     );

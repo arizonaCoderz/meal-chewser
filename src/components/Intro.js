@@ -5,16 +5,23 @@ import IntroFilter from './Internals/IntroFilter';
 
 const Intro = props => {
     const [address, setAddress] = useState("");
+    const [showFilter, setShowFilter] = useState(false);
+
     const onAddressChange = event => {
         setAddress(event.target.value);
     }
 
     const filterhandler = event => {
-
+        if (showFilter == true) {
+            setShowFilter(false);
+        }
+        else {
+            setShowFilter(true);
+        }
     }
 
     const chewshandler = event => {
-        
+        props.clickedChews();
     }
 
     const buildhandler = event => {
@@ -34,13 +41,13 @@ const Intro = props => {
                         <img id="caret" src="/assets/Logos/Caretdown.png" alt="this is a caret down icon" /> 
                     </button>
                 </div>
-                <IntroFilter></IntroFilter>
+                <IntroFilter showFilter={showFilter}></IntroFilter>
                 <div className="otherbuttons">
                     <button className="nextbutton" onClick={chewshandler}>
                         <img src="/assets/Logos/mcbutton.png" alt="this is a Meal Chewser button" /> 
                     </button>
                     <button className="nextbutton" onClick={buildhandler}>
-                        <img src="/assets/Logos/mcbutton.png" alt="this is a Meal Chewser button" /> 
+                        <img src="/assets/Logos/mcbutton.png" alt="this is a Build a Meal button" /> 
                     </button>
                 </div>
             </div>

@@ -50,7 +50,7 @@ const Filter = (props) => {
           <p>{sliderV}</p>
           <p style={{ marginLeft: "5px" }}>MILES</p>
         </div>
-        <Slider onSliderChangeC={onSliderChangeP} />
+        <Slider bcolor="#5C7CBE" onSliderChangeC={onSliderChangeP} />
 
         <p>PRICE</p>
         <div id="prices">
