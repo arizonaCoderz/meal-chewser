@@ -8,7 +8,7 @@ import Overlay from "./Overlay";
 const Filter = (props) => {
   const [sliderV, setSliderV] = useState(25);
   const [address, setAddress] = useState("");
-  const [price, setPrice] = useState([0,1]);
+  const [price, setPrice] = useState([0,4]);
   const [keyword, setKeyword] = useState("");
 
   var chewsdata = [address, price, sliderV, keyword];

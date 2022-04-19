@@ -4,7 +4,7 @@ import "./PriceButton.css";
 
 const PriceButton = (props) => {
 
-  const [clicked, setClicked] = useState(1);
+  const [clicked, setClicked] = useState(0);
 
   const p1clicked = event => {
     setClicked(1);
@@ -31,7 +31,18 @@ const PriceButton = (props) => {
   //   props.bstatus([4,4]);
   // }
   
-  if (clicked == 1) {
+  if (clicked == 0) {
+    return (
+      <div className="pricebuttons">
+        <button className="pricebutton">
+          <img className="pbutton" src="/assets/Logos/dollarsign.svg" alt="this is a dollarsign icon" onClick={p1clicked}/>
+          <img className="pbutton" src="/assets/Logos/dollarsign.svg" alt="this is a dollarsign icon" onClick={p2clicked}/>
+          <img className="pbutton" src="/assets/Logos/dollarsign.svg" alt="this is a dollarsign icon" onClick={p3clicked}/>
+          <img className="pbutton" src="/assets/Logos/dollarsign.svg" alt="this is a dollarsign icon" onClick={p4clicked}/>
+        </button>
+      </div>
+    ) 
+  } else if (clicked == 1) {
     return (
       <div className="pricebuttons">
         <button className="pricebutton">
