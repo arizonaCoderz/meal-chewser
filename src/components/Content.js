@@ -5,7 +5,7 @@ import Map from "./Map";
 import "./Content.css";
 
 const Content = (props) => {
-  const [data, setData] = useState(["", [0, 0], 0, "0"]);
+  const [data, setData] = useState([props.data[0], props.data[1], props.data[2], props.data[3]]);
 
   const pdataHandler = (value) => {
     setData(value);
@@ -13,7 +13,7 @@ const Content = (props) => {
 
   return (
     <div className="content">
-      <Leftside cdataHandler={pdataHandler}></Leftside>
+      <Leftside cdataHandler={pdataHandler} data={data}></Leftside>
       <Map
         address={data[0]}
         price={data[1]}

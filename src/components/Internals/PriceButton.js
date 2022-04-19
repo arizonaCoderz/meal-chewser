@@ -4,7 +4,7 @@ import "./PriceButton.css";
 
 const PriceButton = (props) => {
 
-  const [clicked, setClicked] = useState(0);
+  const [clicked, setClicked] = useState(props.value[1]);
 
   const p1clicked = event => {
     setClicked(1);

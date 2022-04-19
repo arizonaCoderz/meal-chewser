@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "./Slider.css";
 
 const Slider = (props) => {
-  const [slideValue, setSlideValue] = useState(25);
+  const [slideValue, setSlideValue] = useState(props.value);
 
   const sliderChange = event => {
       setSlideValue(event.target.value);

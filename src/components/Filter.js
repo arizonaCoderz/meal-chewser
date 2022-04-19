@@ -6,10 +6,10 @@ import PriceButton from "./Internals/PriceButton";
 import Overlay from "./Overlay";
 
 const Filter = (props) => {
-  const [sliderV, setSliderV] = useState(25);
-  const [address, setAddress] = useState("");
-  const [price, setPrice] = useState([0,4]);
-  const [keyword, setKeyword] = useState("");
+  const [sliderV, setSliderV] = useState(props.data[2]);
+  const [address, setAddress] = useState(props.data[0]);
+  const [price, setPrice] = useState(props.data[1]);
+  const [keyword, setKeyword] = useState(props.data[3]);
 
   var chewsdata = [address, price, sliderV, keyword];
 
@@ -43,23 +43,23 @@ const Filter = (props) => {
       <div className={props.showFilter ? "filter": "disappear"}> {/* Ternary to pick className, disappear has a styling to display:none*/}
 
         <p>ADDRESS</p>
-        <input id="input" onChange={onAddressChange} placeholder="Street, City, Zip"></input>
+        <input id="input" onChange={onAddressChange} placeholder="Street, City, Zip" value={address}></input>
 
         <div id="distance">
           <p style={{ marginRight: "10px" }}>MAX DISTANCE:</p>
           <p>{sliderV}</p>
           <p style={{ marginLeft: "5px" }}>MILES</p>
         </div>
-        <Slider bcolor="#5C7CBE" onSliderChangeC={onSliderChangeP} />
+        <Slider bcolor="#5C7CBE" onSliderChangeC={onSliderChangeP} value={sliderV}/>
 
         <p>PRICE</p>
         <div id="prices">
-          <PriceButton bstatus={buttonHandler}></PriceButton>
+          <PriceButton bstatus={buttonHandler} value={price}></PriceButton>
         </div>
 
         <div className="keyworddiv">
           <p>KEYWORD</p>
-          <input id="keywordinput" onChange={onKeywordChange} placeholder="dinner, pizza, etc"></input>
+          <input id="keywordinput" onChange={onKeywordChange} placeholder="dinner, pizza, etc" value={keyword}></input>
           <p id="note">*If you have multiple keywords, separate by commas</p>
         </div>
 

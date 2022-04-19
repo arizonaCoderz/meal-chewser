@@ -9,7 +9,7 @@ const IntroFilter = (props) => {
   const [price, setPrice] = useState([0,4]);
   const [keyword, setKeyword] = useState("");
 
-  const onSliderChangeP = (value) => {
+  const onSliderChangeP = value => {
     setSliderV(value);
   };
 
@@ -21,6 +21,16 @@ const IntroFilter = (props) => {
     setKeyword(event.target.value);
   }
 
+  var ichewsdata = [price, sliderV, keyword];
+  const onChewsen = event => {
+    ichewsdata[0] = price;
+    ichewsdata[1] = sliderV;
+    ichewsdata[2] = keyword;
+    props.chews(ichewsdata);
+  }
+
+  onChewsen();
+
   return (
     <div className={props.showFilter ? "introfilter": "disappear"}> {/* Ternary to pick className, disappear has a styling to display:none*/}
 
@@ -31,7 +41,7 @@ const IntroFilter = (props) => {
         <p>{sliderV}</p>
         <p style={{ marginLeft: "5px" }}>MILES</p>
       </div>
-      <Slider bcolor="white" onSliderChangeC={onSliderChangeP} />
+      <Slider bcolor="white" onSliderChangeC={onSliderChangeP} value={sliderV}/>
       <div className="introkeyworddiv">
           <p>KEYWORD</p>
           <input className="introkeywordinput" onChange={onKeywordChange} placeholder="dinner, pizza, etc"></input>

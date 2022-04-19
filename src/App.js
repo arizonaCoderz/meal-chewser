@@ -8,16 +8,17 @@ import Intro from "./components/Intro";
 
 function App() {
   const [page, setPage] = useState(1);
-
-  const clickedChews = event => {
+  const [data, setData] = useState(["",0,0,""]);
+  const clickedChews = idata => {
     setPage(0);
+    setData([idata[0],idata[1],idata[2],idata[3]]);
   }
 
   if (page == 0) {
     return (
       <div className="App">
         <Header></Header>
-        <Content></Content>
+        <Content data={data}></Content>
         <Footer></Footer>
       </div>
     );

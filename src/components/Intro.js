@@ -12,16 +12,23 @@ const Intro = props => {
     }
 
     const filterhandler = event => {
-        if (showFilter == true) {
-            setShowFilter(false);
+        if (showFilter == false) {
+            setShowFilter(true);
         }
         else {
-            setShowFilter(true);
+            setShowFilter(false);
         }
     }
 
+    var idata = [address, [0,0], 0, ""]
+    const chewsenhandler = ichewsdata => {
+        idata[1] = ichewsdata[0];
+        idata[2] = ichewsdata[1];
+        idata[3] = ichewsdata[2];
+    }
+
     const chewshandler = event => {
-        props.clickedChews();
+        props.clickedChews(idata);
     }
 
     const buildhandler = event => {
@@ -41,7 +48,7 @@ const Intro = props => {
                         <img id="caret" src="/assets/Logos/Caretdown.png" alt="this is a caret down icon" /> 
                     </button>
                 </div>
-                <IntroFilter showFilter={showFilter}></IntroFilter>
+                <IntroFilter showFilter={showFilter} chews={chewsenhandler}></IntroFilter>
                 <div className="otherbuttons">
                     <button className="nextbutton" onClick={chewshandler}>
                         <img src="/assets/Logos/mcbutton.png" alt="this is a Meal Chewser button" /> 
