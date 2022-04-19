@@ -69,9 +69,22 @@
     width: 300px;
     border-radius: 5px;
     border-style: none;
+    background-color: white;
+    padding: 0;
 }
 
 .nextbutton:active {
     transform: scale(0.98);
     box-shadow: 3px 2px 15px 1px #97c4c7;
   }
+
+.ibuttons {
+  border-style: none;
+  background-color: transparent;
+}
+
+#ortext {
+  width: 25px;
+  color: white;
+  margin: 10px auto 10px auto;
+}

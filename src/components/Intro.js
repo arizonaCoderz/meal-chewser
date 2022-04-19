@@ -51,10 +51,11 @@ const Intro = props => {
                 <IntroFilter showFilter={showFilter} chews={chewsenhandler}></IntroFilter>
                 <div className="otherbuttons">
                     <button className="nextbutton" onClick={chewshandler}>
-                        <img src="/assets/Logos/mcbutton.png" alt="this is a Meal Chewser button" /> 
+                        <img className="ibuttons" src="/assets/Logos/chewsmymeal.png" alt="this is a Meal Chewser button" /> 
                     </button>
+                    <p id="ortext">OR</p>
                     <button className="nextbutton" onClick={buildhandler}>
-                        <img src="/assets/Logos/mcbutton.png" alt="this is a Build a Meal button" /> 
+                        <img className="ibuttons" src="/assets/Logos/buildmyplate.png" alt="this is a Build a Meal button" /> 
                     </button>
                 </div>
             </div>
