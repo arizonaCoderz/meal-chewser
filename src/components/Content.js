@@ -12,7 +12,7 @@ const Content = (props) => {
   };
 
   return (
-    <div className="content">
+    <div className={props.showHome ? "content": "disappear"}> {/* Ternary to pick className, disappear has a styling to display:none*/}
       <Leftside cdataHandler={pdataHandler} data={data}></Leftside>
       <Map
         address={data[0]}

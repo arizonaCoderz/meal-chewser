@@ -7,6 +7,10 @@ import Footer from "./components/Footer";
 import Intro from "./components/Intro";
 
 function App() {
+  const [showHome, setShowHome] = useState(true);
+  const [showPlate, setShowPlate] = useState(false);
+  const [showAbout, setShowAbout] = useState(false);
+
   const [page, setPage] = useState(0);
   const [data, setData] = useState(["", 0, 0, ""]);
   const clickedChews = (idata) => {
@@ -17,15 +21,21 @@ function App() {
   };
 
   const clickedHome = event => {
-    setPage(1);
+    setShowHome(true);
+    setShowPlate(false);
+    setShowAbout(false);
   }
 
   const clickedPlate = event => {
-    setPage(2);
+    setShowHome(false);
+    setShowPlate(true);
+    setShowAbout(false);
   }
 
   const clickedAbout = event => {
-    setPage(3);
+    setShowHome(false);
+    setShowPlate(false);
+    setShowAbout(true);
   }
 
   if (page == 0) {
@@ -35,26 +45,12 @@ function App() {
         <Footer clickedHome={clickedHome} clickedAbout={clickedAbout}></Footer>
       </div>
     );
-  } else if (page == 1) {
-    return (
-      <div className="App">
-        <Header clickedHome={clickedHome} clickedPlate={clickedPlate}></Header>
-        <Content data={data}></Content>
-        <Footer clickedHome={clickedHome} clickedAbout={clickedAbout}></Footer>
-      </div>
-    );
-  } else if (page == 2) {
-    return (
-      <div className="App">
-        <Header clickedHome={clickedHome} clickedPlate={clickedPlate}></Header>
-        <p>Plate</p>
-        <Footer clickedHome={clickedHome} clickedAbout={clickedAbout}></Footer>
-      </div>
-    );
   } else {
     return (
       <div className="App">
         <Header clickedHome={clickedHome} clickedPlate={clickedPlate}></Header>
+        <Content showHome={showHome} data={data}></Content>
+        <p>Plate</p>
         <p>About</p>
         <Footer clickedHome={clickedHome} clickedAbout={clickedAbout}></Footer>
       </div>
