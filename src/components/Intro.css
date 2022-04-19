@@ -23,6 +23,7 @@
 
 #filterdiv {
     width: 110px;
+    height: 40px;
     margin: 0 auto;
   }
 
@@ -46,6 +47,10 @@
     color: white;
     font-size: 15px;
     margin-bottom: 30px;
+}
+
+#filterdropdown:active {
+  transform: scale(0.98);
 }
 
 #caret {
