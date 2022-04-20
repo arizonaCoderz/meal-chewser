@@ -5,6 +5,8 @@ import Header from "./components/Header";
 import Content from "./components/Content";
 import Footer from "./components/Footer";
 import Intro from "./components/Intro";
+import About from "./components/About";
+import Plate from "./components/Plate";
 
 function App() {
   const [showHome, setShowHome] = useState(true);
@@ -54,8 +56,8 @@ function App() {
       <div className="App">
         <Header clickedHome={clickedHome} clickedPlate={clickedPlate} clickedLogo={clickedLogo}></Header>
         <Content showHome={showHome} data={data}></Content>
-        <p>Plate</p>
-        <p>About</p>
+        <Plate showPlate={showPlate}></Plate>
+        <About showAbout={showAbout}></About>
         <Footer clickedHome={clickedHome} clickedAbout={clickedAbout} clickedLogo={clickedLogo}></Footer>
       </div>
     );
