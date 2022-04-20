@@ -19,8 +19,8 @@ const About = (props) => {
           based in Phoenix, Arizona. We decided to create this fun little
           project after having a reccuring issue of not being able to choose
           where to eat. Meal Chewser is what we came up with! Whenever you feel
-          indecisive or are looking for a some randomness in your life, come
-          back here! We hope to see you again!
+          indecisive or are looking for a some randomness in your life, let us 
+          decide your fate! We hope to see you again!
         </p>
         <div className="icons">
           <img
