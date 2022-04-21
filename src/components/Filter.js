@@ -34,8 +34,9 @@ const Filter = (props) => {
     chewsdata[1] = price;
     chewsdata[2] = sliderV;
     chewsdata[3] = keyword;
-    props.chews(chewsdata);
-    console.log(address)
+    if (address != "") {
+      props.chews(chewsdata);
+    }
   }
 
 
