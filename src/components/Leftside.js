@@ -40,7 +40,7 @@ const Leftside = (props) => {
             onClick={clickedResultsTab}
           />
         </div>
-        <Filter chews={onChews} showFilter={showFilter} data={props.data}></Filter> 
+        <Filter chews={onChews} showFilter={showFilter} inputdata={props.inputdata}></Filter> 
       </div>
     );
   }

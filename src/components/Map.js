@@ -1,61 +1,54 @@
 import React, { useState, useEffect } from "react";
 import { GoogleMap, useLoadScript } from "@react-google-maps/api";
 import axios from "axios";
+import LatLngConverter from "./Processes/LatLngConverter";
 
 import "./Map.css";
-
 const libraries = ["places"];
 
 const mapContainerStyle = {
   width: "100%",
   height: "100%",
 };
-const center = {
-  lat: 39,
-  lng: -97,
-};
 
 const Map = (props) => {
-
   //Initialize Filters--------------------------------------------------------------------------------------
-  const address = props.address.trim().replace(/ /g, "%20"); //convert to processable address version
-  const tempdist = props.distance * 1609.34; //converts input distance (miles) to meters
-  const tempprice = props.price; //price
-  const tempkeyword = props.keyword; //keyword(s)
+  const address = props.inputdata[0].trim().replace(/ /g, "%20"); //convert to processable address version
+  const tempprice = props.inputdata[1]; //price
+  const tempdist = props.inputdata[2] * 1609.34; //converts input distance (miles) to meters
+  const tempkeyword = props.inputdata[3]; //keyword(s)
 
-  console.log("address is: " + props.address);
-  console.log("distance is: " + tempdist);
-  console.log("price is: " + tempprice[0] + " to " + tempprice[1]);
-  console.log("keyword is: " + tempkeyword);
+  // console.log("address is: " + props.address);
+  // console.log("distance is: " + tempdist);
+  // console.log("price is: " + tempprice[0] + " to " + tempprice[1]);
+  // console.log("keyword is: " + tempkeyword);
 
   //Converts Address to Latitude and Longitude---------------------------------------------------------------
-
   const locURL =
     "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=" +
     address +
     "&inputtype=textquery&fields=formatted_address,geometry&key=AIzaSyA9oUuwu2IcJiytz70UxvzQIAtIWD_Pskc";
 
-  const [lat, setlat] = useState("");
-  const [lng, setlng] = useState("");
+  const [lat, setlat] = useState(39);
+  const [lng, setlng] = useState(-97);
 
   useEffect(() => {
     axios.get(locURL).then((response) => {
       const temploc = response.data.candidates[0].geometry.location;
-      setlat(temploc.lat.toString());
-      setlng(temploc.lng.toString());
+      setlat(temploc.lat);
+      setlng(temploc.lng);
     });
   }, []);
 
-  // console.log("the latitude is " + lat);
-  // console.log("the longitude is " + lng);
+  console.log(lat);
 
   //Search Function-----------------------------------------------------------------------------------------
 
   const baseURL =
     "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" +
-    lat +
+    lat.toString() +
     "," +
-    lng +
+    lng.toString() +
     "&radius=" +
     tempdist +
     "&type=food" +
@@ -69,16 +62,46 @@ const Map = (props) => {
     "&key=AIzaSyA9oUuwu2IcJiytz70UxvzQIAtIWD_Pskc";
 
   // console.log("baseURL is: " + baseURL);
-  const [searchdata, setSearchData] = useState(null);
+
+  const [searchdata, setSearchData] = useState("");
+  const [page2token, setPage2] = useState("");
 
   useEffect(() => {
     axios.get(baseURL).then((response) => {
-      setSearchData(response.data);
+      setSearchData(response.data.results);
+      if (typeof response.data.next_page_token !== "undefined") {
+        setPage2(response.data.next_page_token.toString());
+      }
     });
-  }, []);
+  }, [baseURL]);
 
-  console.log(searchdata.next_page_token);
+  //Page 2 Results
 
+  // const [searchdata2, setSearchData2] = useState([]);
+  // const [page3token, setPage3] = useState("");
+
+  // const baseURL2 =
+  //   "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" +
+  //   lat +
+  //   "," +
+  //   lng +
+  //   "&pagetoken=" +
+  //   page2token +
+  //   "&key=AIzaSyA9oUuwu2IcJiytz70UxvzQIAtIWD_Pskc";
+
+  // useEffect(() => {
+  //   axios.get(baseURL2).then((response) => {
+  //     setSearchData2(response.data.results);
+  //     if (typeof response.data.next_page_token !== 'undefined') {
+  //       setPage3(response.data.next_page_token.toString());
+  //     }
+  //     console.log("search data2 is " + searchdata2);
+  //   });
+  // }, []);
+
+  //Concat all data
+  var allData = searchdata;
+  props.adataHandler(allData);
 
   //Load in the Map-----------------------------------------------------------------------------------------
   const { isLoaded, loadError } = useLoadScript({
@@ -89,16 +112,12 @@ const Map = (props) => {
   if (loadError) return "Error loading maps";
   if (!isLoaded) return "Loading Maps";
 
-
-
-
-
   return (
     <div className="map">
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
-        zoom={5}
-        center={center}
+        zoom={15}
+        center={{lat: lat,lng: lng}}
       />
     </div>
   );

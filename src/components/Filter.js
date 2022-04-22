@@ -6,10 +6,10 @@ import PriceButton from "./Internals/PriceButton";
 import Overlay from "./Overlay";
 
 const Filter = (props) => {
-  const [sliderV, setSliderV] = useState(props.data[2]);
-  const [address, setAddress] = useState(props.data[0]);
-  const [price, setPrice] = useState(props.data[1]);
-  const [keyword, setKeyword] = useState(props.data[3]);
+  const [sliderV, setSliderV] = useState(props.inputdata[2]);
+  const [address, setAddress] = useState(props.inputdata[0]);
+  const [price, setPrice] = useState(props.inputdata[1]);
+  const [keyword, setKeyword] = useState(props.inputdata[3]);
 
   var chewsdata = [address, price, sliderV, keyword];
 

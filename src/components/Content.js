@@ -5,20 +5,22 @@ import Map from "./Map";
 import "./Content.css";
 
 const Content = (props) => {
-  const [data, setData] = useState([props.data[0], props.data[1], props.data[2], props.data[3]]);
+  const [inputdata, setInputData] = useState([props.inputdata[0], props.inputdata[1], props.inputdata[2], props.inputdata[3]]);
 
   const pdataHandler = (value) => {
-    setData(value);
+    setInputData(value);
   };
+
+  const adataHandler = allData => {
+    console.log(allData);
+  }
 
   return (
     <div className={props.showHome ? "content": "disappear"}> {/* Ternary to pick className, disappear has a styling to display:none*/}
-      <Leftside cdataHandler={pdataHandler} data={data}></Leftside>
+      <Leftside cdataHandler={pdataHandler} inputdata={inputdata}></Leftside>
       <Map
-        address={data[0]}
-        price={data[1]}
-        distance={data[2]}
-        keyword={data[3]}
+        inputdata={inputdata}
+        adataHandler={adataHandler}
       ></Map>
     </div>
   );

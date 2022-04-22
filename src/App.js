@@ -14,11 +14,11 @@ function App() {
   const [showAbout, setShowAbout] = useState(false);
 
   const [page, setPage] = useState(0);
-  const [data, setData] = useState(["", 0, 0, ""]);
+  const [inputdata, setInputData] = useState(["", 0, 0, ""]);
   const clickedChews = (idata) => {
     if (idata[0] != "") {
       setPage(1);
-      setData([idata[0], idata[1], idata[2], idata[3]]);
+      setInputData([idata[0], idata[1], idata[2], idata[3]]);
     }
   };
 
@@ -55,7 +55,7 @@ function App() {
     return (
       <div className="App">
         <Header clickedHome={clickedHome} clickedPlate={clickedPlate} clickedLogo={clickedLogo}></Header>
-        <Content showHome={showHome} data={data}></Content>
+        <Content showHome={showHome} inputdata={inputdata}></Content>
         <Plate showPlate={showPlate}></Plate>
         <About showAbout={showAbout}></About>
         <Footer clickedHome={clickedHome} clickedAbout={clickedAbout} clickedLogo={clickedLogo}></Footer>
