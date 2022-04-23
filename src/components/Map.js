@@ -13,12 +13,13 @@ const mapContainerStyle = {
 
 const Map = (props) => {
   //Initialize Filters--------------------------------------------------------------------------------------
-  const address = props.inputdata[0].trim().replace(/ /g, "%20"); //convert to processable address version
-  const tempprice = props.inputdata[1]; //price
-  const tempdist = props.inputdata[2] * 1609.34; //converts input distance (miles) to meters
-  const tempkeyword = props.inputdata[3]; //keyword(s)
+  const address = props.filtereddata[0].trim().replace(/ /g, "%20"); //convert to processable address version
+  // const address = props.filtereddata[0]; //convert to processable address version
+  const tempprice = props.filtereddata[1]; //price range
+  const tempdist = props.filtereddata[2] * 1609.34; //converts input distance (miles) to meters
+  const tempkeyword = props.filtereddata[3]; //keyword(s)
 
-  // console.log("address is: " + props.address);
+  // console.log("address is: " + address);
   // console.log("distance is: " + tempdist);
   // console.log("price is: " + tempprice[0] + " to " + tempprice[1]);
   // console.log("keyword is: " + tempkeyword);
@@ -39,8 +40,6 @@ const Map = (props) => {
       setlng(temploc.lng);
     });
   }, []);
-
-  console.log(lat);
 
   //Search Function-----------------------------------------------------------------------------------------
 
@@ -64,14 +63,15 @@ const Map = (props) => {
   // console.log("baseURL is: " + baseURL);
 
   const [searchdata, setSearchData] = useState("");
-  const [page2token, setPage2] = useState("");
+  // const [page2token, setPage2] = useState("");
 
   useEffect(() => {
     axios.get(baseURL).then((response) => {
       setSearchData(response.data.results);
-      if (typeof response.data.next_page_token !== "undefined") {
-        setPage2(response.data.next_page_token.toString());
-      }
+      // if (typeof response.data.next_page_token !== "undefined") {
+      //   setPage2(response.data.next_page_token.toString());
+      // }
+
     });
   }, [baseURL]);
 
@@ -79,29 +79,49 @@ const Map = (props) => {
 
   // const [searchdata2, setSearchData2] = useState([]);
   // const [page3token, setPage3] = useState("");
-
   // const baseURL2 =
-  //   "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" +
-  //   lat +
-  //   "," +
-  //   lng +
-  //   "&pagetoken=" +
-  //   page2token +
-  //   "&key=AIzaSyA9oUuwu2IcJiytz70UxvzQIAtIWD_Pskc";
+  //     "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" +
+  //     lat +
+  //     "," +
+  //     lng +
+  //     "&radius=0" +
+  //     page2token +
+  //     "&key=AIzaSyA9oUuwu2IcJiytz70UxvzQIAtIWD_Pskc";
+
+  // if (page2token != "") {
+  //   baseURL2 =
+  //     "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" +
+  //     lat +
+  //     "," +
+  //     lng +
+  //     "&radius=0" +
+  //     page2token +
+  //     "&key=AIzaSyA9oUuwu2IcJiytz70UxvzQIAtIWD_Pskc";
+  // } else {
+  //   baseURL2 =
+  //     "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" +
+  //     lat +
+  //     "," +
+  //     lng +
+  //     "&pagetoken=" +
+  //     page2token +
+  //     "&key=AIzaSyA9oUuwu2IcJiytz70UxvzQIAtIWD_Pskc";
+  // }
 
   // useEffect(() => {
   //   axios.get(baseURL2).then((response) => {
   //     setSearchData2(response.data.results);
-  //     if (typeof response.data.next_page_token !== 'undefined') {
+  //     if (typeof response.data.next_page_token !== "undefined") {
   //       setPage3(response.data.next_page_token.toString());
   //     }
   //     console.log("search data2 is " + searchdata2);
   //   });
-  // }, []);
+  // }, [baseURL2]);
 
   //Concat all data
   var allData = searchdata;
   props.adataHandler(allData);
+  //console.log("inside map" + allData)
 
   //Load in the Map-----------------------------------------------------------------------------------------
   const { isLoaded, loadError } = useLoadScript({
@@ -117,7 +137,7 @@ const Map = (props) => {
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
         zoom={15}
-        center={{lat: lat,lng: lng}}
+        center={{ lat: lat, lng: lng }}
       />
     </div>
   );
