@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { GoogleMap, useLoadScript } from "@react-google-maps/api";
+import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 
 import "./Map.css";
 const libraries = ["places"];
@@ -11,11 +11,13 @@ const mapContainerStyle = {
 
 const Map = (props) => {
   //Location Setting---------------------------------------------------------------------------------------
-  var temploc = [39,-97,5];
+  var temploc = [39,-97];
 
   if (props.resultsdata.length != 0) {
-    temploc = [props.resultsdata[props.chosennum].geometry.location.lat, props.resultsdata[props.chosennum].geometry.location.lng, 15];
+    temploc = [props.resultsdata[props.chosennum].geometry.location.lat, props.resultsdata[props.chosennum].geometry.location.lng, 15]; //temploc is [lat,lng,zoom]
   }
+
+  var location = { lat: temploc[0], lng: temploc[1] };
   
   //Load in the Map-----------------------------------------------------------------------------------------
   const { isLoaded, loadError } = useLoadScript({
@@ -35,8 +37,10 @@ const Map = (props) => {
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
         zoom={temploc[2]}
-        center={{ lat: temploc[0], lng: temploc[1] }}
-      />
+        center={location}
+      >
+        <Marker position={location}></Marker>
+      </GoogleMap>
     </div>
   );
 };
