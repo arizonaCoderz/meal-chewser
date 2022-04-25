@@ -45,7 +45,7 @@ const Leftside = (props) => {
           />
         </div>
         <Filter chews={onChews} showFilter={showFilter} inputdata={props.inputdata}></Filter> 
-        <Results showResults={showResults} resultsdata={props.resultsdata} chosennum={props.chosennum}></Results>
+        <Results showResults={showResults} resultsdata={props.resultsdata} chosennum={props.chosennum} origin={props.origin}></Results>
       </div>
     );
   }

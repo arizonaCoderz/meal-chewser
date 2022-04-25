@@ -58,6 +58,7 @@ const Content = (props) => {
     "&minprice=" +
     inputData[1,0] +
     "&maxprice=" +
+    // "&rankby=distance" + //if you use this, radius is disallowed
     inputData[1,1] +
     "&key=AIzaSyA9oUuwu2IcJiytz70UxvzQIAtIWD_Pskc";
 
@@ -102,7 +103,7 @@ const Content = (props) => {
 
   //Concat all data
   var resultsdata = searchdata;
-
+  console.log(resultsdata);
 
   //Randomized Option
   const chosennum = Math.floor(Math.random() * resultsdata.length);
@@ -125,6 +126,7 @@ const Content = (props) => {
         inputdata={props.inputdata}
         resultsdata={resultsdata}
         chosennum={chosennum}
+        origin={[lat,lng]}
       ></Leftside>
       <Map resultsdata={resultsdata} chosennum={chosennum}></Map>
     </div>
