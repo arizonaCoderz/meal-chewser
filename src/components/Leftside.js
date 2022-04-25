@@ -6,10 +6,10 @@ import Filter from "./Filter.js";
 import Results from "./Results.js";
 
 const Leftside = (props) => {
-  const [showFilter, setShowFilter] = useState(true); //changed this to boolean
-  const [showResults, setShowResults] =useState(false);
-  const [filterColor, setFilterColor] = useState("#ffffff");
-  const [resultsColor, setResultsColor] = useState("#C0DCF3");
+  const [showFilter, setShowFilter] = useState(false); //changed this to boolean
+  const [showResults, setShowResults] =useState(true);
+  const [filterColor, setFilterColor] = useState("#C0DCF3");
+  const [resultsColor, setResultsColor] = useState("#ffffff");
 
   const clickedFilterTab = (event) => {
     setShowFilter(true); //if you click filter tab, you should show filter. 
@@ -26,6 +26,7 @@ const Leftside = (props) => {
   };
 
   const onChews = chewsdata => {
+    clickedResultsTab();
     props.inputdataHandler(chewsdata);
   }
 
