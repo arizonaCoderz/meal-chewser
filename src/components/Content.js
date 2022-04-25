@@ -102,7 +102,6 @@ const Content = (props) => {
 
   //Concat all data
   var resultsdata = searchdata;
-  console.log(searchdata);
 
 
   //Randomized Option
