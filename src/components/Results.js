@@ -8,8 +8,8 @@ const Results = props => {
     if (props.resultsdata.length != 0) {
         return (
             <div className={props.showResults ? "results": "disappear"}> {/* Ternary to pick className, disappear has a styling to display:none*/}
-                <p>{props.resultsdata[props.randomnum].name}</p>
-                <p>{props.resultsdata[props.randomnum].vicinity}</p>
+                <p>{props.resultsdata[props.chosennum].name}</p>
+                <p>{props.resultsdata[props.chosennum].vicinity}</p>
             </div>
         );
     } else {

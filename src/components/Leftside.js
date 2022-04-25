@@ -25,8 +25,8 @@ const Leftside = (props) => {
     setResultsColor("#ffffff");
   };
 
-  const onChews = value => {
-    props.inputdataHandler(value);
+  const onChews = chewsdata => {
+    props.inputdataHandler(chewsdata);
   }
 
     return (
@@ -44,7 +44,7 @@ const Leftside = (props) => {
           />
         </div>
         <Filter chews={onChews} showFilter={showFilter} inputdata={props.inputdata}></Filter> 
-        <Results showResults={showResults} resultsdata={props.resultsdata} randomnum={props.randomnum}></Results>
+        <Results showResults={showResults} resultsdata={props.resultsdata} chosennum={props.chosennum}></Results>
       </div>
     );
   }

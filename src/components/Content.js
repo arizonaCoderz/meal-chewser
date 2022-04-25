@@ -7,10 +7,17 @@ import "./Content.css";
 
 const Content = (props) => {
   //Initialize Filters--------------------------------------------------------------------------------------
-  const address = props.inputdata[0].trim().replace(/ /g, "%20"); //convert to processable address version
-  const tempprice = props.inputdata[1]; //price
-  const tempdist = props.inputdata[2] * 1609.34; //converts input distance (miles) to meters
-  const tempkeyword = props.inputdata[3]; //keyword(s)
+  const [inputData, setInputData] = useState([
+    props.inputdata[0].trim().replace(/ /g, "%20"),
+    props.inputdata[1],
+    props.inputdata[2] * 1609.34,
+    props.inputdata[3]
+  ]);
+
+  // const address = props.inputdata[0].trim().replace(/ /g, "%20"); //convert to processable address version
+  // const tempprice = props.inputdata[1]; //price
+  // const tempdist = props.inputdata[2] * 1609.34; //converts input distance (miles) to meters
+  // const tempkeyword = props.inputdata[3]; //keyword(s)
 
   // console.log("address is: " + props.address);
   // console.log("distance is: " + tempdist);
@@ -21,7 +28,7 @@ const Content = (props) => {
   //Converts Address to Latitude and Longitude---------------------------------------------------------------
   const locURL =
     "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=" +
-    address +
+    inputData[0] +
     "&inputtype=textquery&fields=formatted_address,geometry&key=AIzaSyA9oUuwu2IcJiytz70UxvzQIAtIWD_Pskc";
 
   const [lat, setlat] = useState(39);
@@ -43,15 +50,15 @@ const Content = (props) => {
     "," +
     lng.toString() +
     "&radius=" +
-    tempdist +
+    inputData[2] +
     "&type=food" +
     "&keyword=food," +
-    tempkeyword +
+    inputData[3] +
     "&opennow=true" +
     "&minprice=" +
-    tempprice[0] +
+    inputData[1,0] +
     "&maxprice=" +
-    tempprice[1] +
+    inputData[1,1] +
     "&key=AIzaSyA9oUuwu2IcJiytz70UxvzQIAtIWD_Pskc";
 
   // console.log("baseURL is: " + baseURL);
@@ -95,14 +102,21 @@ const Content = (props) => {
 
   //Concat all data
   var resultsdata = searchdata;
+  console.log(searchdata);
 
 
   //Randomized Option
-  const randomnum = Math.floor(Math.random() * resultsdata.length);
+  const chosennum = Math.floor(Math.random() * resultsdata.length);
 
 
-  const inputdataHandler = (value) => {
-    //  setInputData(value);
+  //Connect Regular Filter to Results
+  const inputdataHandler = chewsdata => {
+    setInputData([
+      chewsdata[0].trim().replace(/ /g, "%20"),
+      chewsdata[1],
+      chewsdata[2] * 1609.34,
+      chewsdata[3]
+    ]);
   };
 
   return (
@@ -111,9 +125,9 @@ const Content = (props) => {
         inputdataHandler={inputdataHandler}
         inputdata={props.inputdata}
         resultsdata={resultsdata}
-        randomnum={randomnum}
+        chosennum={chosennum}
       ></Leftside>
-      <Map inputdata={props.inputdata}></Map>
+      <Map resultsdata={resultsdata} chosennum={chosennum}></Map>
     </div>
   );
 };
