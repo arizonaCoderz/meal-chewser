@@ -1,41 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './Results.css';
 import Result from './Result.js';
 
 const Results = props => {
-    return (
-        <div className="results">
-            <div className="row">
-                <Result></Result>
+
+    if (props.resultsdata.length != 0) {
+        return (
+            <div className={props.showResults ? "results": "disappear"}> {/* Ternary to pick className, disappear has a styling to display:none*/}
+                <p>{props.resultsdata[props.randomnum].name}</p>
+                <p>{props.resultsdata[props.randomnum].vicinity}</p>
             </div>
-            <div className="row">
-                <Result></Result>
-            </div>
-            <div className="row">
-                <Result></Result>
-            </div>
-            <div className="row">
-                <Result></Result>
-            </div>
-            <div className="row">
-                <Result></Result>
-            </div>
-            <div className="row">
-                <Result></Result>
-            </div>
-            <div className="row">
-                <Result></Result>
-            </div>
-            <div className="row">
-                <Result></Result>
-            </div>
-            <div className="row">
-                <Result></Result>
-            </div>
-           
-        </div>
-    );
+        );
+    } else {
+        return (
+            <div>No Results</div>
+        );
+    }
 }
 
 export default Results;

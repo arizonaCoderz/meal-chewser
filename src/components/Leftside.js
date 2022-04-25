@@ -7,23 +7,26 @@ import Results from "./Results.js";
 
 const Leftside = (props) => {
   const [showFilter, setShowFilter] = useState(true); //changed this to boolean
+  const [showResults, setShowResults] =useState(false);
   const [filterColor, setFilterColor] = useState("#ffffff");
   const [resultsColor, setResultsColor] = useState("#C0DCF3");
 
   const clickedFilterTab = (event) => {
     setShowFilter(true); //if you click filter tab, you should show filter. 
+    setShowResults(false);
     setFilterColor("#ffffff");
     setResultsColor("#C0DCF3");
   };
 
   const clickedResultsTab = (event) => {
     setShowFilter(false);
+    setShowResults(true);
     setFilterColor("#C0DCF3");
     setResultsColor("#ffffff");
   };
 
   const onChews = value => {
-    props.cdataHandler(value);
+    props.inputdataHandler(value);
   }
 
     return (
@@ -41,6 +44,7 @@ const Leftside = (props) => {
           />
         </div>
         <Filter chews={onChews} showFilter={showFilter} inputdata={props.inputdata}></Filter> 
+        <Results showResults={showResults} resultsdata={props.resultsdata} randomnum={props.randomnum}></Results>
       </div>
     );
   }
