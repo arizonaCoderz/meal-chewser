@@ -4,4 +4,67 @@
   padding-top: 20px;
   border-style: none;
   color: #5c7cbe;
+  text-align: center;
+}
+
+.letseat {
+  font-size: 35px;
+  font-family: 'Patrick Hand', cursive;
+  letter-spacing: 0.3rem;
+  margin: 15px auto;
+}
+
+.nameinfo {
+  color: black;
+  font-size: 25px;
+  margin-top: 10px;
+}
+
+.addressinfo {
+  color: black;
+  margin-top: 20px;
+}
+
+.distanceinfo {
+  margin-top: 20px;
+}
+
+.resultbuttons {
+  width: 100%;
+  margin: 30px auto;
+  display: inline-block;
+}
+
+.gobutton {
+  margin: auto;
+  width: 100px;
+  height: 60px;
+  font-size: 30px;
+  color: white;
+  background-color: #5c7cbe;
+  border-style: none;
+  border-radius: 10px;
+  letter-spacing: 0.1rem;
+}
+
+.chooseagain {
+  margin: 30px auto;
+  width: 280px;
+  height: 60px;
+  color: #5c7cbe;
+  background-color: white;
+  border: 1px solid #d1d1d1;
+  border-radius: 10px;
+  letter-spacing: 0.1rem;
+  font-size: 30px
+}
+
+.gobutton:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 15px 1px #5C7CBE;
+}
+
+.chooseagain:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 15px 1px #8b8b8b;
 }

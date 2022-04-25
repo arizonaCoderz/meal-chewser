@@ -23,12 +23,17 @@ function deg2rad(deg) {
 }
 
 const Results = (props) => {
+  const clickedChooseAgain = event => {
+    props.clickedChooseAgain();
+  }
+
   if (props.resultsdata.length != 0) {
     return (
       <div className={props.showResults ? "results" : "disappear"}> {/* Ternary to pick className, disappear has a styling to display:none*/}
-        <p>{props.resultsdata[props.chosennum].name}</p>
-        <p>{props.resultsdata[props.chosennum].vicinity}</p>
-        <p>
+        <p className="letseat">LETS EAT!</p>
+        <p className="nameinfo">{props.resultsdata[props.chosennum].name}</p>
+        <p className="addressinfo">{props.resultsdata[props.chosennum].vicinity}</p>
+        <p className="distanceinfo">
           {Math.round(
             getDistanceFromLatLngInMiles(
               props.resultsdata[props.chosennum].geometry.location.lat,
@@ -38,6 +43,10 @@ const Results = (props) => {
             ) * 10
           ) / 10} Miles
         </p>
+        <div className="resultbuttons">
+          <button className="gobutton">GO</button>
+          <button className="chooseagain" onClick={clickedChooseAgain}>CHOOSE AGAIN</button>
+        </div>
       </div>
     );
   } else {

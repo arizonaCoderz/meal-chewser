@@ -30,6 +30,10 @@ const Leftside = (props) => {
     props.inputdataHandler(chewsdata);
   }
 
+  const clickedChooseAgain = event => {
+    
+  }
+
     return (
       <div className="leftside">
         <div className="tabs">
@@ -45,7 +49,7 @@ const Leftside = (props) => {
           />
         </div>
         <Filter chews={onChews} showFilter={showFilter} inputdata={props.inputdata}></Filter> 
-        <Results showResults={showResults} resultsdata={props.resultsdata} chosennum={props.chosennum} origin={props.origin}></Results>
+        <Results showResults={showResults} resultsdata={props.resultsdata} chosennum={props.chosennum} origin={props.origin} clickedChooseAgain={clickedChooseAgain}></Results>
       </div>
     );
   }
