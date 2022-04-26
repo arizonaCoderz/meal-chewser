@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import "./Results.css";
-import Result from "./Result.js";
+import Delayed from "./Internals/Delayed";
 
 function getDistanceFromLatLngInMiles(lat1, lon1, lat2, lon2) {
   var R = 3963; // Radius of the earth in miles
@@ -23,16 +23,18 @@ function deg2rad(deg) {
 }
 
 const Results = (props) => {
-  const clickedChooseAgain = event => {
+  const clickedChooseAgain = (event) => {
     props.clickedChooseAgain();
-  }
+  };
 
   if (props.resultsdata.length != 0) {
     return (
-      <div className={props.showResults ? "results" : "disappear"}> {/* Ternary to pick className, disappear has a styling to display:none*/}
+      <div className={props.showResults ? "results" : "disappear"}>{/* Ternary to pick className, disappear has a styling to display:none*/}
         <p className="letseat">LETS EAT!</p>
         <p className="nameinfo">{props.resultsdata[props.chosennum].name}</p>
-        <p className="addressinfo">{props.resultsdata[props.chosennum].vicinity}</p>
+        <p className="addressinfo">
+          {props.resultsdata[props.chosennum].vicinity}
+        </p>
         <p className="distanceinfo">
           {Math.round(
             getDistanceFromLatLngInMiles(
@@ -41,11 +43,14 @@ const Results = (props) => {
               props.origin[0],
               props.origin[1]
             ) * 10
-          ) / 10} Miles
+          ) / 10}{" "}
+          Miles
         </p>
         <div className="resultbuttons">
           <button className="gobutton">GO</button>
-          <button className="chooseagain" onClick={clickedChooseAgain}>CHOOSE AGAIN</button>
+          <button className="chooseagain" onClick={clickedChooseAgain}>
+            CHOOSE AGAIN
+          </button>
         </div>
       </div>
     );

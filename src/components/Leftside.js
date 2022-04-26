@@ -31,7 +31,7 @@ const Leftside = (props) => {
   }
 
   const clickedChooseAgain = event => {
-    
+    props.changeChosen();
   }
 
     return (
