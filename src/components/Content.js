@@ -98,18 +98,7 @@ const Content = (props) => {
   if (searchdata.length != 0) {
     resultsdata = searchdata;
   }
-  console.log(searchdata);
 
-  //Randomized Option
-  var chosennum = Math.floor(Math.random() * resultsdata.length);
-
-  const changeChosen = (event) => {
-    var newChosen = Math.floor(Math.random() * resultsdata.length);
-    while (newChosen == chosennum) {
-      newChosen = Math.floor(Math.random() * resultsdata.length); //make sure new chosen is not the same as old chosen
-    }
-    chosennum = newChosen;
-  };
 
   //Connect Regular Filter to Results
   const inputdataHandler = (chewsdata) => {
@@ -122,16 +111,28 @@ const Content = (props) => {
     setLoading(true);
   };
 
+  const [chosennum, setChosenNum] = useState(0);
+  //Pass chosen number from leftside
+  const chosennumHandler = value => {
+    setChosenNum(value);
+  }
+
+  //Change chosen num
+  const changeChosen = newChosen => {
+    setChosenNum(newChosen);
+  }
+
+
   return (
     <Delayed waitBeforeShow={1500}>
       <div className={props.showHome ? "content" : "disappear"}>
         {/* Ternary to pick className, disappear has a styling to display:none*/}
         <Leftside
           inputdataHandler={inputdataHandler}
+          chosennumHandler={chosennumHandler}
           changeChosen={changeChosen}
           inputdata={props.inputdata}
           resultsdata={resultsdata}
-          chosennum={chosennum}
           origin={[loc[0], loc[1]]}
         ></Leftside>
         <Map resultsdata={resultsdata} chosennum={chosennum}></Map>

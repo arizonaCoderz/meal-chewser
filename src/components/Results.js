@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "./Results.css";
 import Delayed from "./Internals/Delayed";
 
-function getDistanceFromLatLngInMiles(lat1, lon1, lat2, lon2) {
+function getDistanceFromLatLngInMiles(lat1, lon1, lat2, lon2) { //calculate distance between 2 latlng pairs
   var R = 3963; // Radius of the earth in miles
   var dLat = deg2rad(lat2 - lat1); // deg2rad below
   var dLon = deg2rad(lon2 - lon1);
@@ -23,23 +23,42 @@ function deg2rad(deg) {
 }
 
 const Results = (props) => {
+  //choose a random number
+  const [chosennum, setChosenNum] = useState(Math.floor(Math.random() * props.resultsdata.length));
+  props.chosenHandler(chosennum);
+
+  // const changeChosen = (event) => {
+  //   var newChosen = Math.floor(Math.random() * resultsdata.length);
+  //   while (newChosen == chosennum) {
+  //     newChosen = Math.floor(Math.random() * resultsdata.length); //make sure new chosen is not the same as old chosen
+  //   }
+  //   chosennum = newChosen;
+  // };
+
+
+
   const clickedChooseAgain = (event) => {
-    props.clickedChooseAgain();
+    var newChosen = Math.floor(Math.random() * props.resultsdata.length);
+    while (newChosen == chosennum) {
+      newChosen = Math.floor(Math.random() * props.resultsdata.length); //make sure new chosen is not the same as old chosen
+    }
+    setChosenNum(newChosen);
+    props.clickedChooseAgain(newChosen);
   };
 
   if (props.resultsdata.length != 0) {
     return (
       <div className={props.showResults ? "results" : "disappear"}>{/* Ternary to pick className, disappear has a styling to display:none*/}
         <p className="letseat">LETS EAT!</p>
-        <p className="nameinfo">{props.resultsdata[props.chosennum].name}</p>
+        <p className="nameinfo">{props.resultsdata[chosennum].name}</p>
         <p className="addressinfo">
-          {props.resultsdata[props.chosennum].vicinity}
+          {props.resultsdata[chosennum].vicinity}
         </p>
         <p className="distanceinfo">
           {Math.round(
             getDistanceFromLatLngInMiles(
-              props.resultsdata[props.chosennum].geometry.location.lat,
-              props.resultsdata[props.chosennum].geometry.location.lng,
+              props.resultsdata[chosennum].geometry.location.lat,
+              props.resultsdata[chosennum].geometry.location.lng,
               props.origin[0],
               props.origin[1]
             ) * 10
