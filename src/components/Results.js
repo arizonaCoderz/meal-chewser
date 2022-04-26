@@ -27,16 +27,8 @@ const Results = (props) => {
   const [chosennum, setChosenNum] = useState(Math.floor(Math.random() * props.resultsdata.length));
   props.chosenHandler(chosennum);
 
-  // const changeChosen = (event) => {
-  //   var newChosen = Math.floor(Math.random() * resultsdata.length);
-  //   while (newChosen == chosennum) {
-  //     newChosen = Math.floor(Math.random() * resultsdata.length); //make sure new chosen is not the same as old chosen
-  //   }
-  //   chosennum = newChosen;
-  // };
 
-
-
+  //choose a new number (Choose again button was pressed)
   const clickedChooseAgain = (event) => {
     var newChosen = Math.floor(Math.random() * props.resultsdata.length);
     while (newChosen == chosennum) {

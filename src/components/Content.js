@@ -117,7 +117,7 @@ const Content = (props) => {
     setChosenNum(value);
   }
 
-  //Change chosen num
+  //Clicked choose again
   const changeChosen = newChosen => {
     setChosenNum(newChosen);
   }
