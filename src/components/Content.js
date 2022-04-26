@@ -116,7 +116,7 @@ const Content = (props) => {
   const chosennumHandler = value => {
     setChosenNum(value);
   }
-  
+
 
   //Clicked choose again
   const changeChosen = newChosen => {
@@ -126,8 +126,7 @@ const Content = (props) => {
 
   return (
     <Delayed waitBeforeShow={1500}>
-      <div className={props.showHome ? "content" : "disappear"}>
-        {/* Ternary to pick className, disappear has a styling to display:none*/}
+      <div className={props.showHome ? "content" : "disappear"}>{/* Ternary to pick className, disappear has a styling to display:none*/}
         <Leftside
           inputdataHandler={inputdataHandler}
           chosennumHandler={chosennumHandler}
