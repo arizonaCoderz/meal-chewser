@@ -30,12 +30,8 @@ const Leftside = (props) => {
     props.inputdataHandler(chewsdata);
   }
 
-  const clickedChooseAgain = newChosen => {
-    props.changeChosen(newChosen);
-  }
-
-  const chosenHandler = chosennum => {
-    props.chosennumHandler(chosennum);
+  const clickedChooseAgain = event => {
+    props.changeChosen();
   }
 
     return (
@@ -53,7 +49,7 @@ const Leftside = (props) => {
           />
         </div>
         <Filter chews={onChews} showFilter={showFilter} inputdata={props.inputdata}></Filter> 
-        <Results showResults={showResults} resultsdata={props.resultsdata} chosenHandler={chosenHandler} origin={props.origin} clickedChooseAgain={clickedChooseAgain}></Results>
+        <Results showResults={showResults} resultsdata={props.resultsdata} origin={props.origin} clickedChooseAgain={clickedChooseAgain} chosennum={props.chosennum}></Results>
       </div>
     );
   }

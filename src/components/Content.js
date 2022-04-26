@@ -98,6 +98,7 @@ const Content = (props) => {
   if (searchdata.length != 0) {
     resultsdata = searchdata;
   }
+  console.log(searchdata)
 
 
   //Connect Regular Filter to Results
@@ -111,26 +112,28 @@ const Content = (props) => {
     setLoading(true);
   };
 
-  const [chosennum, setChosenNum] = useState(0);
-  //Pass chosen number from leftside
-  const chosennumHandler = value => {
-    setChosenNum(value);
-  }
+
+  //Choose a Random number
+  const [refreshcount, setRefreshCount] = useState(0); //counts how many times choose again was pressed
+  var chosennum = 0;
+  if (resultsdata.length != 0) {
+    chosennum = Math.floor(Math.random() * resultsdata.length);
+  };
 
 
   //Clicked choose again
-  const changeChosen = newChosen => {
-    setChosenNum(newChosen);
+  const changeChosen = event => {
+    setRefreshCount(refreshcount + 1); //reloading the component is enough to pick a new chosennum
   }
 
 
   return (
-    <Delayed waitBeforeShow={1500}>
+    <Delayed waitBeforeShow={2000}>
       <div className={props.showHome ? "content" : "disappear"}>{/* Ternary to pick className, disappear has a styling to display:none*/}
         <Leftside
           inputdataHandler={inputdataHandler}
-          chosennumHandler={chosennumHandler}
           changeChosen={changeChosen}
+          chosennum={chosennum}
           inputdata={props.inputdata}
           resultsdata={resultsdata}
           origin={[loc[0], loc[1]]}
