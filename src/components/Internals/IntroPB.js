@@ -8,27 +8,27 @@ const IntroPB = props => {
 
   const allclicked = event => {
     setClicked(0);
-    props.bstatus([0,4,0]);
+    props.bstatus([0,4]);
   }
 
   const p1clicked = event => {
     setClicked(1);
-    props.bstatus([0,1,1]);
+    props.bstatus([1,1]);
   }
 
   const p2clicked = event => {
     setClicked(2);
-    props.bstatus([1,2,2]);
+    props.bstatus([2,2]);
   }
 
   const p3clicked = event => {
     setClicked(3);
-    props.bstatus([2,3,3]);
+    props.bstatus([3,3]);
   }
 
   const p4clicked = event => {
     setClicked(4);
-    props.bstatus([3,4,4]);
+    props.bstatus([4,4]);
   }
 
   // const p5clicked = event => {

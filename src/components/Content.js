@@ -8,7 +8,7 @@ import Delayed from "./Internals/Delayed";
 
 const Content = (props) => {
   //Loading mode
-  // const [isLoading, setLoading] = useState(true);
+  const [isLoading, setLoading] = useState(true);
 
   //Initialize Filters--------------------------------------------------------------------------------------
   const [inputData, setInputData] = useState([
@@ -17,7 +17,7 @@ const Content = (props) => {
     props.inputdata[2] * 1609.34,
     props.inputdata[3],
   ]);
-  console.log(inputData)
+  //console.log(inputData);
   
 
   //Converts Address to Latitude and Longitude---------------------------------------------------------------
@@ -33,7 +33,7 @@ const Content = (props) => {
       const temploc = response.data.candidates[0].geometry.location;
       setloc([temploc.lat, temploc.lng]);
     });
-  }, []);
+  }, [inputData[0]]);
 
   //Search Function-----------------------------------------------------------------------------------------
   const baseURL =
@@ -48,10 +48,10 @@ const Content = (props) => {
     inputData[3] +
     "&opennow=true" +
     "&minprice=" +
-    inputData[(1, 0)] +
+    inputData[1][0] +
     "&maxprice=" +
+    inputData[1][1] +
     // "&rankby=distance" + //if you use this, radius is disallowed
-    inputData[(1, 1)] +
     "&key=AIzaSyA9oUuwu2IcJiytz70UxvzQIAtIWD_Pskc";
 
   // console.log("baseURL is: " + baseURL);
@@ -65,6 +65,7 @@ const Content = (props) => {
       // if (typeof response.data.next_page_token !== "undefined") {
       //   setPage2(response.data.next_page_token.toString());
       // }
+      setLoading(false);
     });
   }, [baseURL]);
 
@@ -118,20 +119,22 @@ const Content = (props) => {
       chewsdata[2] * 1609.34,
       chewsdata[3],
     ]);
+    setLoading(true);
   };
 
   return (
     <Delayed waitBeforeShow={1500}>
-      <div className={props.showHome ? "content" : "disappear"}>{/* Ternary to pick className, disappear has a styling to display:none*/}
-          <Leftside
-            inputdataHandler={inputdataHandler}
-            changeChosen={changeChosen}
-            inputdata={props.inputdata}
-            resultsdata={resultsdata}
-            chosennum={chosennum}
-            origin={[loc[0], loc[1]]}
-          ></Leftside>
-          <Map resultsdata={resultsdata} chosennum={chosennum}></Map>
+      <div className={props.showHome ? "content" : "disappear"}>
+        {/* Ternary to pick className, disappear has a styling to display:none*/}
+        <Leftside
+          inputdataHandler={inputdataHandler}
+          changeChosen={changeChosen}
+          inputdata={props.inputdata}
+          resultsdata={resultsdata}
+          chosennum={chosennum}
+          origin={[loc[0], loc[1]]}
+        ></Leftside>
+        <Map resultsdata={resultsdata} chosennum={chosennum}></Map>
       </div>
     </Delayed>
   );
