@@ -10,6 +10,7 @@ const Content = (props) => {
   //Loading mode--------------------------------------------------------------------------------------------
   const [isLoading, setLoading] = useState(true);
 
+
   //Initialize Filters--------------------------------------------------------------------------------------
   const [inputData, setInputData] = useState([
     props.inputdata[0].trim().replace(/ /g, "%20"),
@@ -17,7 +18,6 @@ const Content = (props) => {
     props.inputdata[2] * 1609.34,
     props.inputdata[3],
   ]);
-  //console.log(inputData);
   
 
   //Converts Address to Latitude and Longitude---------------------------------------------------------------
@@ -34,6 +34,7 @@ const Content = (props) => {
       setloc([temploc.lat, temploc.lng]);
     });
   }, [inputData[0]]);
+
 
   //Search Function-----------------------------------------------------------------------------------------
   const baseURL =
@@ -53,8 +54,6 @@ const Content = (props) => {
     inputData[1][1] +
     // "&rankby=distance" + //if you use this, radius is disallowed
     "&key=AIzaSyA9oUuwu2IcJiytz70UxvzQIAtIWD_Pskc";
-
-  // console.log("baseURL is: " + baseURL);
 
   const [searchdata, setSearchData] = useState([]);
   //const [page2token, setPage2] = useState("");
@@ -93,6 +92,7 @@ const Content = (props) => {
   //   });
   // }, []);
 
+
   //Concat all data
   var resultsdata = [];
   if (searchdata.length != 0) {
@@ -116,6 +116,7 @@ const Content = (props) => {
   const chosennumHandler = value => {
     setChosenNum(value);
   }
+  
 
   //Clicked choose again
   const changeChosen = newChosen => {
