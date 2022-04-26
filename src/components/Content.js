@@ -7,7 +7,7 @@ import "./Content.css";
 import Delayed from "./Internals/Delayed";
 
 const Content = (props) => {
-  //Loading mode
+  //Loading mode--------------------------------------------------------------------------------------------
   const [isLoading, setLoading] = useState(true);
 
   //Initialize Filters--------------------------------------------------------------------------------------
