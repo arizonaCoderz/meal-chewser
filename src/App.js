@@ -6,7 +6,6 @@ import Content from "./components/Content";
 import Footer from "./components/Footer";
 import Intro from "./components/Intro";
 import About from "./components/About";
-import Plate from "./components/Plate";
 
 function App() {
   const [showHome, setShowHome] = useState(true);
@@ -44,6 +43,11 @@ function App() {
     setPage(0);
   }
 
+  var resultsdata = [];
+  const resultsDataHandler = value => {
+    resultsdata = value;
+  }
+
   if (page == 0) {
     return (
       <div className="App">
@@ -55,8 +59,7 @@ function App() {
     return (
       <div className="App">
         <Header clickedHome={clickedHome} clickedPlate={clickedPlate} clickedLogo={clickedLogo}></Header>
-        <Content showHome={showHome} inputdata={inputdata}></Content>
-        <Plate showPlate={showPlate}></Plate>
+        <Content showHome={showHome} showPlate={showPlate} inputdata={inputdata} resultsDataHandler={resultsDataHandler}></Content>
         <About showAbout={showAbout}></About>
         <Footer clickedHome={clickedHome} clickedAbout={clickedAbout} clickedLogo={clickedLogo}></Footer>
       </div>

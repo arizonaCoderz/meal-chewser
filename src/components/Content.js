@@ -5,6 +5,7 @@ import Leftside from "./Leftside";
 import Map from "./Map";
 import "./Content.css";
 import Delayed from "./Internals/Delayed";
+import Plate from "./Plate";
 
 const Content = (props) => {
   //Loading mode--------------------------------------------------------------------------------------------
@@ -73,6 +74,7 @@ const Content = (props) => {
         console.log("Places API Call Search");
         console.log(loc);
         setWantSearch(false);
+        props.resultsDataHandler(searchdata);
       });
     }
   }, [baseURL]);
@@ -145,6 +147,7 @@ const Content = (props) => {
         ></Leftside>
         <Map resultsdata={searchdata} chosennum={chosennum}></Map>
       </div>
+      <Plate showPlate={props.showPlate} resultsdata={searchdata}></Plate>
     </Delayed>
   );
 };
