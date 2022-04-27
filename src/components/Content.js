@@ -24,18 +24,20 @@ const Content = (props) => {
     inputData[0] +
     "&inputtype=textquery&fields=formatted_address,geometry&key=AIzaSyA9oUuwu2IcJiytz70UxvzQIAtIWD_Pskc";
 
-  const [loc, setloc] = useState([39, -97]);
+  const [loc, setloc] = useState([0,0]);
+  const [wantSearch, setWantSearch] = useState(false); //makes sure the search only goes through when location or input data is changed
 
   useEffect(() => {
     axios.get(locURL).then((response) => {
-      const temploc = response.data.candidates[0].geometry.location;
-      setloc([temploc.lat, temploc.lng]);
+      setloc([response.data.candidates[0].geometry.location.lat, response.data.candidates[0].geometry.location.lng]);
       console.log("Places API Call LatLng");
+      setWantSearch(true);
     });
   }, [inputData[0]]);
 
   //Search Function-----------------------------------------------------------------------------------------
-  const baseURL =
+  var baseURL;
+  if (wantSearch) {baseURL =
     "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" +
     loc[0].toString() +
     "," +
@@ -52,20 +54,24 @@ const Content = (props) => {
     inputData[1][1] +
     // "&rankby=distance" + //if you use this, radius is disallowed
     "&key=AIzaSyA9oUuwu2IcJiytz70UxvzQIAtIWD_Pskc";
+  }
 
   const [searchdata, setSearchData] = useState([]);
   //const [page2token, setPage2] = useState("");
 
   useEffect(() => {
-    axios.get(baseURL).then((response) => {
-      setSearchData(response.data.results);
-      // if (typeof response.data.next_page_token !== "undefined") {
-      //   setPage2(response.data.next_page_token.toString());
-      // }
-      setLoading(false);
-      console.log("Places API Call Search");
-      console.log(loc);
-    });
+    if (wantSearch) {
+      axios.get(baseURL).then((response) => {
+        setSearchData(response.data.results);
+        // if (typeof response.data.next_page_token !== "undefined") {
+        //   setPage2(response.data.next_page_token.toString());
+        // }
+        setLoading(false);
+        console.log("Places API Call Search");
+        console.log(loc);
+        setWantSearch(false);
+      });
+    }
   }, [baseURL]);
 
   //Page 2 Results
