@@ -25,7 +25,9 @@ const Content = (props) => {
     "&inputtype=textquery&fields=formatted_address,geometry&key=AIzaSyA9oUuwu2IcJiytz70UxvzQIAtIWD_Pskc";
 
   const [loc, setloc] = useState([0,0]);
-  const [wantSearch, setWantSearch] = useState(false); //makes sure the search only goes through when location is changed
+  const [wantSearch, setWantSearch] = useState(false); //makes sure the search goes through when location is changed
+
+  // const [inputChange, setInputChange] = useState(false); //makes sure the search goes through when input changes
   
 
   useEffect(() => {
@@ -34,7 +36,7 @@ const Content = (props) => {
       console.log("Places API Call LatLng");
       setWantSearch(true);
     });
-  }, [inputData[0]]);
+  }, [inputData]);
 
   //Search Function-----------------------------------------------------------------------------------------
   var baseURL;
