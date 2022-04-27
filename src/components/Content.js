@@ -25,7 +25,8 @@ const Content = (props) => {
     "&inputtype=textquery&fields=formatted_address,geometry&key=AIzaSyA9oUuwu2IcJiytz70UxvzQIAtIWD_Pskc";
 
   const [loc, setloc] = useState([0,0]);
-  const [wantSearch, setWantSearch] = useState(false); //makes sure the search only goes through when location or input data is changed
+  const [wantSearch, setWantSearch] = useState(false); //makes sure the search only goes through when location is changed
+  
 
   useEffect(() => {
     axios.get(locURL).then((response) => {
@@ -114,7 +115,6 @@ const Content = (props) => {
       chewsdata[3],
     ]);
     setLoading(true);
-    setWantSearch(true);
   };
 
   //Choose a Random number
