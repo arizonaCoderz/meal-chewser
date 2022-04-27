@@ -114,6 +114,7 @@ const Content = (props) => {
       chewsdata[3],
     ]);
     setLoading(true);
+    setWantSearch(true);
   };
 
   //Choose a Random number
