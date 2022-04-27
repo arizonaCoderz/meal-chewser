@@ -10,15 +10,13 @@ const Content = (props) => {
   //Loading mode--------------------------------------------------------------------------------------------
   const [isLoading, setLoading] = useState(true);
 
-
   //Initialize Filters--------------------------------------------------------------------------------------
   const [inputData, setInputData] = useState([
     props.inputdata[0].trim().replace(/ /g, "%20"),
     props.inputdata[1],
-    props.inputdata[2] * 1609.34,
+    props.inputdata[2] * 1609,
     props.inputdata[3],
   ]);
-  
 
   //Converts Address to Latitude and Longitude---------------------------------------------------------------
   const locURL =
@@ -32,9 +30,9 @@ const Content = (props) => {
     axios.get(locURL).then((response) => {
       const temploc = response.data.candidates[0].geometry.location;
       setloc([temploc.lat, temploc.lng]);
+      console.log("Places API Call LatLng");
     });
   }, [inputData[0]]);
-
 
   //Search Function-----------------------------------------------------------------------------------------
   const baseURL =
@@ -65,6 +63,8 @@ const Content = (props) => {
       //   setPage2(response.data.next_page_token.toString());
       // }
       setLoading(false);
+      console.log("Places API Call Search");
+      console.log(loc);
     });
   }, [baseURL]);
 
@@ -92,53 +92,49 @@ const Content = (props) => {
   //   });
   // }, []);
 
-
   //Concat all data
-  var resultsdata = [];
-  if (searchdata.length != 0) {
-    resultsdata = searchdata;
-  }
-  console.log(searchdata)
-
+  // var resultsdata = [];
+  // if (searchdata.length != 0) {
+  //   resultsdata = searchdata;
+  // }
+  // console.log(searchdata)
 
   //Connect Regular Filter to Results
   const inputdataHandler = (chewsdata) => {
     setInputData([
       chewsdata[0].trim().replace(/ /g, "%20"),
       chewsdata[1],
-      chewsdata[2] * 1609.34,
+      chewsdata[2] * 1609,
       chewsdata[3],
     ]);
     setLoading(true);
   };
 
-
   //Choose a Random number
   const [refreshcount, setRefreshCount] = useState(0); //counts how many times choose again was pressed
   var chosennum = 0;
-  if (resultsdata.length != 0) {
-    chosennum = Math.floor(Math.random() * resultsdata.length);
-  };
-
-
-  //Clicked choose again
-  const changeChosen = event => {
-    setRefreshCount(refreshcount + 1); //reloading the component is enough to pick a new chosennum
+  if (searchdata.length != 0) {
+    chosennum = Math.floor(Math.random() * searchdata.length);
   }
 
+  //Clicked choose again
+  const changeChosen = (event) => {
+    setRefreshCount(refreshcount + 1); //reloading the component is enough to pick a new chosennum
+  };
 
   return (
     <Delayed waitBeforeShow={2000}>
-      <div className={props.showHome ? "content" : "disappear"}>{/* Ternary to pick className, disappear has a styling to display:none*/}
+      <div className={props.showHome ? "content" : "disappear"}>
+        {/* Ternary to pick className, disappear has a styling to display:none*/}
         <Leftside
           inputdataHandler={inputdataHandler}
           changeChosen={changeChosen}
           chosennum={chosennum}
           inputdata={props.inputdata}
-          resultsdata={resultsdata}
+          resultsdata={searchdata}
           origin={[loc[0], loc[1]]}
         ></Leftside>
-        <Map resultsdata={resultsdata} chosennum={chosennum}></Map>
+        <Map resultsdata={searchdata} chosennum={chosennum}></Map>
       </div>
     </Delayed>
   );
