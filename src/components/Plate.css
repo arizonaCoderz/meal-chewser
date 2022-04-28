@@ -1,7 +1,7 @@
 .plate {
-    width: 1000px;
+    width: 900px;
     height: 80%;
-    border-style: solid;
+    border-style: none;
     display: block;
     margin: 30px auto 0px auto;
     position: relative;
@@ -18,7 +18,7 @@
 }
 .resultslist {
     width: 100%;
-    border-style: solid;
+    border-style: none;
     height: 90%;
 }
 
