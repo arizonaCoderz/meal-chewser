@@ -1,13 +1,13 @@
 .plate {
     width: 900px;
-    height: 80%;
+    height: 76%;
     border-style: none;
     display: block;
     margin: 30px auto 0px auto;
     position: relative;
 }
 
-.platetitle {
+.addplatetitle {
     font-size: 40px;
     width: 250px;
     height: 10%;
@@ -16,10 +16,23 @@
     color: #5c7cbe;
     letter-spacing: 0.2rem;
 }
-.resultslist {
+
+.platetitle {
+    font-size: 40px;
+    width: 90px;
+    height: 10%;
+    margin: 0 auto;
+    font-family: 'Patrick Hand', cursive;
+    color: #5c7cbe;
+    letter-spacing: 0.2rem;
+}
+
+.resultslist, .customlist {
     width: 100%;
     border-style: none;
     height: 90%;
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
 #platebutton {
@@ -33,4 +46,8 @@
     border-color: #5c7cbe;
     border-radius: 5px;
     padding: 0px;
+}
+
+.invertedfk {
+    background-color: #5c7cbe;
 }

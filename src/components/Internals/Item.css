@@ -25,6 +25,11 @@
     display: flex;
 }
 
+.iteminfo2 {
+    display: flex;
+    position: relative;
+}
+
 .itemname {
     font-size: 25px;
     margin-bottom: 5px;
@@ -32,15 +37,37 @@
 
 .itemrating {
     font-size: 20px;
+    position: relative;
+    top: 2px;
+    left: 30px;
 }
 
 #star {
     width: 25px;
     height: 25px;
     margin: 0 30px 0 5px;
+    position: relative;
+    top: 2px;
+    left: 30px;
 }
 
 #dollar {
     width: 25px;
     height: 25px;
+}
+
+.allstars {
+    display: flex;
+}
+
+.itemaddress {
+    position: absolute;
+    left: 150px;
+    top: 3px;
+}
+
+.invertedadd {
+    background-color: #5c7cbe;
+    border-radius: 7px;
+    padding: 2px;
 }
