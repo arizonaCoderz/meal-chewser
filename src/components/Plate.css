@@ -1,0 +1,36 @@
+.plate {
+    width: 1000px;
+    height: 80%;
+    border-style: solid;
+    display: block;
+    margin: 30px auto 0px auto;
+    position: relative;
+}
+
+.platetitle {
+    font-size: 40px;
+    width: 250px;
+    height: 10%;
+    margin: 0 auto;
+    font-family: 'Patrick Hand', cursive;
+    color: #5c7cbe;
+    letter-spacing: 0.2rem;
+}
+.resultslist {
+    width: 100%;
+    border-style: solid;
+    height: 90%;
+}
+
+#platebutton {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    border-style: solid;
+    border-color: #5c7cbe;
+    border-radius: 5px;
+    padding: 0px;
+}

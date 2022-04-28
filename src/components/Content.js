@@ -9,7 +9,7 @@ import Plate from "./Plate";
 
 const Content = (props) => {
   //Loading mode--------------------------------------------------------------------------------------------
-  const [isLoading, setLoading] = useState(true);
+  // const [isLoading, setLoading] = useState(true);
 
   //Initialize Filters--------------------------------------------------------------------------------------
   const [inputData, setInputData] = useState([
@@ -70,7 +70,7 @@ const Content = (props) => {
         // if (typeof response.data.next_page_token !== "undefined") {
         //   setPage2(response.data.next_page_token.toString());
         // }
-        setLoading(false);
+        // setLoading(false);
         console.log("Places API Call Search");
         console.log(loc);
         setWantSearch(false);
@@ -118,7 +118,7 @@ const Content = (props) => {
       chewsdata[2] * 1609,
       chewsdata[3],
     ]);
-    setLoading(true);
+    // setLoading(true);
   };
 
   //Choose a Random number
