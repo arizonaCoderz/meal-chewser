@@ -69,7 +69,7 @@ function App() {
     return (
       <div className="App">
         <Header clickedHome={clickedHome} clickedPlate={clickedPlate} clickedLogo={clickedLogo}></Header>
-        <Content showHome={showHome} showPlate={showPlate} inputdata={inputdata}></Content>
+        <Content showHome={showHome} showPlate={showPlate} inputdata={inputdata} clickedLogo={clickedLogo}></Content>
         <About showAbout={showAbout}></About>
         <Footer clickedHome={clickedHome} clickedAbout={clickedAbout} clickedLogo={clickedLogo}></Footer>
       </div>

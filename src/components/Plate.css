@@ -93,3 +93,39 @@
     font-size: 35px;
     margin-top: 15px;
 }
+
+.emptyplate {
+    margin: 20px auto;
+    width: 195px;
+    position: relative;
+    left: 10px;
+    color: #5c7cbe;
+    font-size: 20px;
+}
+
+.emptyaddplate {
+    margin: 40px auto;
+    width: 195px;
+    position: relative;
+    color: #5c7cbe;
+    font-size: 20px;
+    left: 40px;
+}
+
+#filterbutton {
+    position: absolute;
+    width: 80px;
+    height: 40px;
+    top: 20px;
+    left: 20px;
+    color: #5c7cbe;
+    background-color: transparent;
+    border-style: solid;
+    border-color: #5c7cbe;
+    border-radius: 5px;
+    padding: 0px;
+}
+
+#filterbutton:active {
+    box-shadow: 1px 1px 15px 1px #5c7cbe;
+}

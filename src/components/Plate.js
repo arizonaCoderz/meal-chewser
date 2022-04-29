@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import "./Plate.css";
 import Item from "./Internals/Item";
+import Overlay from "./Overlay";
 
 const Plate = (props) => {
   const [reload, setReload] = useState(false);
@@ -23,6 +24,11 @@ const Plate = (props) => {
   };
   // console.log(customlistindex);
 
+  const clickedEliminate = event => {
+    customlistindex.splice(Math.floor(Math.random() * customlistindex.length), 1);
+    setReload(true);
+  }
+
 
   //Builds the custom list using the custom list index
   var customlist = [];
@@ -40,6 +46,8 @@ const Plate = (props) => {
         ></Item>
       );
     }
+  } else {
+    customlist.push(<p className="emptyplate">Chews Some Plates!</p>)
   }
 
   //Builds the list
@@ -56,6 +64,9 @@ const Plate = (props) => {
         status={false}
       ></Item>
     );
+  }
+  if (resultslist.length === 0) {
+    resultslist.push(<p className="emptyaddplate">NO RESULTS</p>)
   }
 
   //Toggles between list and custom list
@@ -89,11 +100,34 @@ const Plate = (props) => {
     setReload(false);
   }
 
+
+
+  //Show and hide overlay
+  const [showOverlay, setShowOverlay] = useState(false);
+  const onClickedBackdrop = event => {
+    setShowOverlay(false);
+  }
+
+  const [overlaydata, setOverlayData] = useState([]);
+  const clickedRandomSelect = event => {
+    const chosen = Math.floor(Math.random() * customlistindex.length);
+    setOverlayData([props.resultsdata[chosen].name, props.resultsdata[chosen].price_level, props.resultsdata[chosen].vicinity, props.resultsdata[chosen].rating]);
+    setShowOverlay(true);
+  }
+
+  //Go to filter button
+  const goToFilter = event => {
+    props.clickedPlateFilter();
+  }
+
   return (
     <div className={props.showPlate ? "plate" : "disappear"}>
       {/* Ternary to pick className, disappear has a styling to display:none*/}
       <button id="platebutton" onClick={toggleCustom}>
         {toggleCustomButton}
+      </button>
+      <button id="filterbutton" onClick={goToFilter}>
+        FILTER
       </button>
       <div className={!custom ? "addplatepage" : "disappear"}>
         <p className="addplatetitle">ADD TO PLATE</p>
@@ -102,11 +136,12 @@ const Plate = (props) => {
       <div className={custom ? "platepage" : "disappear"}>
         <p className="platetitle">PLATE</p>
         <div className="platebuttons">
-          <button className="platebutton">Random Select</button>
+          <button className="platebutton" onClick={clickedRandomSelect}>Chews my Meal</button>
           <p className="or">OR</p>
-          <button className="platebutton">Eliminate</button>
+          <button className="platebutton" onClick={clickedEliminate}>Eliminate an Option</button>
         </div>
         <div className="customlist">{customlist}</div>
+        <Overlay showOverlay={showOverlay} onClickedBackdrop={onClickedBackdrop} overlaydata={overlaydata}></Overlay>
       </div>
     </div>
   );

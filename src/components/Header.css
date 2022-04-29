@@ -14,7 +14,7 @@
     grid-row: 1;
     display: inline-block;
     box-sizing: border-box;
-    z-index: 100;
+    z-index: 10;
 }
 
 #logo {
@@ -45,7 +45,7 @@
     border-style: none;
     position: relative;
     display: inline-block;
-    z-index: 1000;
+    z-index: 10;
 }
 
 .button:hover {
@@ -73,5 +73,5 @@
     background-color: transparent;
     border-style: none;
     height: 100%;
-    z-index: 100;
+    z-index: 10;
 }

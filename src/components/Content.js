@@ -133,6 +133,11 @@ const Content = (props) => {
     setRefreshCount(refreshcount + 1); //reloading the component is enough to pick a new chosennum
   };
 
+  //Clicked Filter in plate
+  const clickedPlateFilter = event => {
+    props.clickedLogo();
+  }
+
   return (
     <Delayed waitBeforeShow={2000}>
       <div className={props.showHome ? "content" : "disappear"}>
@@ -147,7 +152,7 @@ const Content = (props) => {
         ></Leftside>
         <Map resultsdata={searchdata} chosennum={chosennum}></Map>
       </div>
-      <Plate showPlate={props.showPlate} resultsdata={searchdata}></Plate>
+      <Plate showPlate={props.showPlate} resultsdata={searchdata} clickedPlateFilter={clickedPlateFilter}></Plate>
     </Delayed>
   );
 };

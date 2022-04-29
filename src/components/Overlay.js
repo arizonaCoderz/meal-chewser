@@ -7,31 +7,65 @@ const Overlay = (props) => {
     props.onClickedBackdrop();
   };
 
-  const clickedDirections = event => { //execute when clicked on get directions
+  console.log(props.overlaydata);
+  const clickedDirections = (event) => {
+    //execute when clicked on get directions
+  };
 
+  const clickedShare = (event) => {
+    //execute when clicked on share
+  };
+
+
+  //Overlay price
+  var overlayprice = [];
+  for (var i = 0; i < props.overlaydata[1]; i++) {
+    overlayprice.push(
+      <img
+        id="dollar"
+        src="/assets/Logos/dollar.png"
+        alt="this is a star icon"
+        key={i}
+      />
+    );
   }
 
-  const clickedShare = event => { //execute when clicked on share
-
-  }
-
-  return (
-    <div>
-      <div className="backdrop" onClick={clickedBackdrop}></div>
-      <div className="overlay">
-        <p id="resultname">Name of Restaurant!</p>
-        <div className="location">
-          <p id="resultaddress">1234 Blah Avenue, Laveen, AZ, 99999</p>
-          <p>25 miles</p> {/* result distance */}
-        </div>
-        <div id="tags">(pics and tags idk)</div>
-        <div className="resultbuttons">
-            <button className="resultbutton" onClick={clickedDirections}>Get Directions</button>
-            <button className="resultbutton" onClick={clickedShare}>Share</button>
+  if (props.overlaydata !== []) {
+    return (
+      <div className={props.showOverlay ? "plateoverlay" : "disappear"}>
+        <div className="backdrop" onClick={clickedBackdrop}></div>
+        <div className="overlay">
+          <p id="overlayname">{props.overlaydata[0]}</p>
+          <div id="overlayinfo">
+            <div className="overlayrating">
+              {props.overlaydata[3]}
+              <img
+                className="overlaystar"
+                src="/assets/Logos/star.png"
+                alt="this is a star icon"
+              />
+            </div>
+            <div className="overlayprice">
+              {overlayprice}
+            </div>
+          </div>
+          <div className="overlaylocation">
+            <p id="overlayaddress">{props.overlaydata[2]}</p>
+          </div>
+          <div className="overlaybuttons">
+            <button className="overlaybutton" onClick={clickedDirections}>
+              GO
+            </button>
+            <button className="overlaybutton" onClick={clickedShare}>
+              Choose Again
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return <div></div>;
+  }
 };
 
 export default Overlay;
