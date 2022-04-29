@@ -94,7 +94,11 @@ const Plate = (props) => {
       </div>
       <div className={custom ? "platepage" : "disappear"}>
         <p className="platetitle">PLATE</p>
-        <div className="platebuttons"></div>
+        <div className="platebuttons">
+          <button className="platebutton">Random Select</button>
+          <p className="or">OR</p>
+          <button className="platebutton">Eliminate</button>
+        </div>
         <div className="customlist">{customlist}</div>
       </div>
     </div>
