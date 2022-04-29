@@ -4,6 +4,8 @@ import "./Plate.css";
 import Item from "./Internals/Item";
 
 const Plate = (props) => {
+  const [reload, setReload] = useState(false);
+
   //Adds or removes item to custom list
   const [customlistindex, setCustomListIndex] = useState([]);
   const clickedaddlist = (value) => {
@@ -16,6 +18,7 @@ const Plate = (props) => {
     } else {
       customlistindex.splice(customlistindex.indexOf(value), 1);
       setCustomListIndex(customlistindex);
+      setReload(true);
     }
   };
   // console.log(customlistindex);
@@ -80,6 +83,10 @@ const Plate = (props) => {
         key="1"
       />
     );
+  }
+
+  if (reload) {
+    setReload(false);
   }
 
   return (
