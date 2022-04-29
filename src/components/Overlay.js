@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./Overlay.css";
 
@@ -7,13 +7,12 @@ const Overlay = (props) => {
     props.onClickedBackdrop();
   };
 
-  console.log(props.overlaydata);
   const clickedDirections = (event) => {
     //execute when clicked on get directions
   };
 
-  const clickedShare = (event) => {
-    //execute when clicked on share
+  const clickedChooseAgain = (event) => {
+    props.clickedRandomSelect();
   };
 
 
@@ -56,7 +55,7 @@ const Overlay = (props) => {
             <button className="overlaybutton" onClick={clickedDirections}>
               GO
             </button>
-            <button className="overlaybutton" onClick={clickedShare}>
+            <button className="overlaybutton" onClick={clickedChooseAgain}>
               Choose Again
             </button>
           </div>

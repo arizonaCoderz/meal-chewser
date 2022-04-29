@@ -24,11 +24,13 @@ const Plate = (props) => {
   };
   // console.log(customlistindex);
 
-  const clickedEliminate = event => {
-    customlistindex.splice(Math.floor(Math.random() * customlistindex.length), 1);
+  const clickedEliminate = (event) => {
+    customlistindex.splice(
+      Math.floor(Math.random() * customlistindex.length),
+      1
+    );
     setReload(true);
-  }
-
+  };
 
   //Builds the custom list using the custom list index
   var customlist = [];
@@ -47,7 +49,7 @@ const Plate = (props) => {
       );
     }
   } else {
-    customlist.push(<p className="emptyplate">Chews Some Plates!</p>)
+    customlist.push(<p className="emptyplate" key="1">Chews Some Plates!</p>);
   }
 
   //Builds the list
@@ -66,7 +68,7 @@ const Plate = (props) => {
     );
   }
   if (resultslist.length === 0) {
-    resultslist.push(<p className="emptyaddplate">NO RESULTS</p>)
+    resultslist.push(<p className="emptyaddplate" key="1">NO RESULTS</p>);
   }
 
   //Toggles between list and custom list
@@ -91,7 +93,7 @@ const Plate = (props) => {
         className="invertedfk"
         src="/assets/Logos/iforkandknife.png"
         alt="this is inverted fork and knife icon"
-        key="1"
+        key="2"
       />
     );
   }
@@ -100,25 +102,36 @@ const Plate = (props) => {
     setReload(false);
   }
 
-
-
   //Show and hide overlay
   const [showOverlay, setShowOverlay] = useState(false);
-  const onClickedBackdrop = event => {
+  const onClickedBackdrop = (event) => {
     setShowOverlay(false);
-  }
+  };
 
+  //choose a random number
   const [overlaydata, setOverlayData] = useState([]);
-  const clickedRandomSelect = event => {
-    const chosen = Math.floor(Math.random() * customlistindex.length);
-    setOverlayData([props.resultsdata[chosen].name, props.resultsdata[chosen].price_level, props.resultsdata[chosen].vicinity, props.resultsdata[chosen].rating]);
+  const [chosen, setChosen] = useState(
+    Math.floor(Math.random() * customlistindex.length)
+  );
+  const clickedRandomSelect = (event) => {
+    var tempchosen = 0;
+    while (chosen === tempchosen) {
+      tempchosen = Math.floor(Math.random() * customlistindex.length);
+    }
+    setChosen(tempchosen);
+    setOverlayData([
+      props.resultsdata[chosen].name,
+      props.resultsdata[chosen].price_level,
+      props.resultsdata[chosen].vicinity,
+      props.resultsdata[chosen].rating,
+    ]);
     setShowOverlay(true);
-  }
+  };
 
   //Go to filter button
-  const goToFilter = event => {
+  const goToFilter = (event) => {
     props.clickedPlateFilter();
-  }
+  };
 
   return (
     <div className={props.showPlate ? "plate" : "disappear"}>
@@ -136,12 +149,21 @@ const Plate = (props) => {
       <div className={custom ? "platepage" : "disappear"}>
         <p className="platetitle">PLATE</p>
         <div className="platebuttons">
-          <button className="platebutton" onClick={clickedRandomSelect}>Chews my Meal</button>
+          <button className="platebutton" onClick={clickedRandomSelect}>
+            Chews my Meal
+          </button>
           <p className="or">OR</p>
-          <button className="platebutton" onClick={clickedEliminate}>Eliminate an Option</button>
+          <button className="platebutton" onClick={clickedEliminate}>
+            Eliminate an Option
+          </button>
         </div>
         <div className="customlist">{customlist}</div>
-        <Overlay showOverlay={showOverlay} onClickedBackdrop={onClickedBackdrop} overlaydata={overlaydata}></Overlay>
+        <Overlay
+          showOverlay={showOverlay}
+          onClickedBackdrop={onClickedBackdrop}
+          overlaydata={overlaydata}
+          clickedRandomSelect={clickedRandomSelect}
+        ></Overlay>
       </div>
     </div>
   );
