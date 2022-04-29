@@ -4,22 +4,26 @@ import "./Plate.css";
 import Item from "./Internals/Item";
 
 const Plate = (props) => {
-  console.log(props.resultsdata);
-
   //Adds or removes item to custom list
   const [customlistindex, setCustomListIndex] = useState([]);
   const clickedaddlist = (value) => {
-    if (customlistindex.indexOf(value) !== -1) {
-      setCustomListIndex((customlistindex) => customlistindex.splice(customlistindex.indexOf(value), 1));
-    } else {
+    // console.log("value is " + value)
+    // console.log("index is " + customlistindex.indexOf(value))
+    // console.log(customlistindex);
+    if (customlistindex.indexOf(value) === -1) {
       setCustomListIndex((customlistindex) => [...customlistindex, value]);
+      // console.log(customlistindex);
+    } else {
+      customlistindex.splice(customlistindex.indexOf(value), 1);
+      setCustomListIndex(customlistindex);
     }
   };
-  console.log(customlistindex);
+  // console.log(customlistindex);
+
 
   //Builds the custom list using the custom list index
   var customlist = [];
-  if (customlistindex.length != 0) {
+  if (customlistindex.length !== 0) {
     for (var i = 0; i < customlistindex.length; i++) {
       customlist.push(
         <Item
@@ -27,7 +31,7 @@ const Plate = (props) => {
           price={props.resultsdata[customlistindex[i]].price_level}
           rating={props.resultsdata[customlistindex[i]].rating}
           key={customlistindex[i]}
-          index={i}
+          index={customlistindex[i]}
           clickedaddlist={clickedaddlist}
           status={true}
         ></Item>
@@ -37,14 +41,14 @@ const Plate = (props) => {
 
   //Builds the list
   var resultslist = [];
-  for (var i = 0; i < props.resultsdata.length; i++) {
+  for (var j = 0; j < props.resultsdata.length; j++) {
     resultslist.push(
       <Item
-        name={props.resultsdata[i].name}
-        price={props.resultsdata[i].price_level}
-        rating={props.resultsdata[i].rating}
-        key={i}
-        index={i}
+        name={props.resultsdata[j].name}
+        price={props.resultsdata[j].price_level}
+        rating={props.resultsdata[j].rating}
+        key={j}
+        index={j}
         clickedaddlist={clickedaddlist}
         status={false}
       ></Item>
@@ -59,7 +63,7 @@ const Plate = (props) => {
     setCustom(!custom);
   };
 
-  if (custom == false) {
+  if (custom === false) {
     toggleCustomButton.push(
       <img
         src="/assets/Logos/forkandknife.png"
@@ -84,10 +88,15 @@ const Plate = (props) => {
       <button id="platebutton" onClick={toggleCustom}>
         {toggleCustomButton}
       </button>
-      <p className={!custom ? "addplatetitle" : "disappear"}>ADD TO PLATE</p>
-      <p className={custom ? "platetitle" : "disappear"}>PLATE</p>
-      <div className={!custom ? "resultslist" : "disappear"}>{resultslist}</div>
-      <div className={custom ? "customlist" : "disappear"}>{customlist}</div>
+      <div className={!custom ? "addplatepage" : "disappear"}>
+        <p className="addplatetitle">ADD TO PLATE</p>
+        <div className="resultslist">{resultslist}</div>
+      </div>
+      <div className={custom ? "platepage" : "disappear"}>
+        <p className="platetitle">PLATE</p>
+        <div className="platebuttons"></div>
+        <div className="customlist">{customlist}</div>
+      </div>
     </div>
   );
 };

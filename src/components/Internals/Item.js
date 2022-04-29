@@ -27,7 +27,7 @@ const Item = (props) => {
 
   //if on then invert colors
   var itembutton = [];
-  if (selected == false) {
+  if (selected === false) {
     itembutton.push(<img src="/assets/Logos/addbutton.png" alt="this is an add button icon" key="1"/>);
   } else {
     itembutton.push(<img src="/assets/Logos/iaddbutton.png" className="invertedadd" alt="this is an add button icon" key="1"/>);

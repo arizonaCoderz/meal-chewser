@@ -72,7 +72,7 @@ const Content = (props) => {
         // }
         // setLoading(false);
         console.log("Places API Call Search");
-        console.log(loc);
+        // console.log(loc);
         setWantSearch(false);
         props.resultsDataHandler(searchdata);
       });
