@@ -15,14 +15,14 @@ function App() {
   const [page, setPage] = useState(0);
   const [inputdata, setInputData] = useState(["", 0, 0, ""]);
   const clickedChews = (idata) => {
-    if (idata[0] != "") {
+    if (idata[0] !== "") {
       setPage(1);
       setInputData([idata[0], idata[1], idata[2], idata[3]]);
     }
   };
 
   const clickedBuild = (idata) => {
-    if (idata[0] != "") {
+    if (idata[0] !== "") {
       setPage(1);
       setInputData([idata[0], idata[1], idata[2], idata[3]]);
     }
@@ -53,12 +53,12 @@ function App() {
     setPage(0);
   }
 
-  var resultsdata = [];
-  const resultsDataHandler = value => {
-    resultsdata = value;
-  }
+  // var resultsdata = [];
+  // const resultsDataHandler = value => {
+  //   resultsdata = value;
+  // }
 
-  if (page == 0) {
+  if (page === 0) {
     return (
       <div className="App">
         <Intro clickedChews={clickedChews} clickedBuild={clickedBuild}></Intro>
@@ -69,7 +69,7 @@ function App() {
     return (
       <div className="App">
         <Header clickedHome={clickedHome} clickedPlate={clickedPlate} clickedLogo={clickedLogo}></Header>
-        <Content showHome={showHome} showPlate={showPlate} inputdata={inputdata} resultsDataHandler={resultsDataHandler}></Content>
+        <Content showHome={showHome} showPlate={showPlate} inputdata={inputdata}></Content>
         <About showAbout={showAbout}></About>
         <Footer clickedHome={clickedHome} clickedAbout={clickedAbout} clickedLogo={clickedLogo}></Footer>
       </div>

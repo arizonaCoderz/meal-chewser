@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./Results.css";
-import Delayed from "./Internals/Delayed";
 
 function getDistanceFromLatLngInMiles(lat1, lon1, lat2, lon2) { //calculate distance between 2 latlng pairs
   var R = 3963; // Radius of the earth in miles
@@ -28,7 +27,7 @@ const Results = (props) => {
     props.clickedChooseAgain();
   };
 
-  if (props.resultsdata.length != 0) {
+  if (props.resultsdata.length !== 0) {
     return (
       <div className={props.showResults ? "results" : "disappear"}>{/* Ternary to pick className, disappear has a styling to display:none*/}
         <p className="letseat">LETS EAT!</p>

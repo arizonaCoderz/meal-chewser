@@ -74,7 +74,7 @@ const Content = (props) => {
         console.log("Places API Call Search");
         // console.log(loc);
         setWantSearch(false);
-        props.resultsDataHandler(searchdata);
+        // props.resultsDataHandler(searchdata);
       });
     }
   }, [baseURL]);
@@ -124,7 +124,7 @@ const Content = (props) => {
   //Choose a Random number
   const [refreshcount, setRefreshCount] = useState(0); //counts how many times choose again was pressed
   var chosennum = 0;
-  if (searchdata.length != 0) {
+  if (searchdata.length !== 0) {
     chosennum = Math.floor(Math.random() * searchdata.length);
   }
 

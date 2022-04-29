@@ -12,7 +12,7 @@ const Intro = props => {
     }
 
     const filterhandler = event => {
-        if (showFilter == false) {
+        if (showFilter === false) {
             setShowFilter(true);
         }
         else {
