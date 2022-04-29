@@ -62,7 +62,7 @@ function App() {
     return (
       <div className="App">
         <Intro clickedChews={clickedChews} clickedBuild={clickedBuild}></Intro>
-        <Footer clickedHome={clickedHome} clickedAbout={clickedAbout}></Footer>
+        {/* <Footer clickedHome={clickedHome} clickedAbout={clickedAbout}></Footer> */}
       </div>
     );
   } else {
