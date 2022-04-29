@@ -56,7 +56,10 @@ const Results = (props) => {
       </div>
     );
   } else {
-    return <div>No Results</div>;
+    return <div className={props.showResults ? "noresults" : "disappear"}>
+      <p className="noresultstext">NO RESULTS</p>
+      <p>Tweak your filters!</p>
+      </div>;
   }
 };
 

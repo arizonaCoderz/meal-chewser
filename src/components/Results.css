@@ -68,3 +68,19 @@
   transform: scale(0.98);
   box-shadow: 3px 2px 15px 1px #8b8b8b;
 }
+
+.noresults {
+  margin: auto;
+  width: 80%;
+  padding-top: 20px;
+  border-style: none;
+  color: #5c7cbe;
+  text-align: center;
+}
+
+.noresultstext {
+  font-size: 30px;
+  margin: 30px auto;
+  font-family: 'Patrick Hand', cursive;
+  letter-spacing: 0.2rem;
+}
