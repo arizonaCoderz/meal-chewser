@@ -21,6 +21,16 @@ function App() {
     }
   };
 
+  const clickedBuild = (idata) => {
+    if (idata[0] != "") {
+      setPage(1);
+      setInputData([idata[0], idata[1], idata[2], idata[3]]);
+    }
+    setShowHome(false);
+    setShowPlate(true);
+    setShowAbout(false);
+  };
+
   const clickedHome = event => {
     setShowHome(true);
     setShowPlate(false);
@@ -51,7 +61,7 @@ function App() {
   if (page == 0) {
     return (
       <div className="App">
-        <Intro clickedChews={clickedChews}></Intro>
+        <Intro clickedChews={clickedChews} clickedBuild={clickedBuild}></Intro>
         <Footer clickedHome={clickedHome} clickedAbout={clickedAbout}></Footer>
       </div>
     );

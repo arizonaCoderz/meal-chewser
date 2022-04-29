@@ -32,7 +32,7 @@ const Intro = props => {
     }
 
     const buildhandler = event => {
-        
+        props.clickedBuild(idata);
     }
 
     return (
