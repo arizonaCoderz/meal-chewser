@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
 
 import "./Results.css";
 
@@ -30,23 +29,13 @@ const Results = (props) => {
 
   var photolink = "https://maps.googleapis.com/maps/api/place/photo?maxheight=400&maxwidth=400&photo_reference=";
   var placelink = "https://www.google.com/maps/dir/?api=1&origin=";
-  // var placeid = "https://maps.googleapis.com/maps/api/place/details/json?place_id=";
-  // const [placeimage, setPlaceImage] = useState();
+
   if (props.resultsdata.length !== 0) {
     photolink = photolink + props.resultsdata[props.chosennum].photos[0].photo_reference + "&sensor=false&key=AIzaSyA9oUuwu2IcJiytz70UxvzQIAtIWD_Pskc";
     placelink = placelink + props.origin[2] + "&destination=";
     placelink = placelink + props.resultsdata[props.chosennum].vicinity.trim().replace(/ /g, "+").toString() + "&destination_place_id=";
     placelink = placelink + props.resultsdata[props.chosennum].place_id;
-    // console.log(props.resultsdata[props.chosennum].place_id)
-    // placeid = placeid + props.resultsdata[props.chosennum].place_id + "&key=AIzaSyA9oUuwu2IcJiytz70UxvzQIAtIWD_Pskc";
-
   }
-
-  // useEffect(() => {
-  //   axios.get(placeid).then((response) => {
-  //     setPlaceImage("https://maps.googleapis.com/maps/api/place/photo?maxheight=300&maxwidth=200&photo_reference=" + response.data.result.photos[0].photo_reference + "&sensor=false&key=AIzaSyA9oUuwu2IcJiytz70UxvzQIAtIWD_Pskc");
-  //   });
-  // }, [props.chosennum]);
 
 
   if (props.resultsdata.length !== 0) {
