@@ -49,7 +49,11 @@ const Plate = (props) => {
       );
     }
   } else {
-    customlist.push(<p className="emptyplate" key="1">Chews Some Plates!</p>);
+    customlist.push(
+      <p className="emptyplate" key="1">
+        Chews Some Plates!
+      </p>
+    );
   }
 
   //Builds the list
@@ -68,7 +72,11 @@ const Plate = (props) => {
     );
   }
   if (resultslist.length === 0) {
-    resultslist.push(<p className="emptyaddplate" key="1">NO RESULTS</p>);
+    resultslist.push(
+      <p className="emptyaddplate" key="1">
+        NO RESULTS
+      </p>
+    );
   }
 
   //Toggles between list and custom list
@@ -113,10 +121,17 @@ const Plate = (props) => {
   const [chosen, setChosen] = useState(
     Math.floor(Math.random() * customlistindex.length)
   );
+
+  const [renderOverlay, setRenderOverlay] = useState(false);
   const clickedRandomSelect = (event) => {
     var tempchosen = 0;
-    while (chosen === tempchosen) {
-      tempchosen = Math.floor(Math.random() * customlistindex.length);
+    if (customlistindex.length === 0) {
+      setRenderOverlay(false);
+    } else {
+       setRenderOverlay(true);
+       while (chosen === tempchosen) {
+        tempchosen = Math.floor(Math.random() * customlistindex.length);
+      }
     }
     setChosen(tempchosen);
     setOverlayData([
@@ -124,7 +139,7 @@ const Plate = (props) => {
       props.resultsdata[chosen].price_level,
       props.resultsdata[chosen].vicinity,
       props.resultsdata[chosen].rating,
-      props.resultsdata[chosen].place_id
+      props.resultsdata[chosen].place_id,
     ]);
     setShowOverlay(true);
   };
@@ -165,6 +180,7 @@ const Plate = (props) => {
           overlaydata={overlaydata}
           clickedRandomSelect={clickedRandomSelect}
           origin={props.origin}
+          renderOverlay={renderOverlay}
         ></Overlay>
       </div>
     </div>

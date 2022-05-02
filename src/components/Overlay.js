@@ -6,34 +6,35 @@ const Overlay = (props) => {
   const clickedBackdrop = (event) => {
     props.onClickedBackdrop();
   };
-
-  var placelink = "https://www.google.com/maps/dir/?api=1&origin=";
-  placelink = placelink + props.origin + "&destination=";
-  placelink =
-    placelink +
-    props.overlaydata[2].trim().replace(/ /g, "+").toString() +
-    "&destination_place_id=";
-  placelink = placelink + props.overlaydata[4];
-  console.log(placelink);
-
+  
   const clickedChooseAgain = (event) => {
     props.clickedRandomSelect();
   };
 
-  //Overlay price
-  var overlayprice = [];
-  for (var i = 0; i < props.overlaydata[1]; i++) {
-    overlayprice.push(
-      <img
-        id="dollar"
-        src="/assets/Logos/dollar.png"
-        alt="this is a star icon"
-        key={i}
-      />
-    );
+  if (props.renderOverlay) {
+    var placelink = "https://www.google.com/maps/dir/?api=1&origin=";
+    placelink = placelink + props.origin + "&destination=";
+    placelink =
+      placelink +
+      props.overlaydata[2].trim().replace(/ /g, "+").toString() +
+      "&destination_place_id=";
+    placelink = placelink + props.overlaydata[4];
+
+    //Overlay price
+    var overlayprice = [];
+    for (var i = 0; i < props.overlaydata[1]; i++) {
+      overlayprice.push(
+        <img
+          id="dollar"
+          src="/assets/Logos/dollar.png"
+          alt="this is a star icon"
+          key={i}
+        />
+      );
+    }
   }
 
-  if (props.overlaydata !== []) {
+  if (props.renderOverlay) {
     return (
       <div className={props.showOverlay ? "plateoverlay" : "disappear"}>
         <div className="backdrop" onClick={clickedBackdrop}></div>
