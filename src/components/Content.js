@@ -138,6 +138,8 @@ const Content = (props) => {
     props.clickedLogo();
   }
 
+  // console.log(searchdata)
+
   return (
     <Delayed waitBeforeShow={2000}>
       <div className={props.showHome ? "content" : "disappear"}>
@@ -148,7 +150,7 @@ const Content = (props) => {
           chosennum={chosennum}
           inputdata={props.inputdata}
           resultsdata={searchdata}
-          origin={[loc[0], loc[1]]}
+          origin={[loc[0], loc[1], inputData[0]]}
         ></Leftside>
         <Map resultsdata={searchdata} chosennum={chosennum}></Map>
       </div>
