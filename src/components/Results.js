@@ -43,7 +43,7 @@ const Results = (props) => {
       <div className={props.showResults ? "results" : "disappear"}>{/* Ternary to pick className, disappear has a styling to display:none*/}
         <p className="letseat">LETS EAT!</p>
         <div className="placephotodiv">
-          <img className="placephoto" src={photolink} alt="image"/>
+          <img className="placephoto" src={photolink} alt="this is a place"/>
         </div>
         <p className="nameinfo">{props.resultsdata[props.chosennum].name}</p>
         <p className="addressinfo">
@@ -61,7 +61,7 @@ const Results = (props) => {
           Miles
         </p>
         <div className="resultbuttons">
-          <a href={placelink} className="golink" target="_blank">GO</a>
+          <a href={placelink} className="golink" target="_blank" rel="noreferrer">GO</a>
           <button className="chooseagain" onClick={clickedChooseAgain}>
             CHOOSE AGAIN
           </button>

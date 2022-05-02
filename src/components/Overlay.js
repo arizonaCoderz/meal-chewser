@@ -55,7 +55,7 @@ const Overlay = (props) => {
             <p id="overlayaddress">{props.overlaydata[2]}</p>
           </div>
           <div className="overlaybuttons">
-            <a href={placelink} className="overlaylink" target="_blank">
+            <a href={placelink} className="overlaylink" target="_blank" rel="noreferrer">
               GO
             </a>
             <button className="overlaybutton" onClick={clickedChooseAgain}>
