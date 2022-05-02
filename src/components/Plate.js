@@ -124,6 +124,7 @@ const Plate = (props) => {
       props.resultsdata[chosen].price_level,
       props.resultsdata[chosen].vicinity,
       props.resultsdata[chosen].rating,
+      props.resultsdata[chosen].place_id
     ]);
     setShowOverlay(true);
   };
@@ -163,6 +164,7 @@ const Plate = (props) => {
           onClickedBackdrop={onClickedBackdrop}
           overlaydata={overlaydata}
           clickedRandomSelect={clickedRandomSelect}
+          origin={props.origin}
         ></Overlay>
       </div>
     </div>

@@ -154,7 +154,7 @@ const Content = (props) => {
         ></Leftside>
         <Map resultsdata={searchdata} chosennum={chosennum}></Map>
       </div>
-      <Plate showPlate={props.showPlate} resultsdata={searchdata} clickedPlateFilter={clickedPlateFilter}></Plate>
+      <Plate showPlate={props.showPlate} resultsdata={searchdata} clickedPlateFilter={clickedPlateFilter} origin={inputData[0]}></Plate>
     </Delayed>
   );
 };

@@ -93,3 +93,25 @@
     position: relative;
     top: 3px;
 }
+
+.overlaylink {
+    width: 150px;
+    padding-top: 5px;
+    margin: auto;
+    box-shadow: 2px 2px 4px #4d4c4c;
+    border-radius: 10px;
+    border-style: none;
+    background-color: #5c7cbe;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+.overlaylink:active {
+    transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+.overlaylink:visited {
+    text-decoration: none;
+}

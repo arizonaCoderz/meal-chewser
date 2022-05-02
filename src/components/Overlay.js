@@ -7,14 +7,18 @@ const Overlay = (props) => {
     props.onClickedBackdrop();
   };
 
-  const clickedDirections = (event) => {
-    //execute when clicked on get directions
-  };
+  var placelink = "https://www.google.com/maps/dir/?api=1&origin=";
+  placelink = placelink + props.origin + "&destination=";
+  placelink =
+    placelink +
+    props.overlaydata[2].trim().replace(/ /g, "+").toString() +
+    "&destination_place_id=";
+  placelink = placelink + props.overlaydata[4];
+  console.log(placelink);
 
   const clickedChooseAgain = (event) => {
     props.clickedRandomSelect();
   };
-
 
   //Overlay price
   var overlayprice = [];
@@ -44,17 +48,15 @@ const Overlay = (props) => {
                 alt="this is a star icon"
               />
             </div>
-            <div className="overlayprice">
-              {overlayprice}
-            </div>
+            <div className="overlayprice">{overlayprice}</div>
           </div>
           <div className="overlaylocation">
             <p id="overlayaddress">{props.overlaydata[2]}</p>
           </div>
           <div className="overlaybuttons">
-            <button className="overlaybutton" onClick={clickedDirections}>
+            <a href={placelink} className="overlaylink" target="_blank">
               GO
-            </button>
+            </a>
             <button className="overlaybutton" onClick={clickedChooseAgain}>
               Choose Again
             </button>
