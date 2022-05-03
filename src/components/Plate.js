@@ -22,7 +22,6 @@ const Plate = (props) => {
       setReload(true);
     }
   };
-  // console.log(customlistindex);
 
   const clickedEliminate = (event) => {
     customlistindex.splice(
@@ -59,18 +58,33 @@ const Plate = (props) => {
   //Builds the list
   var resultslist = [];
   for (var j = 0; j < props.resultsdata.length; j++) {
-    resultslist.push(
-      <Item
-        name={props.resultsdata[j].name}
-        price={props.resultsdata[j].price_level}
-        rating={props.resultsdata[j].rating}
-        key={j}
-        index={j}
-        clickedaddlist={clickedaddlist}
-        status={false}
-      ></Item>
-    );
+    if (customlistindex.indexOf(j) === -1) {
+      resultslist.push(
+        <Item
+          name={props.resultsdata[j].name}
+          price={props.resultsdata[j].price_level}
+          rating={props.resultsdata[j].rating}
+          key={j}
+          index={j}
+          clickedaddlist={clickedaddlist}
+          status={false}
+        ></Item>
+      );
+    } else {
+      resultslist.push(
+        <Item
+          name={props.resultsdata[j].name}
+          price={props.resultsdata[j].price_level}
+          rating={props.resultsdata[j].rating}
+          key={j}
+          index={j}
+          clickedaddlist={clickedaddlist}
+          status={true}
+        ></Item>
+      );
+    }
   }
+
   if (resultslist.length === 0) {
     resultslist.push(
       <p className="emptyaddplate" key="1">
@@ -117,31 +131,40 @@ const Plate = (props) => {
   };
 
   //choose a random number
+  const [chosen, setChosen] = useState(0);
   const [overlaydata, setOverlayData] = useState([]);
-  const [chosen, setChosen] = useState(
-    Math.floor(Math.random() * customlistindex.length)
-  );
-
   const [renderOverlay, setRenderOverlay] = useState(false);
   const clickedRandomSelect = (event) => {
     var tempchosen = 0;
     if (customlistindex.length === 0) {
       setRenderOverlay(false);
+    } else if (customlistindex.length === 1) {
+      setRenderOverlay(true);
+      tempchosen = 0;
+      setChosen(tempchosen);
+      setOverlayData([
+        props.resultsdata[customlistindex[chosen]].name,
+        props.resultsdata[customlistindex[chosen]].price,
+        props.resultsdata[customlistindex[chosen]].vicinity,
+        props.resultsdata[customlistindex[chosen]].rating,
+        props.resultsdata[customlistindex[chosen]].place_id,
+      ]);
+      setShowOverlay(true);
     } else {
-       setRenderOverlay(true);
-       while (chosen === tempchosen) {
+      setRenderOverlay(true);
+      while (chosen === tempchosen) {
         tempchosen = Math.floor(Math.random() * customlistindex.length);
       }
+      setChosen(tempchosen);
+      setOverlayData([
+        props.resultsdata[customlistindex[chosen]].name,
+        props.resultsdata[customlistindex[chosen]].price,
+        props.resultsdata[customlistindex[chosen]].vicinity,
+        props.resultsdata[customlistindex[chosen]].rating,
+        props.resultsdata[customlistindex[chosen]].place_id,
+      ]);
+      setShowOverlay(true);
     }
-    setChosen(tempchosen);
-    setOverlayData([
-      props.resultsdata[chosen].name,
-      props.resultsdata[chosen].price_level,
-      props.resultsdata[chosen].vicinity,
-      props.resultsdata[chosen].rating,
-      props.resultsdata[chosen].place_id,
-    ]);
-    setShowOverlay(true);
   };
 
   //Go to filter button
@@ -160,7 +183,7 @@ const Plate = (props) => {
       </button>
       <div className={!custom ? "addplatepage" : "disappear"}>
         <p className="addplatetitle">ADD TO PLATE</p>
-        <div className="resultslist">{resultslist}</div>
+        <div className="resultslist">{!custom ? resultslist : <div />}</div>
       </div>
       <div className={custom ? "platepage" : "disappear"}>
         <p className="platetitle">PLATE</p>
