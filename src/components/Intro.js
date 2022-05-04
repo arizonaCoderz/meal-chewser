@@ -40,7 +40,7 @@ const Intro = props => {
             <div className="verticalcenter">
                 <img id="intrologo" src="/assets/Logos/MealChewser_Logo7.png" alt="this is a Meal Chewser Logo" /> 
                 <div id="inputdiv">
-                    <input id="introinput" onChange={onAddressChange} placeholder="STREET, CITY, or ZIP"></input>
+                    <input id="introinput" onChange={onAddressChange} placeholder="LOCATION"></input>
                 </div>
                 <div id="filterdiv">
                     <button id="filterdropdown" onClick={filterhandler}>
