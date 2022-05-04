@@ -152,7 +152,7 @@ const Content = (props) => {
     <div>
       {showContent && (
         <div>
-          <div className={props.showHome ? "content" : "disappear"}>
+          <div className={props.showHome ? "home" : "disappear"}>
             {/* Ternary to pick className, disappear has a styling to display:none*/}
             <Leftside
               inputdataHandler={inputdataHandler}
