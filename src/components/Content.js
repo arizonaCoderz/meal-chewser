@@ -4,10 +4,15 @@ import axios from "axios";
 import Leftside from "./Leftside";
 import Map from "./Map";
 import "./Content.css";
-import Delayed from "./Internals/Delayed";
 import Plate from "./Plate";
 
 const Content = (props) => {
+  const [showContent, setShowContent] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setShowContent(!showContent);
+    }, 1000);
+  }, []);
   //Loading mode--------------------------------------------------------------------------------------------
   // const [isLoading, setLoading] = useState(true);
 
@@ -25,15 +30,17 @@ const Content = (props) => {
     inputData[0] +
     "&inputtype=textquery&fields=formatted_address,geometry&key=AIzaSyA9oUuwu2IcJiytz70UxvzQIAtIWD_Pskc";
 
-  const [loc, setloc] = useState([0,0]);
+  const [loc, setloc] = useState([0, 0]);
   const [wantSearch, setWantSearch] = useState(false); //makes sure the search goes through when location is changed
 
   // const [inputChange, setInputChange] = useState(false); //makes sure the search goes through when input changes
-  
 
   useEffect(() => {
     axios.get(locURL).then((response) => {
-      setloc([response.data.candidates[0].geometry.location.lat, response.data.candidates[0].geometry.location.lng]);
+      setloc([
+        response.data.candidates[0].geometry.location.lat,
+        response.data.candidates[0].geometry.location.lng,
+      ]);
       console.log("Places API Call LatLng");
       setWantSearch(true);
     });
@@ -41,23 +48,24 @@ const Content = (props) => {
 
   //Search Function-----------------------------------------------------------------------------------------
   var baseURL;
-  if (wantSearch) {baseURL =
-    "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" +
-    loc[0].toString() +
-    "," +
-    loc[1].toString() +
-    "&radius=" +
-    inputData[2] +
-    "&type=food" +
-    "&keyword=food," +
-    inputData[3] +
-    "&opennow=true" +
-    "&minprice=" +
-    inputData[1][0] +
-    "&maxprice=" +
-    inputData[1][1] +
-    // "&rankby=distance" + //if you use this, radius is disallowed
-    "&key=AIzaSyA9oUuwu2IcJiytz70UxvzQIAtIWD_Pskc";
+  if (wantSearch) {
+    baseURL =
+      "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" +
+      loc[0].toString() +
+      "," +
+      loc[1].toString() +
+      "&radius=" +
+      inputData[2] +
+      "&type=restaurant" +
+      "&keyword=food,restaurant" +
+      inputData[3] +
+      "&opennow=true" +
+      "&minprice=" +
+      inputData[1][0] +
+      "&maxprice=" +
+      inputData[1][1] +
+      // "&rankby=distance" + //if you use this, radius is disallowed
+      "&key=AIzaSyA9oUuwu2IcJiytz70UxvzQIAtIWD_Pskc";
   }
 
   const [searchdata, setSearchData] = useState([]);
@@ -134,28 +142,37 @@ const Content = (props) => {
   };
 
   //Clicked Filter in plate
-  const clickedPlateFilter = event => {
+  const clickedPlateFilter = (event) => {
     props.clickedLogo();
-  }
+  };
 
-  // console.log(searchdata)
+  //console.log(searchdata)
 
   return (
-    <Delayed waitBeforeShow={1000}>
-      <div className={props.showHome ? "content" : "disappear"}>
-        {/* Ternary to pick className, disappear has a styling to display:none*/}
-        <Leftside
-          inputdataHandler={inputdataHandler}
-          changeChosen={changeChosen}
-          chosennum={chosennum}
-          inputdata={props.inputdata}
-          resultsdata={searchdata}
-          origin={[loc[0], loc[1], inputData[0]]}
-        ></Leftside>
-        <Map resultsdata={searchdata} chosennum={chosennum}></Map>
-      </div>
-      <Plate showPlate={props.showPlate} resultsdata={searchdata} clickedPlateFilter={clickedPlateFilter} origin={inputData[0]}></Plate>
-    </Delayed>
+    <div>
+      {showContent && (
+        <div>
+          <div className={props.showHome ? "content" : "disappear"}>
+            {/* Ternary to pick className, disappear has a styling to display:none*/}
+            <Leftside
+              inputdataHandler={inputdataHandler}
+              changeChosen={changeChosen}
+              chosennum={chosennum}
+              inputdata={props.inputdata}
+              resultsdata={searchdata}
+              origin={[loc[0], loc[1], inputData[0]]}
+            ></Leftside>
+            <Map resultsdata={searchdata} chosennum={chosennum}></Map>
+          </div>
+          <Plate
+            showPlate={props.showPlate}
+            resultsdata={searchdata}
+            clickedPlateFilter={clickedPlateFilter}
+            origin={inputData[0]}
+          ></Plate>
+        </div>
+      )}
+    </div>
   );
 };
 
