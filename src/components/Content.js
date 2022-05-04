@@ -141,7 +141,7 @@ const Content = (props) => {
   // console.log(searchdata)
 
   return (
-    <Delayed waitBeforeShow={2000}>
+    <Delayed waitBeforeShow={1000}>
       <div className={props.showHome ? "content" : "disappear"}>
         {/* Ternary to pick className, disappear has a styling to display:none*/}
         <Leftside
