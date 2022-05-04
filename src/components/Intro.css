@@ -3,11 +3,12 @@
   width: 100%;
   background-color: #5c7cbe;
   position: absolute;
+  overflow-y: scroll;
 }
 
 .verticalcenter {
   position: relative;
-  margin-top: 90px;
+  margin-top: 80px;
 }
 
 #intrologo {
@@ -60,7 +61,7 @@
 
 .otherbuttons {
     width: 750px;
-    margin: auto;
+    margin: 0 auto 70px auto;
     display: flex;
 }
 
