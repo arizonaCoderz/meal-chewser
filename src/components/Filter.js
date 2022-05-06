@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import "./Filter.css";
 import Slider from "./Internals/Slider";
 import PriceButton from "./Internals/PriceButton";
-import Overlay from "./Overlay";
 
 const Filter = (props) => {
   const [sliderV, setSliderV] = useState(props.inputdata[2]);
@@ -34,7 +33,7 @@ const Filter = (props) => {
     chewsdata[1] = price;
     chewsdata[2] = sliderV;
     chewsdata[3] = keyword;
-    if (address != "") {
+    if (address !== "") {
       props.chews(chewsdata);
     }
   }

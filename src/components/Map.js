@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 
 import "./Map.css";
@@ -13,7 +13,7 @@ const Map = (props) => {
   //Location Setting---------------------------------------------------------------------------------------
   var temploc = [39,-97];
 
-  if (props.resultsdata.length != 0) {
+  if (props.resultsdata.length !== 0) {
     temploc = [props.resultsdata[props.chosennum].geometry.location.lat, props.resultsdata[props.chosennum].geometry.location.lng, 15]; //temploc is [lat,lng,zoom]
   }
 

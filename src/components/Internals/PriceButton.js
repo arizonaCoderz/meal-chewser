@@ -36,7 +36,7 @@ const PriceButton = (props) => {
   //   props.bstatus([4,4]);
   // }
   
-  if (clicked == 0) {
+  if (clicked === 0) {
     return (
       <div className="pricebuttons">
         <button className="pricebutton">
@@ -48,7 +48,7 @@ const PriceButton = (props) => {
         </button>
       </div>
     ) 
-  } else if (clicked == 1) {
+  } else if (clicked === 1) {
     return (
       <div className="pricebuttons">
         <button className="pricebutton">
@@ -60,7 +60,7 @@ const PriceButton = (props) => {
         </button>
       </div>
     );
-  } else if (clicked == 2) {
+  } else if (clicked === 2) {
     return (
       <div className="pricebuttons">
         <button className="pricebutton">
@@ -72,7 +72,7 @@ const PriceButton = (props) => {
         </button>
       </div>
     );
-  } else if (clicked == 3) {
+  } else if (clicked === 3) {
     return (
       <div className="pricebuttons">
         <button className="pricebutton">
