@@ -36,7 +36,7 @@ const Results = (props) => {
     photolink =
       photolink +
       props.resultsdata[props.chosennum].photos[0].photo_reference +
-      "&sensor=false&key=AIzaSyA9oUuwu2IcJiytz70UxvzQIAtIWD_Pskc";
+      "&sensor=false&key=" + process.env.REACT_APP_API_KEY;
     placelink = placelink + props.origin[2] + "&destination=";
     placelink =
       placelink +
@@ -59,7 +59,7 @@ const Results = (props) => {
   //   props.resultsdata[props.chosennum].geometry.location.lat + 
   //   "%2C" + 
   //   props.resultsdata[props.chosennum].geometry.location.lng + 
-  //   "&key=AIzaSyA9oUuwu2IcJiytz70UxvzQIAtIWD_Pskc";
+  //   "&key=" + process.env.REACT_APP_API_KEY;
 
   // useEffect(() => {
   //   axios.get(addInfoURL).then((response) => {

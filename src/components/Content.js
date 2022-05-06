@@ -28,7 +28,7 @@ const Content = (props) => {
   const locURL =
     "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=" +
     inputData[0] +
-    "&inputtype=textquery&fields=formatted_address,geometry&key=AIzaSyA9oUuwu2IcJiytz70UxvzQIAtIWD_Pskc";
+    "&inputtype=textquery&fields=formatted_address,geometry&key=" + process.env.REACT_APP_API_KEY;
 
   const [loc, setloc] = useState([0, 0]);
   const [wantSearch, setWantSearch] = useState(false); //makes sure the search goes through when location is changed
@@ -65,7 +65,7 @@ const Content = (props) => {
       "&maxprice=" +
       inputData[1][1] +
       // "&rankby=distance" + //if you use this, radius is disallowed
-      "&key=AIzaSyA9oUuwu2IcJiytz70UxvzQIAtIWD_Pskc";
+      "&key=" + process.env.REACT_APP_API_KEY;
   }
 
   const [searchdata, setSearchData] = useState([]);
@@ -99,7 +99,7 @@ const Content = (props) => {
   //   lng +
   //   "&pagetoken=" +
   //   page2token +
-  //   "&key=AIzaSyA9oUuwu2IcJiytz70UxvzQIAtIWD_Pskc";
+  //   "&key=" + process.env.REACT_APP_API_KEY;
 
   // useEffect(() => {
   //   axios.get(baseURL2).then((response) => {
