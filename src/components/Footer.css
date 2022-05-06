@@ -4,6 +4,7 @@
     background-color: #5C7CBE;
     position: absolute;
     top: 100vh;
+    min-width: 900px;
 }
 
 .links {
