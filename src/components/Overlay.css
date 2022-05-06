@@ -9,11 +9,9 @@
 }
 
 .overlay {
-    position: fixed;
-    top: 30vh;
-    height: 35vh;
-    left: 35%;
+    height: 300px;
     width: 500px;
+    margin: 20vh auto;
     z-index: 11;
     background: #ffffff;
     border-radius: 25px;
@@ -26,16 +24,13 @@
 .overlaylocation {
     display: flex;
     margin: 0 auto;
-    width: 90%;
+    width: fit-content;
 }
 
 .overlaybuttons {
     width: 100%;
-    margin: auto;
+    margin: 40px auto;
     display: flex;
-    position: absolute;
-    left: 0px;
-    bottom: 40px;
 }
 
 .overlaybutton {
@@ -65,7 +60,11 @@
 }
 
 .plateoverlay {
-    width: 1000px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    top: 0;
 }
 
 #overlayinfo {

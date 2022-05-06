@@ -144,7 +144,7 @@ const Plate = (props) => {
       setChosen(tempchosen);
       setOverlayData([
         props.resultsdata[customlistindex[chosen]].name,
-        props.resultsdata[customlistindex[chosen]].price,
+        props.resultsdata[customlistindex[chosen]].price_level,
         props.resultsdata[customlistindex[chosen]].vicinity,
         props.resultsdata[customlistindex[chosen]].rating,
         props.resultsdata[customlistindex[chosen]].place_id,
@@ -158,7 +158,7 @@ const Plate = (props) => {
       setChosen(tempchosen);
       setOverlayData([
         props.resultsdata[customlistindex[chosen]].name,
-        props.resultsdata[customlistindex[chosen]].price,
+        props.resultsdata[customlistindex[chosen]].price_level,
         props.resultsdata[customlistindex[chosen]].vicinity,
         props.resultsdata[customlistindex[chosen]].rating,
         props.resultsdata[customlistindex[chosen]].place_id,
