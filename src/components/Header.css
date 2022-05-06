@@ -2,35 +2,32 @@
     background-color: #5c7cbe;
     width: 100%;
     height: 70px;
-    white-space: nowrap;
-    padding-left: 10px;
-    display: grid;
-    grid-template-columns: 40% auto 30%;
-    grid-template-rows: 70px;
+    display: flex;
 }
 
 #title{
-    grid-column:1;
-    grid-row: 1;
-    display: inline-block;
-    box-sizing: border-box;
+    width: 400px;
     z-index: 10;
+    display: flex;
+}
+
+.logobutton {
+    background-color: transparent;
+    border-style: none;
+    height: 100%;
+    width: 400px;
+    z-index: 10;
+    padding: 0;
 }
 
 #logo {
-    height: 70%;
-    margin-top: 12px;
-    margin-right: 2.5px;
-    margin-left: 2px;
-    display:inline-block;
+    width: 380px;
+    margin: 10px;
 }
 
 #menu {
-    grid-column: 3;
-    grid-row:1;
-    box-sizing: border-box;
-    float: right;
-    justify-self: end;
+    margin-left: auto;
+    white-space: nowrap;
 }
 
 .button {
@@ -67,11 +64,4 @@
 
 .button:hover::before {
     width: 100%;
-}
-
-.logobutton {
-    background-color: transparent;
-    border-style: none;
-    height: 100%;
-    z-index: 10;
 }

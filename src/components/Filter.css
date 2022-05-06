@@ -1,9 +1,12 @@
 .filter {
   margin: auto;
-  width: 80%;
-  padding-top: 20px;
+  width: 100%;
+  padding: 20px 10%;
   border-style: none;
   color: #5C7CBE;
+  max-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 #input {
@@ -45,6 +48,7 @@
 #chewsbutton {
   width: 100%;
   margin: auto;
+  margin-bottom: 30px;
   border-style: none;
   border-radius: 5px;
   /* box-shadow: 5px 5px 0px #5C7CBE; */
