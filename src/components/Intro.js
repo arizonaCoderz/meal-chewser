@@ -38,7 +38,7 @@ const Intro = props => {
     return (
         <div className="intro">
             <div className="verticalcenter">
-                <img id="intrologo" src="/assets/Logos/MealChewser_Logo7.png" alt="this is a Meal Chewser Logo" /> 
+                <img id="intrologo" src="/assets/Logos/MealChewser_Logo7.png" alt="this is a big MealChewser Logo" /> 
                 <div id="inputdiv">
                     <input id="introinput" onChange={onAddressChange} placeholder="LOCATION"></input>
                 </div>
