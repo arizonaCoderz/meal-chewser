@@ -33,7 +33,7 @@ const Plate = (props) => {
 
   //Builds the custom list using the custom list index
   var customlist = [];
-  if (customlistindex.length !== 0) {
+  if (customlistindex.length !== 0 && props.resultsdata.length !== 0) {
     for (var i = 0; i < customlistindex.length; i++) {
       customlist.push(
         <Item

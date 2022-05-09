@@ -127,6 +127,7 @@ const Content = (props) => {
 
   //Connect Regular Filter to Results
   const inputdataHandler = (chewsdata) => {
+    setSearchData([]);
     setInputData([
       chewsdata[0].trim().replace(/ /g, "%20"),
       chewsdata[1],
