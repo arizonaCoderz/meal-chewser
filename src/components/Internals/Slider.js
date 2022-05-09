@@ -17,7 +17,7 @@ const Slider = (props) => {
       <input
         type="range"
         min="1"
-        max="50"
+        max="30"
         value={slideValue}
         className="slider"
         onChange={sliderChange}

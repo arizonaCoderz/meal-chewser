@@ -6,7 +6,7 @@ import Slider from "./Slider";
 
 const IntroFilter = (props) => {
   //Initialize Intro filter variables
-  const [sliderV, setSliderV] = useState(25); //Slider value aka Distance
+  const [sliderV, setSliderV] = useState(15); //Slider value aka Distance
   const [price, setPrice] = useState([0,4,0]); //price selection toggle
   const [keyword, setKeyword] = useState(""); //Keyword
 
