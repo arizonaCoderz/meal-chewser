@@ -25,15 +25,20 @@ const Content = (props) => {
   ]);
 
   //Converts Address to Latitude and Longitude---------------------------------------------------------------
-  const locURL =
-    "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=" +
-    inputData[0] +
-    "&inputtype=textquery&fields=formatted_address,geometry&key=" + process.env.REACT_APP_API_KEY;
+  // const locURL =
+  //   "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=" +
+  //   inputData[0] +
+  //   "&inputtype=textquery&fields=formatted_address,geometry&key=" + process.env.REACT_APP_API_KEY;
 
   const [loc, setloc] = useState([0, 0]);
   const [wantSearch, setWantSearch] = useState(false); //makes sure the search goes through when location is changed
 
   // const [inputChange, setInputChange] = useState(false); //makes sure the search goes through when input changes
+
+  const locURL =
+    "http://localhost:5000/?extension=findplacefromtext/json&input=" +
+    inputData[0] +
+    "&inputtype=textquery&fields=formatted_address,geometry";
 
   useEffect(() => {
     axios.get(locURL).then((response) => {
@@ -50,7 +55,8 @@ const Content = (props) => {
   var baseURL;
   if (wantSearch) {
     baseURL =
-      "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" +
+      // "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" +
+      "http://localhost:5000/?extension=nearbysearch/json&location=" + 
       loc[0].toString() +
       "," +
       loc[1].toString() +
@@ -63,9 +69,10 @@ const Content = (props) => {
       "&minprice=" +
       inputData[1][0] +
       "&maxprice=" +
-      inputData[1][1] +
+      inputData[1][1];
       // "&rankby=distance" + //if you use this, radius is disallowed
-      "&key=" + process.env.REACT_APP_API_KEY;
+      // "&key=" +
+      // process.env.REACT_APP_API_KEY;
   }
 
   const [searchdata, setSearchData] = useState([]);

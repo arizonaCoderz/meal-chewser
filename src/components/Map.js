@@ -21,7 +21,7 @@ const Map = (props) => {
   
   //Load in the Map-----------------------------------------------------------------------------------------
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: "AIzaSyA9oUuwu2IcJiytz70UxvzQIAtIWD_Pskc",
+    googleMapsApiKey: process.env.REACT_APP_API_KEY,
     libraries,
   });
 
