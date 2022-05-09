@@ -3,14 +3,14 @@ import React, { useState } from "react";
 import "./Slider.css";
 
 const Slider = (props) => {
+  //Initialize slide value
   const [slideValue, setSlideValue] = useState(props.value);
 
+  //Executes when slider is moved
   const sliderChange = event => {
       setSlideValue(event.target.value);
       props.onSliderChangeC(event.target.value);
   }
-  
-  const backcolor = props.bcolor;
 
   return (
     <div>
@@ -21,7 +21,7 @@ const Slider = (props) => {
         value={slideValue}
         className="slider"
         onChange={sliderChange}
-        style={{backgroundColor: backcolor}}
+        style={{backgroundColor: props.bcolor}}
       ></input>
     </div>
   );

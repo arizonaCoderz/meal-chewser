@@ -1,12 +1,12 @@
 .leftside {
-    height: 100%;
-    width: 400px;
-    background-color: white;
+  height: 100%;
+  width: 400px;
+  background-color: white;
 }
 
 .tabs {
-    height: 30px;
-    width: 400px;
-    display: flex;
-    background-color: white;
+  height: 30px;
+  width: 400px;
+  display: flex;
+  background-color: white;
 }

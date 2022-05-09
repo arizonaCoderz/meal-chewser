@@ -3,6 +3,7 @@ import React from 'react';
 import './Tab.css';
 
 const Tab = props => {
+    //Executes when the tab is clicked
     const clicked = (event) => {
         props.onClick();
     }

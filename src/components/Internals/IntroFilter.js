@@ -5,22 +5,27 @@ import IntroPB from "./IntroPB";
 import Slider from "./Slider";
 
 const IntroFilter = (props) => {
-  const [sliderV, setSliderV] = useState(25);
-  const [price, setPrice] = useState([0,4,0]);
-  const [keyword, setKeyword] = useState("");
+  //Initialize Intro filter variables
+  const [sliderV, setSliderV] = useState(25); //Slider value aka Distance
+  const [price, setPrice] = useState([0,4,0]); //price selection toggle
+  const [keyword, setKeyword] = useState(""); //Keyword
 
+  //Two way binding with Slider. When slider is moved, value is automatically updated
   const onSliderChangeP = value => {
     setSliderV(value);
   };
 
+  //Price button selection handler
   const buttonHandler = value => {
     setPrice(value);
   }
 
+  //Linked to keyword input box
   const onKeywordChange = event => {
     setKeyword(event.target.value);
   }
 
+  //Put all input variables in an array and send to parent component (Intro)
   var ichewsdata = [price, sliderV, keyword];
   const onChewsen = event => {
     ichewsdata[0] = price;
@@ -32,7 +37,7 @@ const IntroFilter = (props) => {
   onChewsen();
 
   return (
-    <div className={props.showFilter ? "introfilter": "disappear"}> {/* Ternary to pick className, disappear has a styling to display:none*/}
+    <div className={props.showFilter ? "introfilter": "disappear"}>
 
       <p className="introprice">PRICE</p>
       <IntroPB bstatus={buttonHandler}></IntroPB>

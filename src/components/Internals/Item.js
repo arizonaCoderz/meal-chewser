@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "./Item.css";
 
 const Item = (props) => {
-  //"On state"
+  //"On state": selected for the plate or not
   const [selected, setSelected] = useState(props.status);
 
   //assigns correct amount of stars based on price value
@@ -25,7 +25,7 @@ const Item = (props) => {
     setSelected(!selected);
   };
 
-  //if on then invert colors
+  //if selected then invert colors for + button
   var itembutton = [];
   if (selected === false) {
     itembutton.push(<img src="/assets/Logos/addbutton.png" alt="this is an add button icon" key="1"/>);
@@ -35,7 +35,7 @@ const Item = (props) => {
 
   return (
     <div className="item">
-      <button id="itembutton" onClick={clickedAddToList}>
+      <button className="itembutton" onClick={clickedAddToList}>
         {itembutton}
       </button>
       <div className="iteminfo">
@@ -45,7 +45,6 @@ const Item = (props) => {
       </div>
       <div className="iteminfo2">
         <div className="allstars">{stars}</div>
-        {/* <p className="itemaddress">{props.address}</p> */}
       </div>
     </div>
   );

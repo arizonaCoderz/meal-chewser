@@ -12,7 +12,7 @@
 
 .letseat {
   font-size: 35px;
-  font-family: 'Patrick Hand', cursive;
+  font-family: "Patrick Hand", cursive;
   letter-spacing: 0.3rem;
   margin: 15px auto;
 }
@@ -47,7 +47,7 @@
   border: 1px solid #d1d1d1;
   border-radius: 10px;
   letter-spacing: 0.1rem;
-  font-size: 30px
+  font-size: 30px;
 }
 
 .chooseagain:active {
@@ -67,7 +67,7 @@
 .noresultstext {
   font-size: 30px;
   margin: 30px auto;
-  font-family: 'Patrick Hand', cursive;
+  font-family: "Patrick Hand", cursive;
   letter-spacing: 0.2rem;
 }
 
@@ -101,5 +101,5 @@
 
 .golink:active {
   transform: scale(0.98);
-  box-shadow: 3px 2px 15px 1px #5C7CBE;
+  box-shadow: 3px 2px 15px 1px #5c7cbe;
 }

@@ -3,7 +3,7 @@
   width: 100%;
   padding: 20px 10%;
   border-style: none;
-  color: #5C7CBE;
+  color: #5c7cbe;
   max-height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
@@ -57,7 +57,7 @@
 
 #chewsbutton:active {
   transform: scale(0.98);
-  box-shadow: 3px 2px 15px 1px #5C7CBE;
+  box-shadow: 3px 2px 15px 1px #5c7cbe;
 }
 
 #mcbutton {

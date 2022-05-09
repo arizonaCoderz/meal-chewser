@@ -1,147 +1,148 @@
 .plate {
-    width: 900px;
-    height: 76vh;
-    border-style: none;
-    display: block;
-    margin: 30px auto 0px auto;
-    position: relative;
+  width: 900px;
+  height: 76vh;
+  border-style: none;
+  display: block;
+  margin: 30px auto 0px auto;
+  position: relative;
 }
 
 .addplatetitle {
-    font-size: 40px;
-    width: 250px;
-    height: 50px;
-    margin: 0 auto;
-    font-family: 'Patrick Hand', cursive;
-    color: #5c7cbe;
-    letter-spacing: 0.2rem;
+  font-size: 40px;
+  width: 250px;
+  height: 50px;
+  margin: 0 auto;
+  font-family: "Patrick Hand", cursive;
+  color: #5c7cbe;
+  letter-spacing: 0.2rem;
 }
 
 .platetitle {
-    font-size: 40px;
-    width: 90px;
-    height: 50px;
-    margin: 0 auto;
-    font-family: 'Patrick Hand', cursive;
-    color: #5c7cbe;
-    letter-spacing: 0.2rem;
+  font-size: 40px;
+  width: 90px;
+  height: 50px;
+  margin: 0 auto;
+  font-family: "Patrick Hand", cursive;
+  color: #5c7cbe;
+  letter-spacing: 0.2rem;
 }
 
 .resultslist {
-    width: 100%;
-    border-style: none;
-    margin: 20px auto;
-    height: 90%;
-    overflow: scroll;
-    overflow-x: hidden;
+  width: 100%;
+  border-style: none;
+  margin: 20px auto;
+  height: 90%;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 #platebutton {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    top: 20px;
-    right: 20px;
-    background-color: transparent;
-    border-style: solid;
-    border-color: #5c7cbe;
-    border-radius: 5px;
-    border-width: 2px;
-    padding: 0px;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  border-style: solid;
+  border-color: #5c7cbe;
+  border-radius: 5px;
+  border-width: 2px;
+  padding: 0px;
 }
 
 #platebutton2 {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    top: 20px;
-    right: 20px;
-    background-color: transparent;
-    border-style: none;
-    padding: 0px;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  border-style: none;
+  padding: 0px;
 }
 
 .invertedfk {
-    background-color: #5c7cbe;
-    border-radius: 5px;
+  background-color: #5c7cbe;
+  border-radius: 5px;
 }
 
 .platebuttons {
-    width: 100%;
-    height: 90px;
-    margin: 20px auto;
-    display: flex;
-    font-family: 'Patrick Hand', cursive;
-    color: #5c7cbe;
+  width: 100%;
+  height: 90px;
+  margin: 20px auto;
+  display: flex;
+  font-family: "Patrick Hand", cursive;
+  color: #5c7cbe;
 }
 
 .customlist {
-    width: 100%;
-    margin: 20px auto;
-    border-style: none;
-    height: 75%;
-    overflow: scroll;
-    overflow-x: hidden;
+  width: 100%;
+  margin: 20px auto;
+  border-style: none;
+  height: 75%;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
-.addplatepage, .platepage {
-    width: 100%;
-    height: 100%;
+.addplatepage,
+.platepage {
+  width: 100%;
+  height: 100%;
 }
 
 .platebutton {
-    margin: 20px auto;
-    width: 300px;
-    height: 50px;
-    background-color: transparent;
-    border-style: none;
-    color: #5c7cbe;
-    font-size: 25px;
-    box-shadow: 3px 2px 15px 1px #888888;
-    border-radius: 5px;
+  margin: 20px auto;
+  width: 300px;
+  height: 50px;
+  background-color: transparent;
+  border-style: none;
+  color: #5c7cbe;
+  font-size: 25px;
+  box-shadow: 3px 2px 15px 1px #888888;
+  border-radius: 5px;
 }
 
 .platebutton:active {
-    box-shadow: 1px 1px 5px 1px #888888;
+  box-shadow: 1px 1px 5px 1px #888888;
 }
 
 .or {
-    font-size: 35px;
-    margin-top: 15px;
+  font-size: 35px;
+  margin-top: 15px;
 }
 
 .emptyplate {
-    margin: 20px auto;
-    width: 195px;
-    position: relative;
-    left: 10px;
-    color: #5c7cbe;
-    font-size: 20px;
+  margin: 20px auto;
+  width: 195px;
+  position: relative;
+  left: 10px;
+  color: #5c7cbe;
+  font-size: 20px;
 }
 
 .emptyaddplate {
-    margin: 40px auto;
-    width: 195px;
-    position: relative;
-    color: #5c7cbe;
-    font-size: 20px;
-    left: 40px;
+  margin: 40px auto;
+  width: 195px;
+  position: relative;
+  color: #5c7cbe;
+  font-size: 20px;
+  left: 40px;
 }
 
 .platefilterbutton {
-    position: absolute;
-    width: 80px;
-    height: 40px;
-    top: 20px;
-    left: 20px;
-    color: #5c7cbe;
-    background-color: transparent;
-    border-style: solid;
-    border-color: #5c7cbe;
-    border-radius: 5px;
-    padding: 0px;
+  position: absolute;
+  width: 80px;
+  height: 40px;
+  top: 20px;
+  left: 20px;
+  color: #5c7cbe;
+  background-color: transparent;
+  border-style: solid;
+  border-color: #5c7cbe;
+  border-radius: 5px;
+  padding: 0px;
 }
 
 .platefilterbutton:active {
-    box-shadow: 1px 1px 15px 1px #5c7cbe;
+  box-shadow: 1px 1px 15px 1px #5c7cbe;
 }

@@ -1,31 +1,31 @@
 .footer {
-    width: 100%;
-    height: 160px;
-    background-color: #5C7CBE;
-    position: absolute;
-    top: 100vh;
-    min-width: 900px;
+  width: 100%;
+  height: 160px;
+  background-color: #5c7cbe;
+  position: absolute;
+  top: 100vh;
+  min-width: 900px;
 }
 
 .links {
-    display: flex;
-    width: 175px;
-    margin: auto;
-    color: white;
-    margin-top: 50px;
-    margin-bottom: 20px;
+  display: flex;
+  width: 175px;
+  margin: auto;
+  color: white;
+  margin-top: 50px;
+  margin-bottom: 20px;
 }
 
 .copyright {
-    text-align: center;
-    color: white;
-    font-size: 12px;
+  text-align: center;
+  color: white;
+  font-size: 12px;
 }
 
 .fbutton {
-    text-align: center;
-    font-size: 18px;
-    border-style: none;
-    background-color: transparent;
-    color: white;
+  text-align: center;
+  font-size: 18px;
+  border-style: none;
+  background-color: transparent;
+  color: white;
 }
