@@ -73,7 +73,7 @@ const Content = (props) => {
     }
   }, [baseURL]);
 
-  //Page 2 Results--------------------------------------------------------------------------------------------------
+  //Page 2 Results------------------------------------------------------------------------------------------------------------------
   //Currently only capable of returning 20 results
   //For more results use the next page token (will be implemented in future versions)
 
@@ -131,7 +131,7 @@ const Content = (props) => {
     ]);
   };
 
-  //Randomizer to choose random restaurant index
+  //Randomizer to choose random restaurant index------------------------------------------------------------------------------------
   const [refreshcount, setRefreshCount] = useState(0); //counts how many times choose again was pressed
   var chosennum = 0;
   if (searchdata.length !== 0) {
