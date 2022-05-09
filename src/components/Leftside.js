@@ -6,18 +6,21 @@ import Filter from "./Filter.js";
 import Results from "./Results.js";
 
 const Leftside = (props) => {
-  const [showFilter, setShowFilter] = useState(false); //changed this to boolean
+  //Initialize Filter/Result States and tab colors
+  const [showFilter, setShowFilter] = useState(false);
   const [showResults, setShowResults] =useState(true);
   const [filterColor, setFilterColor] = useState("#C0DCF3");
   const [resultsColor, setResultsColor] = useState("#ffffff");
 
+  //Executes when Fitler tab is clicked
   const clickedFilterTab = (event) => {
-    setShowFilter(true); //if you click filter tab, you should show filter. 
+    setShowFilter(true);
     setShowResults(false);
     setFilterColor("#ffffff");
     setResultsColor("#C0DCF3");
   };
 
+  //Executes when results tab is clicked
   const clickedResultsTab = (event) => {
     setShowFilter(false);
     setShowResults(true);
@@ -25,11 +28,13 @@ const Leftside = (props) => {
     setResultsColor("#ffffff");
   };
 
+  //Executes when Chews My Meal button is clicked in filter
   const onChews = chewsdata => {
     clickedResultsTab();
     props.inputdataHandler(chewsdata);
   }
 
+  //Executes when Choose Again button is clicked in results
   const clickedChooseAgain = event => {
     props.changeChosen();
   }

@@ -4,13 +4,16 @@ import './Intro.css';
 import IntroFilter from './Internals/IntroFilter';
 
 const Intro = props => {
+    //Initialize address and show filter state
     const [address, setAddress] = useState("");
     const [showFilter, setShowFilter] = useState(false);
 
+    //Executes when address is input (two way binding)
     const onAddressChange = event => {
         setAddress(event.target.value);
     }
 
+    //Controls whether additional filters are shown or not
     const filterhandler = event => {
         if (showFilter === false) {
             setShowFilter(true);
@@ -20,6 +23,7 @@ const Intro = props => {
         }
     }
 
+    //Initialize intro filter variables
     var idata = [address, [0,0], 0, ""]
     const chewsenhandler = ichewsdata => {
         idata[1] = ichewsdata[0];
@@ -27,10 +31,12 @@ const Intro = props => {
         idata[3] = ichewsdata[2];
     }
 
+    //Executes when Chews My Meal button is clicked
     const chewshandler = event => {
         props.clickedChews(idata);
     }
 
+    //Executes when Build My Plate button is clicked
     const buildhandler = event => {
         props.clickedBuild(idata);
     }
@@ -49,7 +55,7 @@ const Intro = props => {
                     </button>
                 </div>
                 <IntroFilter showFilter={showFilter} chews={chewsenhandler}></IntroFilter>
-                <div className="otherbuttons">
+                <div className="introbuttons">
                     <button className="nextbutton" onClick={chewshandler}>
                         <img className="ibuttons" src="/assets/Logos/chewsmymeal.png" alt="this is a Meal Chewser button" /> 
                     </button>

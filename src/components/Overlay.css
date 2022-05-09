@@ -49,13 +49,13 @@
     box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
 
-#overlayname {
+.overlayname {
     font-size: 35px;
     text-align: center;
     margin-bottom: 10px;
 }
 
-#overlayaddress {
+.overlayaddress {
     margin-right: auto;
 }
 
@@ -67,7 +67,7 @@
     top: 0;
 }
 
-#overlayinfo {
+.overlayinfo {
     display: flex;
     font-size: 25px;
     width: 200px;

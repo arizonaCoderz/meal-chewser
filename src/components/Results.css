@@ -38,18 +38,6 @@
   display: inline-block;
 }
 
-/* .gobutton {
-  margin: auto;
-  width: 100px;
-  height: 60px;
-  font-size: 30px;
-  color: white;
-  background-color: #5c7cbe;
-  border-style: none;
-  border-radius: 10px;
-  letter-spacing: 0.1rem;
-} */
-
 .chooseagain {
   margin: 30px auto;
   width: 280px;
@@ -61,11 +49,6 @@
   letter-spacing: 0.1rem;
   font-size: 30px
 }
-
-/* .gobutton:active {
-  transform: scale(0.98);
-  box-shadow: 3px 2px 15px 1px #5C7CBE;
-} */
 
 .chooseagain:active {
   transform: scale(0.98);

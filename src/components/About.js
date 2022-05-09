@@ -5,15 +5,13 @@ import "./About.css";
 const About = (props) => {
   return (
     <div className={props.showAbout ? "about" : "disappear"}>
-      {" "}
-      {/* Ternary to pick className, disappear has a styling to display:none*/}
       <div className="aboutcontainer">
         <img
-          id="abouticon"
+          className="aboutlogo"
           src="/assets/Logos/MealChewser_Logo1.png"
           alt="this is the meal chewser logo"
         />
-        <p id="aboutustitle">ABOUT US</p>
+        <p className="aboutustitle">ABOUT US</p>
         <p className="abouttext" style={{ height: "150px" }}>
           Hi! We are a group of three people, two developers and one designer,
           based in Phoenix, Arizona. We decided to create this fun little

@@ -11,13 +11,14 @@ const mapContainerStyle = {
 
 const Map = (props) => {
   //Location Setting---------------------------------------------------------------------------------------
-  var temploc = [39,-97];
+  var temploc = [39,-97]; //Initialize default location (middle of United States)
 
+  //Sets map location to resultant restaurant location (sets zoom value to 15)
   if (props.resultsdata.length !== 0) {
     temploc = [props.resultsdata[props.chosennum].geometry.location.lat, props.resultsdata[props.chosennum].geometry.location.lng, 15]; //temploc is [lat,lng,zoom]
   }
 
-  var location = { lat: temploc[0], lng: temploc[1] };
+  var location = { lat: temploc[0], lng: temploc[1] }; //used for Map center as well as marker placement
   
   //Load in the Map-----------------------------------------------------------------------------------------
   const { isLoaded, loadError } = useLoadScript({
@@ -25,12 +26,9 @@ const Map = (props) => {
     libraries,
   });
 
+  //Displays when there is an error or while it is loading
   if (loadError) return "Error loading maps";
   if (!isLoaded) return "Loading Maps";
-
-  //Add in a marker----------------------------------------------------------------------------------------
-
-
 
   return (
     <div className="map">

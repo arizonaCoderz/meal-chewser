@@ -6,13 +6,13 @@
     min-width: 900px;
 }
 
-#title{
+#headertitle{
     width: 400px;
     z-index: 10;
     display: flex;
 }
 
-.logobutton {
+.headerlogobutton {
     background-color: transparent;
     border-style: none;
     height: 100%;
@@ -21,17 +21,17 @@
     padding: 0;
 }
 
-#logo {
+#headerlogo {
     width: 380px;
     margin: 10px;
 }
 
-#menu {
+#headermenu {
     margin-left: auto;
     white-space: nowrap;
 }
 
-.button {
+.headerbutton {
     font-size: 25px;
     font-family: 'Patrick Hand', cursive;
     letter-spacing: 0.1em;
@@ -46,11 +46,11 @@
     z-index: 10;
 }
 
-.button:hover {
+.headerbutton:hover {
   color: white;
 }
 
-.button::before {
+.headerbutton::before {
   content: "";
   background-color: white; 
   
@@ -63,6 +63,6 @@
   transition: width 0.25s ease-out;
 }
 
-.button:hover::before {
+.headerbutton:hover::before {
     width: 100%;
 }

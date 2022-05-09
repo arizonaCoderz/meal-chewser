@@ -2,8 +2,8 @@ import React from "react";
 
 import "./Results.css";
 
+//Function to calculate distance between 2 lat lng pairs
 function getDistanceFromLatLngInMiles(lat1, lng1, lat2, lng2) {
-  //calculate distance between 2 latlng pairs
   var R = 3963; // Radius of the earth in miles
   var dLat = deg2rad(lat2 - lat1);
   var dLng = deg2rad(lng2 - lng1);
@@ -18,19 +18,21 @@ function getDistanceFromLatLngInMiles(lat1, lng1, lat2, lng2) {
   return d;
 }
 
+//Function to convert from degrees to radians
 function deg2rad(deg) {
   return deg * (Math.PI / 180);
 }
 
 const Results = (props) => {
-  //Choose Again button pressed
+  //Executes when choose again button is clicked
   const clickedChooseAgain = (event) => {
     props.clickedChooseAgain();
   };
 
+  //Makes an API to retrieve photo data of the chosen restaurant
   var photolink =
     "https://maps.googleapis.com/maps/api/place/photo?maxheight=400&maxwidth=400&photo_reference=";
-  var placelink = "https://www.google.com/maps/dir/?api=1&origin=";
+  var placelink = "https://www.google.com/maps/dir/?api=1&origin="; //Creates link to google directions from input location to chosen restaurant
 
   if (props.resultsdata.length !== 0) {
     photolink =
@@ -70,7 +72,6 @@ const Results = (props) => {
   if (props.resultsdata.length !== 0) {
     return (
       <div className={props.showResults ? "results" : "disappear"}>
-        {/* Ternary to pick className, disappear has a styling to display:none*/}
         <p className="letseat">LETS EAT!</p>
         <div className="placephotodiv">
           <img className="placephoto" src={photolink} alt="this is a place" />

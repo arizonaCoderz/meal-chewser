@@ -7,38 +7,30 @@ import "./Content.css";
 import Plate from "./Plate";
 
 const Content = (props) => {
-  const [showContent, setShowContent] = useState(false);
-  useEffect(() => {
-    setTimeout(() => {
-      setShowContent(!showContent);
-    }, 1000);
-  }, []);
-  //Loading mode--------------------------------------------------------------------------------------------
-  // const [isLoading, setLoading] = useState(true);
-
-  //Initialize Filters--------------------------------------------------------------------------------------
+  //Initialize all variables-----------------------------------------------------------------------------------------------
+  const [showContent, setShowContent] = useState(false); //show Home page or not (boolean)
   const [inputData, setInputData] = useState([
     props.inputdata[0].trim().replace(/ /g, "%20"),
     props.inputdata[1],
     props.inputdata[2] * 1609,
     props.inputdata[3],
-  ]);
-
-  //Converts Address to Latitude and Longitude---------------------------------------------------------------
-  // const locURL =
-  //   "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=" +
-  //   inputData[0] +
-  //   "&inputtype=textquery&fields=formatted_address,geometry&key=" + process.env.REACT_APP_API_KEY;
-
-  const [loc, setloc] = useState([0, 0]);
+  ]); //initial filter data
+  const [loc, setloc] = useState([0, 0]); //Latitude and Longitude of input location
   const [wantSearch, setWantSearch] = useState(false); //makes sure the search goes through when location is changed
+  const [searchdata, setSearchData] = useState([]); //Results from the API search
 
-  // const [inputChange, setInputChange] = useState(false); //makes sure the search goes through when input changes
+  //Delays the initial render by 1000 ms-----------------------------------------------------------------------------------
+  useEffect(() => {
+    setTimeout(() => {
+      setShowContent(!showContent);
+    }, 1000);
+  }, []);
 
+  //Converts Address to Latitude and Longitude-----------------------------------------------------------------------------
   const locURL =
     "http://localhost:5000/?extension=findplacefromtext/json&input=" +
     inputData[0] +
-    "&inputtype=textquery&fields=formatted_address,geometry";
+    "&inputtype=textquery&fields=formatted_address,geometry"; //Uses a proxy server which then calls the API
 
   useEffect(() => {
     axios.get(locURL).then((response) => {
@@ -51,12 +43,11 @@ const Content = (props) => {
     });
   }, [inputData]);
 
-  //Search Function-----------------------------------------------------------------------------------------
+  //Search Function----------------------------------------------------------------------------------------------------------
   var baseURL;
   if (wantSearch) {
     baseURL =
-      // "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" +
-      "http://localhost:5000/?extension=nearbysearch/json&location=" + 
+      "http://localhost:5000/?extension=nearbysearch/json&location=" +
       loc[0].toString() +
       "," +
       loc[1].toString() +
@@ -69,35 +60,39 @@ const Content = (props) => {
       "&minprice=" +
       inputData[1][0] +
       "&maxprice=" +
-      inputData[1][1];
-      // "&rankby=distance" + //if you use this, radius is disallowed
-      // "&key=" +
-      // process.env.REACT_APP_API_KEY;
+      inputData[1][1]; //Uses a proxy server which then calls the API
   }
-
-  const [searchdata, setSearchData] = useState([]);
-  //const [page2token, setPage2] = useState("");
 
   useEffect(() => {
     if (wantSearch) {
       axios.get(baseURL).then((response) => {
         setSearchData(response.data.results);
-        // if (typeof response.data.next_page_token !== "undefined") {
-        //   setPage2(response.data.next_page_token.toString());
-        // }
-        // setLoading(false);
         console.log("Places API Call Search");
-        // console.log(loc);
         setWantSearch(false);
-        // props.resultsDataHandler(searchdata);
       });
     }
   }, [baseURL]);
 
-  //Page 2 Results
+  //Page 2 Results--------------------------------------------------------------------------------------------------
+  //Currently only capable of returning 20 results
+  //For more results use the next page token (will be implemented in future versions)
 
+  //const [page2token, setPage2] = useState("");
   // const [searchdata2, setSearchData2] = useState([]);
   // const [page3token, setPage3] = useState("");
+
+  // useEffect(() => {
+  //   if (wantSearch) {
+  //     axios.get(baseURL).then((response) => {
+  //       setSearchData(response.data.results);
+  //       if (typeof response.data.next_page_token !== "undefined") {
+  //         setPage2(response.data.next_page_token.toString());
+  //       }
+  //       console.log("Places API Call Search");
+  //       setWantSearch(false);
+  //     });
+  //   }
+  // }, [baseURL]);
 
   // const baseURL2 =
   //   "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" +
@@ -134,34 +129,30 @@ const Content = (props) => {
       chewsdata[2] * 1609,
       chewsdata[3],
     ]);
-    // setLoading(true);
   };
 
-  //Choose a Random number
+  //Randomizer to choose random restaurant index
   const [refreshcount, setRefreshCount] = useState(0); //counts how many times choose again was pressed
   var chosennum = 0;
   if (searchdata.length !== 0) {
     chosennum = Math.floor(Math.random() * searchdata.length);
   }
 
-  //Clicked choose again
+  //Clicked choose again, rerandomizes restaurant index
   const changeChosen = (event) => {
     setRefreshCount(refreshcount + 1); //reloading the component is enough to pick a new chosennum
   };
 
-  //Clicked Filter in plate
+  //Clicked Filter in plate, takes user back to Intro page
   const clickedPlateFilter = (event) => {
     props.clickedLogo();
   };
-
-  //console.log(searchdata)
 
   return (
     <div>
       {showContent && (
         <div>
           <div className={props.showHome ? "home" : "disappear"}>
-            {/* Ternary to pick className, disappear has a styling to display:none*/}
             <Leftside
               inputdataHandler={inputdataHandler}
               changeChosen={changeChosen}

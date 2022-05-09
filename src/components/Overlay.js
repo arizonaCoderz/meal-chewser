@@ -3,14 +3,17 @@ import React from "react";
 import "./Overlay.css";
 
 const Overlay = (props) => {
+  //Unrenders overlay when the backdrop is clicked
   const clickedBackdrop = (event) => {
     props.onClickedBackdrop();
   };
   
+  //Rerandomizes restaurant choice in parent component
   const clickedChooseAgain = (event) => {
     props.clickedRandomSelect();
   };
 
+  //Creates link to google directions from input location to chosen restaurant
   if (props.renderOverlay) {
     var placelink = "https://www.google.com/maps/dir/?api=1&origin=";
     placelink = placelink + props.origin + "&destination=";
@@ -20,7 +23,7 @@ const Overlay = (props) => {
       "&destination_place_id=";
     placelink = placelink + props.overlaydata[4];
 
-    //Overlay price
+    //Creates dollar pngs depending on what the price of the chosen restaurant is
     var overlayprice = [];
     for (var i = 0; i < props.overlaydata[1]; i++) {
       overlayprice.push(
@@ -39,8 +42,8 @@ const Overlay = (props) => {
       <div className={props.showOverlay ? "plateoverlay" : "disappear"}>
         <div className="backdrop" onClick={clickedBackdrop}></div>
         <div className="overlay">
-          <p id="overlayname">{props.overlaydata[0]}</p>
-          <div id="overlayinfo">
+          <p className="overlayname">{props.overlaydata[0]}</p>
+          <div className="overlayinfo">
             <div className="overlayrating">
               {props.overlaydata[3]}
               <img
@@ -52,7 +55,7 @@ const Overlay = (props) => {
             <div className="overlayprice">{overlayprice}</div>
           </div>
           <div className="overlaylocation">
-            <p id="overlayaddress">{props.overlaydata[2]}</p>
+            <p className="overlayaddress">{props.overlaydata[2]}</p>
           </div>
           <div className="overlaybuttons">
             <a href={placelink} className="overlaylink" target="_blank" rel="noreferrer">

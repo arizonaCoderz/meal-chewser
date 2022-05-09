@@ -5,17 +5,22 @@ import Item from "./Internals/Item";
 import Overlay from "./Overlay";
 
 const Plate = (props) => {
-  const [reload, setReload] = useState(false);
+  //Initialize all Plate variables
+  const [reload, setReload] = useState(false); //triggers reload when something is added to the plate
+  const [customlistindex, setCustomListIndex] = useState([]); //index that shows which objects in the search data should be in the plate
+  const [custom, setCustom] = useState(false); //toggles between plate and add to plate pages
+  const [showOverlay, setShowOverlay] = useState(false); //show overlay or not
+  const [chosen, setChosen] = useState(0); //chosen is the index of the randomized chosen restaurant
+  const [overlaydata, setOverlayData] = useState([]); //sends data to overlay
+  const [renderOverlay, setRenderOverlay] = useState(false); //render overlay or not
+  var customlist = []; //array of Item objects in the plate
+  var resultslist = []; //array of all Item objects from search data
+  var toggleCustomButton = []; //fork and knife icon toggle
 
   //Adds or removes item to custom list
-  const [customlistindex, setCustomListIndex] = useState([]);
   const clickedaddlist = (value) => {
-    // console.log("value is " + value)
-    // console.log("index is " + customlistindex.indexOf(value))
-    // console.log(customlistindex);
     if (customlistindex.indexOf(value) === -1) {
       setCustomListIndex((customlistindex) => [...customlistindex, value]);
-      // console.log(customlistindex);
     } else {
       customlistindex.splice(customlistindex.indexOf(value), 1);
       setCustomListIndex(customlistindex);
@@ -23,6 +28,7 @@ const Plate = (props) => {
     }
   };
 
+  //Removes an item from plate when Eliminate an Option button is clicked
   const clickedEliminate = (event) => {
     customlistindex.splice(
       Math.floor(Math.random() * customlistindex.length),
@@ -32,7 +38,6 @@ const Plate = (props) => {
   };
 
   //Builds the custom list using the custom list index
-  var customlist = [];
   if (customlistindex.length !== 0 && props.resultsdata.length !== 0) {
     for (var i = 0; i < customlistindex.length; i++) {
       customlist.push(
@@ -55,8 +60,7 @@ const Plate = (props) => {
     );
   }
 
-  //Builds the list
-  var resultslist = [];
+  //Builds the list from the search data
   for (var j = 0; j < props.resultsdata.length; j++) {
     if (customlistindex.indexOf(j) === -1) {
       resultslist.push(
@@ -85,6 +89,7 @@ const Plate = (props) => {
     }
   }
 
+  //Shows no results if there are no results
   if (resultslist.length === 0) {
     resultslist.push(
       <p className="emptyaddplate" key="1">
@@ -93,10 +98,7 @@ const Plate = (props) => {
     );
   }
 
-  //Toggles between list and custom list
-  var toggleCustomButton = [];
-
-  const [custom, setCustom] = useState(false);
+  //Toggles between plate and add to plate
   const toggleCustom = (event) => {
     setCustom(!custom);
   };
@@ -120,34 +122,29 @@ const Plate = (props) => {
     );
   }
 
+  //triggers reload if something was added to the plate
   if (reload) {
     setReload(false);
   }
 
   //Show and hide overlay
-  const [showOverlay, setShowOverlay] = useState(false);
   const onClickedBackdrop = (event) => {
     setShowOverlay(false);
   };
 
-  //choose a random number
-  const [chosen, setChosen] = useState(0);
-  const [overlaydata, setOverlayData] = useState([]);
-  const [renderOverlay, setRenderOverlay] = useState(false);
+  //choose a random number for the index of the randomized restaurant
   const clickedRandomSelect = (event) => {
     var tempchosen = 0;
     if (customlistindex.length === 0) {
       setRenderOverlay(false);
     } else if (customlistindex.length === 1) {
       setRenderOverlay(true);
-      tempchosen = 0;
-      setChosen(tempchosen);
       setOverlayData([
-        props.resultsdata[customlistindex[chosen]].name,
-        props.resultsdata[customlistindex[chosen]].price_level,
-        props.resultsdata[customlistindex[chosen]].vicinity,
-        props.resultsdata[customlistindex[chosen]].rating,
-        props.resultsdata[customlistindex[chosen]].place_id,
+        props.resultsdata[customlistindex[0]].name,
+        props.resultsdata[customlistindex[0]].price_level,
+        props.resultsdata[customlistindex[0]].vicinity,
+        props.resultsdata[customlistindex[0]].rating,
+        props.resultsdata[customlistindex[0]].place_id,
       ]);
       setShowOverlay(true);
     } else {
@@ -167,18 +164,17 @@ const Plate = (props) => {
     }
   };
 
-  //Go to filter button
+  //Go to Intro filter when Filter Button is clicked
   const goToFilter = (event) => {
     props.clickedPlateFilter();
   };
 
   return (
     <div className={props.showPlate ? "plate" : "disappear"}>
-      {/* Ternary to pick className, disappear has a styling to display:none*/}
       <button id={!custom ? "platebutton" : "platebutton2"} onClick={toggleCustom}>
         {toggleCustomButton}
       </button>
-      <button id="filterbutton" onClick={goToFilter}>
+      <button className="platefilterbutton" onClick={goToFilter}>
         FILTER
       </button>
       <div className={!custom ? "addplatepage" : "disappear"}>

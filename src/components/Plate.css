@@ -128,7 +128,7 @@
     left: 40px;
 }
 
-#filterbutton {
+.platefilterbutton {
     position: absolute;
     width: 80px;
     height: 40px;
@@ -142,6 +142,6 @@
     padding: 0px;
 }
 
-#filterbutton:active {
+.platefilterbutton:active {
     box-shadow: 1px 1px 15px 1px #5c7cbe;
 }
