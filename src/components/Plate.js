@@ -5,7 +5,7 @@ import Item from "./Internals/Item";
 import Overlay from "./Overlay";
 
 const Plate = (props) => {
-  //Initialize all Plate variables
+  //Initialize all Plate variables---------------------------------------------------------------------------------------------------------
   const [reload, setReload] = useState(false); //triggers reload when something is added to the plate
   const [customlistindex, setCustomListIndex] = useState([]); //index that shows which objects in the search data should be in the plate
   const [custom, setCustom] = useState(false); //toggles between plate and add to plate pages
@@ -17,7 +17,7 @@ const Plate = (props) => {
   var resultslist = []; //array of all Item objects from search data
   var toggleCustomButton = []; //fork and knife icon toggle
 
-  //Adds or removes item to custom list
+  //Adds or removes item to custom list---------------------------------------------------------------------------------------------------
   const clickedaddlist = (value) => {
     if (customlistindex.indexOf(value) === -1) {
       setCustomListIndex((customlistindex) => [...customlistindex, value]);
@@ -37,7 +37,7 @@ const Plate = (props) => {
     setReload(true);
   };
 
-  //Builds the custom list using the custom list index
+  //Builds the custom list using the custom list index------------------------------------------------------------------------------------
   if (customlistindex.length !== 0 && props.resultsdata.length !== 0) {
     for (var i = 0; i < customlistindex.length; i++) {
       customlist.push(
@@ -60,7 +60,7 @@ const Plate = (props) => {
     );
   }
 
-  //Builds the list from the search data
+  //Builds the list from the search data---------------------------------------------------------------------------------------------------
   for (var j = 0; j < props.resultsdata.length; j++) {
     if (customlistindex.indexOf(j) === -1) {
       resultslist.push(
@@ -89,7 +89,7 @@ const Plate = (props) => {
     }
   }
 
-  //Shows no results if there are no results
+  //Shows no results if there are no results------------------------------------------------------------------------------------------------
   if (resultslist.length === 0) {
     resultslist.push(
       <p className="emptyaddplate" key="1">
@@ -98,7 +98,7 @@ const Plate = (props) => {
     );
   }
 
-  //Toggles between plate and add to plate
+  //Toggles between plate and add to plate----------------------------------------------------------------------------------------------------
   const toggleCustom = (event) => {
     setCustom(!custom);
   };
@@ -122,7 +122,7 @@ const Plate = (props) => {
     );
   }
 
-  //triggers reload if something was added to the plate
+  //triggers reload if something was added to the plate--------------------------------------------------------------------------------------------
   if (reload) {
     setReload(false);
   }
@@ -132,7 +132,7 @@ const Plate = (props) => {
     setShowOverlay(false);
   };
 
-  //choose a random number for the index of the randomized restaurant
+  //choose a random number for the index of the randomized restaurant-------------------------------------------------------------------------------
   const clickedRandomSelect = (event) => {
     var tempchosen = 0;
     if (customlistindex.length === 0) {
@@ -164,7 +164,7 @@ const Plate = (props) => {
     }
   };
 
-  //Go to Intro filter when Filter Button is clicked
+  //Go to Intro filter when Filter Button is clicked---------------------------------------------------------------------------------------------
   const goToFilter = (event) => {
     props.clickedPlateFilter();
   };
