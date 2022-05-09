@@ -46,11 +46,24 @@
     border-style: solid;
     border-color: #5c7cbe;
     border-radius: 5px;
+    border-width: 2px;
+    padding: 0px;
+}
+
+#platebutton2 {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    border-style: none;
     padding: 0px;
 }
 
 .invertedfk {
     background-color: #5c7cbe;
+    border-radius: 5px;
 }
 
 .platebuttons {

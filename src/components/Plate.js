@@ -175,7 +175,7 @@ const Plate = (props) => {
   return (
     <div className={props.showPlate ? "plate" : "disappear"}>
       {/* Ternary to pick className, disappear has a styling to display:none*/}
-      <button id="platebutton" onClick={toggleCustom}>
+      <button id={!custom ? "platebutton" : "platebutton2"} onClick={toggleCustom}>
         {toggleCustomButton}
       </button>
       <button id="filterbutton" onClick={goToFilter}>
