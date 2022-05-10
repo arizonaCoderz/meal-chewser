@@ -78,9 +78,48 @@ const IntroPB = (props) => {
 
   return (
     <div className="intropricebuttons">
-      <button id={!price1 ? "intropbutton1" : "intropbutton1on"} onClick={onPrice1Clicked}>$</button>
-      <button id={!price2 ? "intropbutton2" : "intropbutton2on"} onClick={onPrice2Clicked}>$$</button>
-      <button id={!price3 ? "intropbutton3" : "intropbutton3on"} onClick={onPrice3Clicked}>$$$</button>
+      <button id={!price1 ? "intropbutton1" : "intropbutton1on"} onClick={onPrice1Clicked}>
+        <div className={!price1 ? "ipbuttondollarholder1" : "ipbuttondollarholder1on"}>
+          <img
+            className="ipbuttondollar"
+            src="/assets/Logos/dollar.png"
+           alt="this is a dollar icon"
+          />
+        </div>
+      </button>
+      <button id={!price2 ? "intropbutton2" : "intropbutton2on"} onClick={onPrice2Clicked}>
+        <div className={!price2 ? "ipbuttondollarholder2" : "ipbuttondollarholder2on"}>
+          <img
+            className="ipbuttondollar"
+            src="/assets/Logos/dollar.png"
+           alt="this is a dollar icon"
+          />
+          <img
+            className="ipbuttondollar"
+            src="/assets/Logos/dollar.png"
+            alt="this is a dollar icon"
+          />
+        </div>
+      </button>
+      <button id={!price3 ? "intropbutton3" : "intropbutton3on"} onClick={onPrice3Clicked}>
+        <div className={!price3 ? "ipbuttondollarholder3" : "ipbuttondollarholder3on"}>
+          <img
+            className="ipbuttondollar"
+            src="/assets/Logos/dollar.png"
+           alt="this is a dollar icon"
+          />
+          <img
+            className="ipbuttondollar"
+            src="/assets/Logos/dollar.png"
+            alt="this is a dollar icon"
+          />
+          <img
+            className="ipbuttondollar"
+            src="/assets/Logos/dollar.png"
+            alt="this is a dollar icon"
+          />
+        </div>
+      </button>
     </div>
   );
 };

@@ -13,7 +13,7 @@ const Item = (props) => {
       <img
         id="dollar"
         src="/assets/Logos/dollar.png"
-        alt="this is a star icon"
+        alt="this is a dollar icon"
         key={i}
       />
     );

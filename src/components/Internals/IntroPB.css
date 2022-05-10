@@ -43,3 +43,46 @@
   border-radius: 0 20px 20px 0;
   border-color: #8CB0DD;
 }
+
+.ipbuttondollar {
+  width: 15px;
+}
+
+.ipbuttondollarholder1 {
+  display: flex;
+  width: 15px;
+  margin: auto;
+}
+
+.ipbuttondollarholder2 {
+  display: flex;
+  width: 30px;
+  margin: auto;
+}
+
+.ipbuttondollarholder3 {
+  display: flex;
+  width: 45px;
+  margin: auto;
+}
+
+.ipbuttondollarholder1on {
+  display: flex;
+  width: 15px;
+  margin: auto;
+  filter: invert(65%) sepia(84%) saturate(272%) hue-rotate(184deg) brightness(93%) contrast(85%);
+}
+
+.ipbuttondollarholder2on {
+  display: flex;
+  width: 30px;
+  margin: auto;
+  filter: invert(65%) sepia(84%) saturate(272%) hue-rotate(184deg) brightness(93%) contrast(85%);
+}
+
+.ipbuttondollarholder3on {
+  display: flex;
+  width: 45px;
+  margin: auto;
+  filter: invert(65%) sepia(84%) saturate(272%) hue-rotate(184deg) brightness(93%) contrast(85%);
+}

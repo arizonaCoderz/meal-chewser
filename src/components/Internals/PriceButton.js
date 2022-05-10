@@ -98,9 +98,48 @@ const PriceButton = (props) => {
 
   return (
     <div className="pricebuttons">
-      <button id={!price1 ? "pbutton1" : "pbutton1on"} onClick={onPrice1Clicked}>$</button>
-      <button id={!price2 ? "pbutton2" : "pbutton2on"} onClick={onPrice2Clicked}>$$</button>
-      <button id={!price3 ? "pbutton3" : "pbutton3on"} onClick={onPrice3Clicked}>$$$</button>
+      <button id={!price1 ? "pbutton1" : "pbutton1on"} onClick={onPrice1Clicked}>
+        <div className={!price1 ? "pbuttondollarholder1" : "pbuttondollarholder1on"}>
+          <img
+            className="pbuttondollar"
+            src="/assets/Logos/dollar.png"
+           alt="this is a dollar icon"
+          />
+        </div>
+      </button>
+      <button id={!price2 ? "pbutton2" : "pbutton2on"} onClick={onPrice2Clicked}>
+        <div className={!price2 ? "pbuttondollarholder2" : "pbuttondollarholder2on"}>
+          <img
+            className="pbuttondollar"
+            src="/assets/Logos/dollar.png"
+           alt="this is a dollar icon"
+          />
+          <img
+            className="pbuttondollar"
+            src="/assets/Logos/dollar.png"
+            alt="this is a dollar icon"
+          />
+        </div>
+      </button>
+      <button id={!price3 ? "pbutton3" : "pbutton3on"} onClick={onPrice3Clicked}>
+        <div className={!price3 ? "pbuttondollarholder3" : "pbuttondollarholder3on"}>
+          <img
+            className="pbuttondollar"
+            src="/assets/Logos/dollar.png"
+           alt="this is a dollar icon"
+          />
+          <img
+            className="pbuttondollar"
+            src="/assets/Logos/dollar.png"
+            alt="this is a dollar icon"
+          />
+          <img
+            className="pbuttondollar"
+            src="/assets/Logos/dollar.png"
+            alt="this is a dollar icon"
+          />
+        </div>
+      </button>
     </div>
   );
 };
