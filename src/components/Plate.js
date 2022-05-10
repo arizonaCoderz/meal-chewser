@@ -45,8 +45,10 @@ const Plate = (props) => {
           name={props.resultsdata[customlistindex[i]].name}
           price={props.resultsdata[customlistindex[i]].price_level}
           rating={props.resultsdata[customlistindex[i]].rating}
+          address={props.resultsdata[customlistindex[i]].vicinity}
           key={customlistindex[i]}
           index={customlistindex[i]}
+          number={customlist.length + 1}
           clickedaddlist={clickedaddlist}
           status={true}
         ></Item>
@@ -68,8 +70,10 @@ const Plate = (props) => {
           name={props.resultsdata[j].name}
           price={props.resultsdata[j].price_level}
           rating={props.resultsdata[j].rating}
+          address={props.resultsdata[j].vicinity}
           key={j}
           index={j}
+          number={resultslist.length + 1}
           clickedaddlist={clickedaddlist}
           status={false}
         ></Item>
@@ -80,8 +84,10 @@ const Plate = (props) => {
           name={props.resultsdata[j].name}
           price={props.resultsdata[j].price_level}
           rating={props.resultsdata[j].rating}
+          address={props.resultsdata[j].vicinity}
           key={j}
           index={j}
+          number={resultslist.length + 1}
           clickedaddlist={clickedaddlist}
           status={true}
         ></Item>
@@ -183,11 +189,11 @@ const Plate = (props) => {
         <p className="platetitle">PLATE</p>
         <div className="platebuttons">
           <button className="platebutton" onClick={clickedRandomSelect}>
-            Chews my Meal
+            CHEWS MY MEAL
           </button>
           <p className="or">OR</p>
           <button className="platebutton" onClick={clickedEliminate}>
-            Eliminate an Option
+            ELIMINATE AN OPTION
           </button>
         </div>
         <div className="customlist">{customlist}</div>

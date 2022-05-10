@@ -7,9 +7,9 @@ const Item = (props) => {
   const [selected, setSelected] = useState(props.status);
 
   //assigns correct amount of stars based on price value
-  var stars = [];
+  var dollars = [];
   for (var i = 0; i < props.price; i++) {
-    stars.push(
+    dollars.push(
       <img
         id="dollar"
         src="/assets/Logos/dollar.png"
@@ -43,9 +43,9 @@ const Item = (props) => {
         <p className="itemrating">{props.rating}</p>
         <img id="star" src="/assets/Logos/star.png" alt="this is a star icon" />
       </div>
-      <div className="iteminfo2">
-        <div className="allstars">{stars}</div>
-      </div>
+      <div>{props.address}</div>
+      <div className="alldollars">{dollars}</div>
+      <div className="resultnumber">{props.number}</div>
     </div>
   );
 };
