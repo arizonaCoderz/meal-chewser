@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import "./IntroPB.css";
 
@@ -8,6 +8,7 @@ const IntroPB = (props) => {
   const [price1, setPrice1] = useState(false);
   const [price2, setPrice2] = useState(false);
   const [price3, setPrice3] = useState(false);
+  const [reload, setReload] = useState(false);
 
   //Button Status Logic----------------------------------------------------------------------------------------------------------------------------
   //Execute when Price 1 is clicked
@@ -23,21 +24,7 @@ const IntroPB = (props) => {
       setPrice1(false);
     }
 
-    if (!price1 && !price2 && !price3) { //All off
-      props.bstatus([0,4]);
-    } else if (price1 && !price2 && !price3) { //Only 1 is on
-      props.bstatus([1,1]);
-    } else if (!price1 && price2 && !price3) { //Only 2 is on
-      props.bstatus([2,2]);
-    } else if (!price1 && !price2 && price3) { //Only 3 is on
-      props.bstatus([3,4]);
-    } else if (!price1 && !price2 && !price3) { //1 and 2 are on
-      props.bstatus([1,2]);
-    } else if (!price1 && !price2 && !price3) { //2 and 3 are on
-      props.bstatus([2,4]);
-    } else { //All on
-      props.bstatus([0,4]);
-    }
+    setReload(true);
   };
 
   //Execute when Price 2 is clicked
@@ -50,21 +37,7 @@ const IntroPB = (props) => {
       }
     }
 
-    if (!price1 && !price2 && !price3) { //All off
-      props.bstatus([0,4]);
-    } else if (price1 && !price2 && !price3) { //Only 1 is on
-      props.bstatus([1,1]);
-    } else if (!price1 && price2 && !price3) { //Only 2 is on
-      props.bstatus([2,2]);
-    } else if (!price1 && !price2 && price3) { //Only 3 is on
-      props.bstatus([3,4]);
-    } else if (!price1 && !price2 && !price3) { //1 and 2 are on
-      props.bstatus([1,2]);
-    } else if (!price1 && !price2 && !price3) { //2 and 3 are on
-      props.bstatus([2,4]);
-    } else { //All on
-      props.bstatus([0,4]);
-    }
+    setReload(true);
   };
 
   //Execute when Price 3 is clicked
@@ -80,6 +53,11 @@ const IntroPB = (props) => {
       setPrice3(false);
     }
 
+    setReload(true);
+  };
+
+  //Send data to parent component---------------------------------------------------------------------------------------------------------------
+  useEffect(() => {
     if (!price1 && !price2 && !price3) { //All off
       props.bstatus([0,4]);
     } else if (price1 && !price2 && !price3) { //Only 1 is on
@@ -88,17 +66,18 @@ const IntroPB = (props) => {
       props.bstatus([2,2]);
     } else if (!price1 && !price2 && price3) { //Only 3 is on
       props.bstatus([3,4]);
-    } else if (!price1 && !price2 && !price3) { //1 and 2 are on
+    } else if (price1 && price2 && !price3) { //1 and 2 are on
       props.bstatus([1,2]);
-    } else if (!price1 && !price2 && !price3) { //2 and 3 are on
+    } else if (!price1 && price2 && price3) { //2 and 3 are on
       props.bstatus([2,4]);
     } else { //All on
       props.bstatus([0,4]);
     }
-  };
+    setReload(false);
+  }, [reload]);
 
   return (
-    <div className="pricebuttons">
+    <div className="intropricebuttons">
       <button id={!price1 ? "intropbutton1" : "intropbutton1on"} onClick={onPrice1Clicked}>$</button>
       <button id={!price2 ? "intropbutton2" : "intropbutton2on"} onClick={onPrice2Clicked}>$$</button>
       <button id={!price3 ? "intropbutton3" : "intropbutton3on"} onClick={onPrice3Clicked}>$$$</button>

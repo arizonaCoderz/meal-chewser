@@ -1,4 +1,4 @@
-.pricebuttons {
+.intropricebuttons {
   width: 182px;
   margin: 0 auto;
   height: 40px;
@@ -11,6 +11,7 @@
 #intropbutton1,#intropbutton2,#intropbutton3 {
   width: 60px;
   height: 100%;
+  background-color: white;
   border-style: solid;
   border-color: rgb(150, 150, 150);
   border-width: 1px;
@@ -27,6 +28,7 @@
 #intropbutton1on,#intropbutton2on,#intropbutton3on {
   width: 60px;
   height: 100%;
+  background-color: white;
   color: #8CB0DD;
   border-style: solid;
   border-color: #8CB0DD;
