@@ -7,8 +7,9 @@
 }
 
 #headertitle {
-  width: 400px;
+  width: 300px;
   z-index: 10;
+  margin-left: 30px;
   display: flex;
 }
 
@@ -26,43 +27,18 @@
   margin: 10px;
 }
 
-#headermenu {
-  margin-left: auto;
-  white-space: nowrap;
-}
-
-.headerbutton {
-  font-size: 25px;
-  font-family: "Patrick Hand", cursive;
-  letter-spacing: 0.1em;
-  color: white;
-  background-color: #5c7cbe;
-  padding-top: 5px;
-  padding-bottom: 0px;
-  margin: 15px 50px 15px 0px;
-  border-style: none;
-  position: relative;
-  display: inline-block;
+.headerplatebutton {
+  width: 40px;
+  height: 40px;
+  margin: 15px 30px 0 auto;
+  background-color: transparent;
+  border: solid 3px white;
+  border-radius: 5px;
+  padding: 0;
   z-index: 10;
 }
 
-.headerbutton:hover {
-  color: white;
-}
-
-.headerbutton::before {
-  content: "";
-  background-color: white;
-
-  /* background-image: linear-gradient(to right, white, #C5C3E2); */
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  transition: width 0.25s ease-out;
-}
-
-.headerbutton:hover::before {
-  width: 100%;
+.headerplatebutton:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 15px 1px #8CB0DD;
 }
