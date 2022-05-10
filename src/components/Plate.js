@@ -106,17 +106,18 @@ const Plate = (props) => {
   if (custom === false) {
     toggleCustomButton.push(
       <img
-        src="/assets/Logos/forkandknife.png"
-        alt="this is fork and knife icon"
+        className="custombuttons"
+        src="/assets/Logos/nextbutton.png"
+        alt="this is next button"
         key="1"
       />
     );
   } else {
     toggleCustomButton.push(
       <img
-        className="invertedfk"
-        src="/assets/Logos/iforkandknife.png"
-        alt="this is inverted fork and knife icon"
+        className="custombuttons"
+        src="/assets/Logos/previousbutton.png"
+        alt="this is a previous button"
         key="2"
       />
     );
@@ -127,7 +128,7 @@ const Plate = (props) => {
     setReload(false);
   }
 
-  //Show and hide overlay
+  //Show and hide overlay--------------------------------------------------------------------------------------------------------------------------
   const onClickedBackdrop = (event) => {
     setShowOverlay(false);
   };
@@ -171,9 +172,6 @@ const Plate = (props) => {
 
   return (
     <div className={props.showPlate ? "plate" : "disappear"}>
-      <button id={!custom ? "platebutton" : "platebutton2"} onClick={toggleCustom}>
-        {toggleCustomButton}
-      </button>
       <button className="platefilterbutton" onClick={goToFilter}>
         FILTER
       </button>
@@ -202,6 +200,7 @@ const Plate = (props) => {
           renderOverlay={renderOverlay}
         ></Overlay>
       </div>
+      <button className={!custom ? "platenextbutton" : "platepreviousbutton"} onClick={toggleCustom}>{toggleCustomButton}</button>
     </div>
   );
 };
