@@ -11,17 +11,17 @@ const PriceButton = (props) => {
 
   //Copy data from intro filter
   useEffect(() => {
-    if (props.value.toString() == "0,4") {
+    if (props.value.toString() === "0,4") {
       setPrice1(true);
       setPrice2(true);
       setPrice3(true);
-    } else if (props.value.toString() == "1,1") {
+    } else if (props.value.toString() === "1,1") {
       setPrice1(true);
-    } else if (props.value.toString() == "2,2") {
+    } else if (props.value.toString() === "2,2") {
       setPrice2(true);
-    } else if (props.value.toString() == "3,4") {
+    } else if (props.value.toString() === "3,4") {
       setPrice3(true);
-    } else if (props.value.toString() == "1,2") {
+    } else if (props.value.toString() === "1,2") {
       setPrice1(true);
       setPrice2(true);
     } else {
