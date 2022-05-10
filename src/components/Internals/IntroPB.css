@@ -1,45 +1,44 @@
 .pricebuttons {
-  width: 100%;
-  height: 50px;
-}
-
-.pricebutton {
-  display: flex;
-  margin: auto;
-  border-style: none;
+  width: 182px;
+  margin: 0 auto;
+  height: 40px;
   background-color: transparent;
+  border: none;
+  border-radius: 20px;
+
 }
 
-.ipbutton {
-  filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(49deg)
-    brightness(103%) contrast(101%);
-  border-style: none;
-  background-color: transparent;
-  margin: 0 5px 0 5px;
+#intropbutton1,#intropbutton2,#intropbutton3 {
+  width: 60px;
+  height: 100%;
+  border-style: solid;
+  border-color: rgb(150, 150, 150);
+  border-width: 1px;
 }
 
-.whitebutton {
-  filter: invert(13%) sepia(88%) saturate(6910%) hue-rotate(149deg)
-    brightness(92%) contrast(106%);
-  border-style: none;
-  background-color: transparent;
-  margin: 0 5px 0 5px;
+#intropbutton1 {
+  border-radius: 20px 0 0 20px;
 }
 
-.iallbutton {
-  filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(49deg)
-    brightness(103%) contrast(101%);
-  position: relative;
-  margin: 0 10px;
-  transform: translateY(50%);
-  font-weight: bolder;
+#intropbutton3 {
+  border-radius: 0 20px 20px 0;
 }
 
-.ipressedallbutton {
-  filter: invert(13%) sepia(88%) saturate(6910%) hue-rotate(149deg)
-    brightness(92%) contrast(106%);
-  position: relative;
-  margin: 0 10px;
-  transform: translateY(50%);
-  font-weight: bolder;
+#intropbutton1on,#intropbutton2on,#intropbutton3on {
+  width: 60px;
+  height: 100%;
+  color: #8CB0DD;
+  border-style: solid;
+  border-color: #8CB0DD;
+  border-width: 1px;
+}
+
+#intropbutton1on {
+  border-radius: 20px 0 0 20px;
+  border-color: #8CB0DD;
+}
+
+#intropbutton3on {
+  border-radius: 0 20px 20px 0;
+  border-color: #8CB0DD;
 }

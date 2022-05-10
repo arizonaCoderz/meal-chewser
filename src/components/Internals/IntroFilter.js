@@ -38,8 +38,6 @@ const IntroFilter = (props) => {
 
   return (
     <div className={props.showFilter ? "introfilter": "disappear"}>
-
-      <p className="introprice">PRICE</p>
       <IntroPB bstatus={buttonHandler}></IntroPB>
       <div className="introdistance">
         <p style={{ marginRight: "10px" }}>MAX DISTANCE:</p>
