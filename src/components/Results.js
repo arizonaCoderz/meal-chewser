@@ -30,15 +30,15 @@ const Results = (props) => {
   };
 
   //Makes an API to retrieve photo data of the chosen restaurant
-  var photolink =
-    "https://maps.googleapis.com/maps/api/place/photo?maxheight=400&maxwidth=400&photo_reference=";
+  // var photolink =
+  //   "https://maps.googleapis.com/maps/api/place/photo?maxheight=400&maxwidth=400&photo_reference=";
   var placelink = "https://www.google.com/maps/dir/?api=1&origin="; //Creates link to google directions from input location to chosen restaurant
 
   if (props.resultsdata.length !== 0) {
-    photolink =
-      photolink +
-      props.resultsdata[props.chosennum].photos[0].photo_reference +
-      "&sensor=false&key=" + process.env.REACT_APP_API_KEY;
+    // photolink =
+    //   photolink +
+    //   props.resultsdata[props.chosennum].photos[0].photo_reference +
+    //   "&sensor=false&key=" + process.env.REACT_APP_API_KEY;
     placelink = placelink + props.origin[2] + "&destination=";
     placelink =
       placelink +
@@ -73,9 +73,9 @@ const Results = (props) => {
     return (
       <div className={props.showResults ? "results" : "disappear"}>
         <p className="letseat">LETS EAT!</p>
-        <div className="placephotodiv">
+        {/* <div className="placephotodiv">
           <img className="placephoto" src={photolink} alt="this is a place" />
-        </div>
+        </div> */}
         <p className="nameinfo">{props.resultsdata[props.chosennum].name}</p>
         <p className="addressinfo">
           {props.resultsdata[props.chosennum].vicinity}
