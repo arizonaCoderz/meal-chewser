@@ -4,8 +4,7 @@
   height: 40px;
   background-color: transparent;
   border: none;
-  border-radius: 20px;
-
+  border-radius: 7px;
 }
 
 #pbutton1,#pbutton2,#pbutton3 {
@@ -18,11 +17,11 @@
 }
 
 #pbutton1 {
-  border-radius: 20px 0 0 20px;
+  border-radius: 7px 0 0 7px;
 }
 
 #pbutton3 {
-  border-radius: 0 20px 20px 0;
+  border-radius: 0 7px 7px 0;
 }
 
 #pbutton1on,#pbutton2on,#pbutton3on {
@@ -36,12 +35,12 @@
 }
 
 #pbutton1on {
-  border-radius: 20px 0 0 20px;
+  border-radius: 7px 0 0 7px;
   border-color: #8CB0DD;
 }
 
 #pbutton3on {
-  border-radius: 0 20px 20px 0;
+  border-radius: 0 7px 7px 0;
   border-color: #8CB0DD;
 }
 

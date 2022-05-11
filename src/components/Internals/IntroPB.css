@@ -4,30 +4,31 @@
   height: 40px;
   background-color: transparent;
   border: none;
-  border-radius: 20px;
+  border-radius: 7px;
 }
 
 #intropbutton1,#intropbutton2,#intropbutton3 {
   width: 60px;
   height: 100%;
-  background-color: white;
+  background-color: transparent;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(138deg) brightness(103%) contrast(101%);
   border-style: solid;
-  border-color: rgb(150, 150, 150);
+  border-color: rgb(0, 0, 0);
   border-width: 1px;
 }
 
 #intropbutton1 {
-  border-radius: 20px 0 0 20px;
+  border-radius: 7px 0 0 7px;
 }
 
 #intropbutton3 {
-  border-radius: 0 20px 20px 0;
+  border-radius: 0 7px 7px 0;
 }
 
 #intropbutton1on,#intropbutton2on,#intropbutton3on {
   width: 60px;
   height: 100%;
-  background-color: white;
+  background-color: transparent;
   color: #8CB0DD;
   border-style: solid;
   border-color: #8CB0DD;
@@ -35,12 +36,12 @@
 }
 
 #intropbutton1on {
-  border-radius: 20px 0 0 20px;
+  border-radius: 7px 0 0 7px;
   border-color: #8CB0DD;
 }
 
 #intropbutton3on {
-  border-radius: 0 20px 20px 0;
+  border-radius: 0 7px 7px 0;
   border-color: #8CB0DD;
 }
 
