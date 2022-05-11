@@ -7,6 +7,7 @@ const Intro = props => {
     //Initialize address and show filter state
     const [address, setAddress] = useState("");
     const [showFilter, setShowFilter] = useState(false);
+    const [isEmptyInput, setEmptyInput] = useState(false);
 
     //Executes when address is input (two way binding)
     const onAddressChange = event => {
@@ -33,20 +34,32 @@ const Intro = props => {
 
     //Executes when Chews My Meal button is clicked
     const chewshandler = event => {
+        if (address === "") {
+            setEmptyInput(true);
+        } else {
+            setEmptyInput(false);
+        }
         props.clickedChews(idata);
     }
 
     //Executes when Build My Plate button is clicked
     const buildhandler = event => {
+        if (address === "") {
+            setEmptyInput(true);
+        } else {
+            setEmptyInput(false);
+        }
         props.clickedBuild(idata);
     }
+
+    console.log(isEmptyInput)
 
     return (
         <div className="intro">
             <div className="verticalcenter">
                 <img id="intrologo" src="/assets/Logos/MealChewser_Logo7.png" alt="this is a big MealChewser Logo" /> 
                 <div id="inputdiv">
-                    <input id="introinput" onChange={onAddressChange} placeholder="LOCATION"></input>
+                    <input id={isEmptyInput ? "introinputempty" : "introinput"} onChange={onAddressChange} placeholder="LOCATION"></input>
                 </div>
                 <div id="filterdiv">
                     <button id="filterdropdown" onClick={filterhandler}>

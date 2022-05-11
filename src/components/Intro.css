@@ -38,6 +38,14 @@
   padding: 0 10px;
 }
 
+#introinputempty {
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  border: solid 2px rgb(245, 52, 52);
+  padding: 0 10px;
+}
+
 #introinput:focus {
   border-style: none;
 }
