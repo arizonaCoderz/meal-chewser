@@ -1,7 +1,7 @@
 .introfilter {
   width: 400px;
   margin: auto;
-  border-style: none;
+  border-style: solid;
   border-color: white;
   border-radius: 10px;
   border-width: 1px;
