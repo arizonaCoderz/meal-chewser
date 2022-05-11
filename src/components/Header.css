@@ -42,3 +42,44 @@
   transform: scale(0.98);
   box-shadow: 3px 2px 15px 1px #8CB0DD;
 }
+
+#headermenu {
+  margin-left: auto;
+  white-space: nowrap;
+  z-index: 11;
+}
+
+.headerbutton {
+  font-size: 25px;
+  font-family: "Patrick Hand", cursive;
+  letter-spacing: 0.1em;
+  color: white;
+  background-color: #5c7cbe;
+  padding-top: 5px;
+  padding-bottom: 0px;
+  margin: 15px 50px 15px 0px;
+  border-style: none;
+  position: relative;
+  display: inline-block;
+}
+
+.headerbutton:hover {
+  color: white;
+}
+
+.headerbutton::before {
+  content: "";
+  background-color: white;
+
+  /* background-image: linear-gradient(to right, white, #C5C3E2); */
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  transition: width 0.25s ease-out;
+}
+
+.headerbutton:hover::before {
+  width: 100%;
+}

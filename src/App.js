@@ -69,7 +69,7 @@ function App() {
   } else {
     return (
       <div className="App">
-        <Header clickedHome={clickedHome} clickedPlate={clickedPlate}></Header>
+        <Header clickedHome={clickedHome} clickedPlate={clickedPlate} clickedLogo={clickedLogo}></Header>
         <Content showHome={showHome} showPlate={showPlate} inputdata={inputdata} clickedLogo={clickedLogo}></Content>
         <About showAbout={showAbout}></About>
         <Footer clickedHome={clickedHome} clickedAbout={clickedAbout} clickedLogo={clickedLogo}></Footer>

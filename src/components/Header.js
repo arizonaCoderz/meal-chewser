@@ -3,7 +3,7 @@ import React from "react";
 import "./Header.css";
 
 const Header = (props) => {
-  //Shows home when logo is clicked
+  //Shows home when back is clicked
   const clickedHome = (event) => {
     props.clickedHome();
   };
@@ -13,10 +13,15 @@ const Header = (props) => {
     props.clickedPlate();
   };
 
+  //Goes back to intro page when logo is clicked
+  const clickedLogo = event => {
+    props.clickedLogo();
+  }
+
   return (
     <div className="header">
       <div id="headertitle">
-        <button className="headerlogobutton" onClick={clickedHome}>
+        <button className="headerlogobutton" onClick={clickedLogo}>
           <img
             id="headerlogo"
             src="/assets/Logos/MealChewser_Logo6.png"
@@ -24,12 +29,16 @@ const Header = (props) => {
           />
         </button>
       </div>
-      <button className="headerplatebutton" onClick={clickedPlate}>
+      {/* <button className="headerplatebutton" onClick={clickedPlate}>
         <img
           src="/assets/Logos/iforkandknife.png"
           alt="this is inverted fork and knife icon"
         />
-      </button>
+      </button> */}
+      <div id="headermenu">
+        <button className='headerbutton' onClick={clickedHome}> HOME </button>
+        <button className='headerbutton' onClick={clickedPlate}> PLATE </button>
+      </div>
     </div>
   );
 };
