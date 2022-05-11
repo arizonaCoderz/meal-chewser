@@ -28,7 +28,7 @@ const Content = (props) => {
 
   //Converts Address to Latitude and Longitude-----------------------------------------------------------------------------
   const locURL =
-    "http://localhost:5000/?extension=findplacefromtext/json&input=" +
+    "http://dhlproxyserver.herokuapp.com/?extension=findplacefromtext/json&input=" +
     inputData[0] +
     "&inputtype=textquery&fields=formatted_address,geometry"; //Uses a proxy server which then calls the API
 
@@ -47,7 +47,7 @@ const Content = (props) => {
   var baseURL;
   if (wantSearch) {
     baseURL =
-      "http://localhost:5000/?extension=nearbysearch/json&location=" +
+      "http://dhlproxyserver.herokuapp.com/?extension=nearbysearch/json&location=" +
       loc[0].toString() +
       "," +
       loc[1].toString() +
