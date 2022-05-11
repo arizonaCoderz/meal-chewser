@@ -52,8 +52,12 @@
   text-align: center;
 }
 
-.githublink {
+.githublinkdiv {
   width: 313px;
   color: white;
   margin: 20px auto 20px auto;
+}
+
+.githublink:visited {
+  color: white;
 }

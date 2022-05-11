@@ -42,8 +42,8 @@ const About = (props) => {
           For more information about us, contact as at our email! In addition,
           check out this GitHub link for the code for this website.
         </p>
-        <div className="githublink">
-          <a href="https://github.com/arizonaCoderz/meal-chewser">
+        <div className="githublinkdiv">
+          <a href="https://github.com/arizonaCoderz/meal-chewser" className="githublink" target="_blank">
             github.com/arizonaCoderz/meal-chewser
           </a>
         </div>
