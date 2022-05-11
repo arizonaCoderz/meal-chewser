@@ -9,16 +9,15 @@
 }
 
 .overlay {
-  height: 300px;
+  height: fit-content;
   width: 500px;
-  margin: 20vh auto;
+  margin: 10vh auto;
   z-index: 11;
   background: #ffffff;
   border-radius: 25px;
   padding: 30px;
-  border-color: #5c7cbe;
-  border-style: solid;
   color: #5c7cbe;
+  text-align: center;
 }
 
 .overlaylocation {
@@ -27,36 +26,14 @@
   width: fit-content;
 }
 
-.overlaybuttons {
-  width: 100%;
-  margin: 40px auto;
-  display: flex;
-}
-
-.overlaybutton {
-  width: 150px;
-  padding-top: 5px;
-  margin: auto;
-  box-shadow: 2px 2px 4px #4d4c4c;
-  border-radius: 10px;
-  border-style: none;
-  background-color: #5c7cbe;
-  color: white;
-}
-
-.overlaybutton:active {
-  transform: scale(0.98);
-  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-}
-
 .overlayname {
-  font-size: 35px;
+  font-size: 27px;
   text-align: center;
-  margin-bottom: 10px;
 }
 
 .overlayaddress {
   margin-right: auto;
+  margin-bottom: 20px;
 }
 
 .plateoverlay {
@@ -65,13 +42,6 @@
   display: flex;
   position: absolute;
   top: 0;
-}
-
-.overlayinfo {
-  display: flex;
-  font-size: 25px;
-  width: 200px;
-  margin: 0 auto;
 }
 
 .overlaystar {
@@ -83,34 +53,21 @@
 }
 
 .overlayrating {
-  margin: 0 30px 30px 0px;
+  margin: 0 auto 20px auto;
   display: flex;
+  font-size: 25px;
+  width: 65px;
 }
 
-.overlayprice {
-  display: flex;
-  position: relative;
-  top: 3px;
+.overlayletseat {
+  font-size: 50px;
+  font-family: "Patrick Hand", cursive;
+  letter-spacing: 0.3rem;
+  margin: 0 auto 30px auto;
 }
 
-.overlaylink {
-  width: 150px;
-  padding-top: 5px;
-  margin: auto;
-  box-shadow: 2px 2px 4px #4d4c4c;
-  border-radius: 10px;
-  border-style: none;
-  background-color: #5c7cbe;
-  color: white;
-  text-decoration: none;
-  text-align: center;
-}
-
-.overlaylink:active {
-  transform: scale(0.98);
-  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-}
-
-.overlaylink:visited {
-  text-decoration: none;
+.overlaybuttons {
+  width: 100%;
+  margin: 0 auto;
+  display: inline-block;
 }

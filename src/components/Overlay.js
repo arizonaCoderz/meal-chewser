@@ -7,7 +7,7 @@ const Overlay = (props) => {
   const clickedBackdrop = (event) => {
     props.onClickedBackdrop();
   };
-  
+
   //Rerandomizes restaurant choice in parent component
   const clickedChooseAgain = (event) => {
     props.clickedRandomSelect();
@@ -42,28 +42,22 @@ const Overlay = (props) => {
       <div className={props.showOverlay ? "plateoverlay" : "disappear"}>
         <div className="backdrop" onClick={clickedBackdrop}></div>
         <div className="overlay">
+          <p className="overlayletseat">LETS EAT!</p>
           <p className="overlayname">{props.overlaydata[0]}</p>
-          <div className="overlayinfo">
-            <div className="overlayrating">
-              {props.overlaydata[3]}
-              <img
-                className="overlaystar"
-                src="/assets/Logos/star.png"
-                alt="this is a star icon"
-              />
-            </div>
-            <div className="overlayprice">{overlayprice}</div>
+          <div className="overlayrating">
+            {props.overlaydata[3]}
+            <img
+              className="overlaystar"
+              src="/assets/Logos/star.png"
+              alt="this is a star icon"
+            />
           </div>
           <div className="overlaylocation">
             <p className="overlayaddress">{props.overlaydata[2]}</p>
           </div>
           <div className="overlaybuttons">
-            <a href={placelink} className="overlaylink" target="_blank" rel="noreferrer">
-              GO
-            </a>
-            <button className="overlaybutton" onClick={clickedChooseAgain}>
-              Choose Again
-            </button>
+            <a className="golink" href={placelink} target="_blank" rel="noreferrer">GO</a>
+            <button className="chooseagain" onClick={clickedChooseAgain}>CHOOSE AGAIN</button>
           </div>
         </div>
       </div>
