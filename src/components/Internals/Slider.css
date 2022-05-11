@@ -9,6 +9,7 @@
   -webkit-transition: 0.2s;
   transition: opacity 0.2s;
   margin-bottom: 30px;
+  margin-top: 15px;
 }
 
 .slider::-webkit-slider-thumb {
