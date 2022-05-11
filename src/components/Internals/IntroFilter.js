@@ -38,13 +38,13 @@ const IntroFilter = (props) => {
 
   return (
     <div className={props.showFilter ? "introfilter": "disappear"}>
-      <IntroPB bstatus={buttonHandler}></IntroPB>
       <div className="introdistance">
         <p style={{ marginRight: "10px" }}>MAX DISTANCE:</p>
         <p>{sliderV}</p>
         <p style={{ marginLeft: "5px" }}>MILES</p>
       </div>
       <Slider bcolor="white" onSliderChangeC={onSliderChangeP} value={sliderV}/>
+      <IntroPB bstatus={buttonHandler}></IntroPB>
       <div className="introkeyworddiv">
           <p>KEYWORD</p>
           <input className="introkeywordinput" onChange={onKeywordChange} placeholder="dinner, pizza, etc"></input>
