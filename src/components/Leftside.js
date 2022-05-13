@@ -3,38 +3,38 @@ import React, { useState } from "react";
 import "./Leftside.css";
 import Tab from "./Internals/Tab";
 import Filter from "./Filter.js";
-import Results from "./Results.js";
+import Chosen from "./Chosen.js";
 
 const Leftside = (props) => {
-  //Initialize Filter/Result States and tab colors
+  //Initialize Filter/Chosen States and tab colors
   const [showFilter, setShowFilter] = useState(false);
-  const [showResults, setShowResults] =useState(true);
+  const [showChosen, setShowChosen] =useState(true);
   const [filterColor, setFilterColor] = useState("#C0DCF3");
-  const [resultsColor, setResultsColor] = useState("#ffffff");
+  const [chosenColor, setChosenColor] = useState("#ffffff");
 
   //Executes when Fitler tab is clicked
   const clickedFilterTab = (event) => {
     setShowFilter(true);
-    setShowResults(false);
+    setShowChosen(false);
     setFilterColor("#ffffff");
-    setResultsColor("#C0DCF3");
+    setChosenColor("#C0DCF3");
   };
 
-  //Executes when results tab is clicked
-  const clickedResultsTab = (event) => {
+  //Executes when chosen tab is clicked
+  const clickedChosenTab = (event) => {
     setShowFilter(false);
-    setShowResults(true);
+    setShowChosen(true);
     setFilterColor("#C0DCF3");
-    setResultsColor("#ffffff");
+    setChosenColor("#ffffff");
   };
 
   //Executes when Chews My Meal button is clicked in filter
   const onChews = chewsdata => {
-    clickedResultsTab();
+    clickedChosenTab();
     props.inputdataHandler(chewsdata);
   }
 
-  //Executes when Choose Again button is clicked in results
+  //Executes when Choose Again button is clicked in chosen
   const clickedChooseAgain = event => {
     props.changeChosen();
   }
@@ -48,13 +48,13 @@ const Leftside = (props) => {
             onClick={clickedFilterTab}
           />
           <Tab
-            title="RESULTS"
-            coloring={resultsColor}
-            onClick={clickedResultsTab}
+            title="CHOSEN"
+            coloring={chosenColor}
+            onClick={clickedChosenTab}
           />
         </div>
         <Filter chews={onChews} showFilter={showFilter} inputdata={props.inputdata}></Filter> 
-        <Results showResults={showResults} resultsdata={props.resultsdata} origin={props.origin} clickedChooseAgain={clickedChooseAgain} chosennum={props.chosennum}></Results>
+        <Chosen showChosen={showChosen} chosendata={props.resultsdata} origin={props.origin} clickedChooseAgain={clickedChooseAgain} chosennum={props.chosennum}></Chosen>
       </div>
     );
   }

@@ -1,4 +1,4 @@
-.results {
+.chosen {
   margin: auto;
   width: 100%;
   padding: 20px 10%;
@@ -32,7 +32,7 @@
   margin-top: 20px;
 }
 
-.resultbuttons {
+.chosenbuttons {
   width: 100%;
   margin: 30px auto;
   display: inline-block;
@@ -56,7 +56,7 @@
   box-shadow: 3px 2px 15px 1px #8b8b8b;
 }
 
-.noresults {
+.nochosen {
   margin: auto;
   width: 80%;
   padding-top: 20px;
@@ -65,7 +65,7 @@
   text-align: center;
 }
 
-.noresultstext {
+.nochosentext {
   font-size: 30px;
   margin: 30px auto;
   font-family: "Patrick Hand", cursive;

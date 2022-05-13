@@ -3,9 +3,9 @@ import React from "react";
 import "./Header.css";
 
 const Header = (props) => {
-  //Shows home when back is clicked
-  const clickedHome = (event) => {
-    props.clickedHome();
+  //Shows Results when back is clicked
+  const clickedResults = (event) => {
+    props.clickedResults();
   };
 
   //Shows plate when plate button is clicked
@@ -14,14 +14,14 @@ const Header = (props) => {
   };
 
   //Goes back to intro page when logo is clicked
-  const clickedLogo = event => {
-    props.clickedLogo();
+  const clickedHome = event => {
+    props.clickedHome();
   }
 
   return (
     <div className="header">
       <div id="headertitle">
-        <button className="headerlogobutton" onClick={clickedLogo}>
+        <button className="headerlogobutton" onClick={clickedHome}>
           <img
             id="headerlogo"
             src="/assets/Logos/MealChewser_Logo6.png"
@@ -36,7 +36,7 @@ const Header = (props) => {
         />
       </button> */}
       <div id="headermenu">
-        <button className='headerbutton' onClick={clickedHome}> HOME </button>
+        <button className='headerbutton' onClick={clickedResults}> RESULTS </button>
         <button className='headerbutton' onClick={clickedPlate}> PLATE </button>
       </div>
     </div>

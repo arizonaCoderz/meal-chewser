@@ -1,4 +1,4 @@
-.introfilter {
+.homefilter {
   width: 400px;
   margin: auto;
   border-style: solid;
@@ -9,20 +9,20 @@
   margin-bottom: 30px;
 }
 
-.introdistance {
+.homedistance {
   width: 100%;
   display: flex;
   margin: 0;
   color: white;
 }
 
-.introkeyworddiv {
+.homekeyworddiv {
   color: white;
   width: 100%;
   text-align: left;
 }
 
-.introkeywordinput {
+.homekeywordinput {
   width: 100%;
   height: 30px;
   margin-bottom: 10px;

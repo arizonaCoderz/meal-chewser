@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-import "./IntroFilter.css";
-import IntroPB from "./IntroPB";
+import "./HomeFilter.css";
+import HomePB from "./HomePB";
 import Slider from "./Slider";
 
-const IntroFilter = (props) => {
-  //Initialize Intro filter variables
+const HomeFilter = (props) => {
+  //Initialize Home filter variables
   const [sliderV, setSliderV] = useState(15); //Slider value aka Distance
   const [price, setPrice] = useState([0,4]); //price selection toggle
   const [keyword, setKeyword] = useState(""); //Keyword
@@ -25,7 +25,7 @@ const IntroFilter = (props) => {
     setKeyword(event.target.value);
   }
 
-  //Put all input variables in an array and send to parent component (Intro)
+  //Put all input variables in an array and send to parent component (Home)
   var ichewsdata = [price, sliderV, keyword];
   const onChewsen = event => {
     ichewsdata[0] = price;
@@ -37,21 +37,21 @@ const IntroFilter = (props) => {
   onChewsen();
 
   return (
-    <div className={props.showFilter ? "introfilter": "disappear"}>
-      <div className="introdistance">
+    <div className={props.showFilter ? "homefilter": "disappear"}>
+      <div className="homedistance">
         <p style={{ marginRight: "10px" }}>MAX DISTANCE:</p>
         <p>{sliderV}</p>
         <p style={{ marginLeft: "5px" }}>MILES</p>
       </div>
       <Slider bcolor="white" onSliderChangeC={onSliderChangeP} value={sliderV}/>
-      <IntroPB bstatus={buttonHandler}></IntroPB>
-      <div className="introkeyworddiv">
+      <HomePB bstatus={buttonHandler}></HomePB>
+      <div className="homekeyworddiv">
           <p>KEYWORD</p>
-          <input className="introkeywordinput" onChange={onKeywordChange} placeholder="dinner, pizza, etc"></input>
+          <input className="homekeywordinput" onChange={onKeywordChange} placeholder="dinner, pizza, etc"></input>
           <p id="note">*If you have multiple keywords, separate by commas</p>
       </div>
     </div>
   );
 };
 
-export default IntroFilter;
+export default HomeFilter;

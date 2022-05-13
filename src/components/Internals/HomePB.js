@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-import "./IntroPB.css";
+import "./HomePB.css";
 
-const IntroPB = (props) => {
+const HomePB = (props) => {
   //VERY SIMILAR TO PRICE BUTTON: maybe merge in future version
   //Intialize clicked state: which price buttons are toggled
   const [price1, setPrice1] = useState(false);
@@ -77,44 +77,44 @@ const IntroPB = (props) => {
   }, [reload]);
 
   return (
-    <div className="intropricebuttons">
-      <button id={!price1 ? "intropbutton1" : "intropbutton1on"} onClick={onPrice1Clicked}>
-        <div className={!price1 ? "ipbuttondollarholder1" : "ipbuttondollarholder1on"}>
+    <div className="homepricebuttons">
+      <button id={!price1 ? "homepbutton1" : "homepbutton1on"} onClick={onPrice1Clicked}>
+        <div className={!price1 ? "hpbuttondollarholder1" : "hpbuttondollarholder1on"}>
           <img
-            className="ipbuttondollar"
+            className="hpbuttondollar"
             src="/assets/Logos/dollar.png"
            alt="this is a dollar icon"
           />
         </div>
       </button>
-      <button id={!price2 ? "intropbutton2" : "intropbutton2on"} onClick={onPrice2Clicked}>
-        <div className={!price2 ? "ipbuttondollarholder2" : "ipbuttondollarholder2on"}>
+      <button id={!price2 ? "homepbutton2" : "homepbutton2on"} onClick={onPrice2Clicked}>
+        <div className={!price2 ? "hpbuttondollarholder2" : "hpbuttondollarholder2on"}>
           <img
-            className="ipbuttondollar"
+            className="hpbuttondollar"
             src="/assets/Logos/dollar.png"
            alt="this is a dollar icon"
           />
           <img
-            className="ipbuttondollar"
+            className="hpbuttondollar"
             src="/assets/Logos/dollar.png"
             alt="this is a dollar icon"
           />
         </div>
       </button>
-      <button id={!price3 ? "intropbutton3" : "intropbutton3on"} onClick={onPrice3Clicked}>
-        <div className={!price3 ? "ipbuttondollarholder3" : "ipbuttondollarholder3on"}>
+      <button id={!price3 ? "homepbutton3" : "homepbutton3on"} onClick={onPrice3Clicked}>
+        <div className={!price3 ? "hpbuttondollarholder3" : "hpbuttondollarholder3on"}>
           <img
-            className="ipbuttondollar"
+            className="hpbuttondollar"
             src="/assets/Logos/dollar.png"
            alt="this is a dollar icon"
           />
           <img
-            className="ipbuttondollar"
+            className="hpbuttondollar"
             src="/assets/Logos/dollar.png"
             alt="this is a dollar icon"
           />
           <img
-            className="ipbuttondollar"
+            className="hpbuttondollar"
             src="/assets/Logos/dollar.png"
             alt="this is a dollar icon"
           />
@@ -124,4 +124,4 @@ const IntroPB = (props) => {
   );
 };
 
-export default IntroPB;
+export default HomePB;

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-import "./Intro.css";
-import IntroFilter from "./Internals/IntroFilter";
+import "./Home.css";
+import HomeFilter from "./Internals/HomeFilter";
 
-const Intro = (props) => {
+const Home = (props) => {
   //Initialize address and show filter state
   const [address, setAddress] = useState("");
   const [showFilter, setShowFilter] = useState(false);
@@ -23,7 +23,7 @@ const Intro = (props) => {
     }
   };
 
-  //Initialize intro filter variables
+  //Initialize Home filter variables
   var idata = [address, [0, 0], 0, ""];
   const chewsenhandler = (ichewsdata) => {
     idata[1] = ichewsdata[0];
@@ -59,21 +59,21 @@ const Intro = (props) => {
   }
 
   return (
-    <div className="intro">
+    <div className="home">
       <img
-        id="intrologo"
+        id="homelogo"
         src="/assets/Logos/MealChewser_Logo7.png"
         alt="this is a big MealChewser Logo"
       />
       <div id="inputdiv">
         <input
-          id={isEmptyInput ? "introinputempty" : "introinput"}
+          id={isEmptyInput ? "homeinputempty" : "homeinput"}
           onChange={onAddressChange}
           placeholder="Street, City, and/or Zip"
           onKeyPress={handleEnterPress}
         ></input>
       </div>
-      <div id="filterdiv">
+      <div id="homefilterdiv">
         <button id="filterdropdown" onClick={filterhandler}>
           <p>FILTERS</p>
           <img
@@ -83,19 +83,19 @@ const Intro = (props) => {
           />
         </button>
       </div>
-      <IntroFilter showFilter={showFilter} chews={chewsenhandler}></IntroFilter>
-      <div className="introbuttons">
-        <button id="ichewsbutton" onClick={chewshandler}>
+      <HomeFilter showFilter={showFilter} chews={chewsenhandler}></HomeFilter>
+      <div className="homebuttons">
+        <button id="hchewsbutton" onClick={chewshandler}>
           <img
-            className="ibuttons"
+            className="hbuttons"
             src="/assets/Logos/chewsmymeal.png"
             alt="this is a Meal Chewser button"
           />
         </button>
-        <p id="ortext">OR</p>
-        <button id="ibuildbutton" onClick={buildhandler}>
+        <p id="homeortext">OR</p>
+        <button id="hbuildbutton" onClick={buildhandler}>
           <img
-            className="ibuttons"
+            className="hbuttons"
             src="/assets/Logos/buildmyplate.png"
             alt="this is a Build a Meal button"
           />
@@ -105,4 +105,4 @@ const Intro = (props) => {
   );
 };
 
-export default Intro;
+export default Home;

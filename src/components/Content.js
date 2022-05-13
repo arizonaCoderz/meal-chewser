@@ -8,7 +8,7 @@ import Plate from "./Plate";
 
 const Content = (props) => {
   //Initialize all variables-----------------------------------------------------------------------------------------------
-  const [showContent, setShowContent] = useState(false); //show Home page or not (boolean)
+  const [showContent, setShowContent] = useState(false); //show Content or not (boolean)
   const [inputData, setInputData] = useState([
     props.inputdata[0].trim().replace(/ /g, "%20"),
     props.inputdata[1],
@@ -120,7 +120,7 @@ const Content = (props) => {
   // }
   // console.log(searchdata)
 
-  //Connect Regular Filter to Results
+  //Connect Regular Filter to Chosen
   const inputdataHandler = (chewsdata) => {
     setSearchData([]);
     setInputData([
@@ -152,7 +152,7 @@ const Content = (props) => {
     <div>
       {showContent && (
         <div>
-          <div className={props.showHome ? "home" : "disappear"}>
+          <div className={props.showResults? "results" : "disappear"}>
             <Leftside
               inputdataHandler={inputdataHandler}
               changeChosen={changeChosen}

@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./Results.css";
+import "./Chosen.css";
 
 //Function to calculate distance between 2 lat lng pairs
 function getDistanceFromLatLngInMiles(lat1, lng1, lat2, lng2) {
@@ -23,7 +23,7 @@ function deg2rad(deg) {
   return deg * (Math.PI / 180);
 }
 
-const Results = (props) => {
+const Chosen = (props) => {
   //Executes when choose again button is clicked
   const clickedChooseAgain = (event) => {
     props.clickedChooseAgain();
@@ -34,20 +34,20 @@ const Results = (props) => {
   //   "https://maps.googleapis.com/maps/api/place/photo?maxheight=400&maxwidth=400&photo_reference=";
   var placelink = "https://www.google.com/maps/dir/?api=1&origin="; //Creates link to google directions from input location to chosen restaurant
 
-  if (props.resultsdata.length !== 0) {
+  if (props.chosendata.length !== 0) {
     // photolink =
     //   photolink +
-    //   props.resultsdata[props.chosennum].photos[0].photo_reference +
+    //   props.chosendata[props.chosennum].photos[0].photo_reference +
     //   "&sensor=false&key=" + process.env.REACT_APP_API_KEY;
     placelink = placelink + props.origin[2] + "&destination=";
     placelink =
       placelink +
-      props.resultsdata[props.chosennum].vicinity
+      props.chosendata[props.chosennum].vicinity
         .trim()
         .replace(/ /g, "+")
         .toString() +
       "&destination_place_id=";
-    placelink = placelink + props.resultsdata[props.chosennum].place_id;
+    placelink = placelink + props.chosendata[props.chosennum].place_id;
   }
 
   //Additional Information Retrieval
@@ -55,12 +55,12 @@ const Results = (props) => {
   //   "https://maps.googleapis.com/maps/api/place/findplacefromtext/json" + 
   //   "?fields=name%2Copening_hours%2Cphoto" + 
   //   "&input=" +
-  //   props.resultsdata[props.chosennum].name.trim().replace(/ /g, "%20") +
+  //   props.chosendata[props.chosennum].name.trim().replace(/ /g, "%20") +
   //   "&inputtype=textquery" +
   //   "&locationbias=circle%3A100%40" + 
-  //   props.resultsdata[props.chosennum].geometry.location.lat + 
+  //   props.chosendata[props.chosennum].geometry.location.lat + 
   //   "%2C" + 
-  //   props.resultsdata[props.chosennum].geometry.location.lng + 
+  //   props.chosendata[props.chosennum].geometry.location.lng + 
   //   "&key=" + process.env.REACT_APP_API_KEY;
 
   // useEffect(() => {
@@ -69,29 +69,29 @@ const Results = (props) => {
   //   });
   // }, [addInfoURL]);
 
-  if (props.resultsdata.length !== 0) {
+  if (props.chosendata.length !== 0) {
     return (
-      <div className={props.showResults ? "results" : "disappear"}>
+      <div className={props.showChosen ? "chosen" : "disappear"}>
         <p className="letseat">LETS EAT!</p>
         {/* <div className="placephotodiv">
           <img className="placephoto" src={photolink} alt="this is a place" />
         </div> */}
-        <p className="nameinfo">{props.resultsdata[props.chosennum].name}</p>
+        <p className="nameinfo">{props.chosendata[props.chosennum].name}</p>
         <p className="addressinfo">
-          {props.resultsdata[props.chosennum].vicinity}
+          {props.chosendata[props.chosennum].vicinity}
         </p>
         <p className="distanceinfo">
           {Math.round(
             getDistanceFromLatLngInMiles(
-              props.resultsdata[props.chosennum].geometry.location.lat,
-              props.resultsdata[props.chosennum].geometry.location.lng,
+              props.chosendata[props.chosennum].geometry.location.lat,
+              props.chosendata[props.chosennum].geometry.location.lng,
               props.origin[0],
               props.origin[1]
             ) * 10
           ) / 10}{" "}
           Miles
         </p>
-        <div className="resultbuttons">
+        <div className="chosenbuttons">
           <a
             href={placelink}
             className="golink"
@@ -108,12 +108,12 @@ const Results = (props) => {
     );
   } else {
     return (
-      <div className={props.showResults ? "noresults" : "disappear"}>
-        <p className="noresultstext">NO RESULTS</p>
+      <div className={props.showChosen ? "nochosen" : "disappear"}>
+        <p className="nochosentext">NO RESULTS</p>
         <p>Tweak your filters!</p>
       </div>
     );
   }
 };
 
-export default Results;
+export default Chosen;

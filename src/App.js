@@ -4,15 +4,15 @@ import "./App.css";
 import Header from "./components/Header";
 import Content from "./components/Content";
 import Footer from "./components/Footer";
-import Intro from "./components/Intro";
+import Home from "./components/Home";
 import About from "./components/About";
 
 function App() {
   //Initialization
-  const [showHome, setShowHome] = useState(true); //Initial states of the Home, Plate, and About pages
+  const [showResults, setShowResults] = useState(true); //Initial states of the Results, Plate, and About pages
   const [showPlate, setShowPlate] = useState(false);
   const [showAbout, setShowAbout] = useState(false);
-  const [page, setPage] = useState(0); //2 Possible Pages, Intro Page [0] and the Results Page [1]
+  const [page, setPage] = useState(0); //2 Possible Pages, Home Page [0] and the Results Page [1]
   const [inputdata, setInputData] = useState(["", 0, 0, ""]); //Initialize input data
 
   //Executes when the user clicks Chews My Meal button
@@ -29,51 +29,51 @@ function App() {
       setPage(1);
       setInputData([idata[0], idata[1], idata[2], idata[3]]);
     }
-    setShowHome(false);
+    setShowResults(false);
     setShowPlate(true);
     setShowAbout(false);
   };
 
-  //Shows Home component (also known as content)
-  const clickedHome = event => {
-    setShowHome(true);
+  //Shows Results component (also known as content)
+  const clickedResults = event => {
+    setShowResults(true);
     setShowPlate(false);
     setShowAbout(false);
   }
 
   //Shows Plate component
   const clickedPlate = event => {
-    setShowHome(false);
+    setShowResults(false);
     setShowPlate(true);
     setShowAbout(false);
   }
 
   //Shows About Component
   const clickedAbout = event => {
-    setShowHome(false);
+    setShowResults(false);
     setShowPlate(false);
     setShowAbout(true);
   }
 
-  //Changes back to Intro Page when logo is clicked
-  const clickedLogo = event => {
+  //Changes back to Home Page
+  const clickedHome = event => {
     setPage(0);
   }
 
   if (page === 0) {
     return (
       <div className="App">
-        <Intro clickedChews={clickedChews} clickedBuild={clickedBuild}></Intro>
-        <Footer clickedHome={clickedHome} clickedAbout={clickedAbout} clickedLogo={clickedLogo}></Footer>
+        <Home clickedChews={clickedChews} clickedBuild={clickedBuild}></Home>
+        <Footer clickedResults={clickedResults} clickedAbout={clickedAbout} clickedHome={clickedHome}></Footer>
       </div>
     );
   } else {
     return (
       <div className="App">
-        <Header clickedHome={clickedHome} clickedPlate={clickedPlate} clickedLogo={clickedLogo}></Header>
-        <Content showHome={showHome} showPlate={showPlate} inputdata={inputdata} clickedLogo={clickedLogo}></Content>
+        <Header clickedResults={clickedResults} clickedPlate={clickedPlate} clickedHome={clickedHome}></Header>
+        <Content showResults={showResults} showPlate={showPlate} inputdata={inputdata} clickedHome={clickedHome}></Content>
         <About showAbout={showAbout}></About>
-        <Footer clickedHome={clickedHome} clickedAbout={clickedAbout} clickedLogo={clickedLogo}></Footer>
+        <Footer clickedResults={clickedResults} clickedAbout={clickedAbout} clickedHome={clickedHome}></Footer>
       </div>
     );
   }
