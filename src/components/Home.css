@@ -39,6 +39,10 @@
   padding: 0 10px;
 }
 
+#homeinput:focus, #homeinputempty:focus {
+  outline: none;
+}
+
 #homeinput:focus {
   border-style: none;
 }
