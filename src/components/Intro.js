@@ -51,6 +51,13 @@ const Intro = (props) => {
     props.clickedBuild(idata);
   };
 
+  //Add event listener for enter key press
+  const handleEnterPress = e => {
+    if (e.code.toString() === "Enter") {
+      chewshandler();
+    }
+  }
+
   return (
     <div className="intro">
       <img
@@ -62,7 +69,8 @@ const Intro = (props) => {
         <input
           id={isEmptyInput ? "introinputempty" : "introinput"}
           onChange={onAddressChange}
-          placeholder="LOCATION"
+          placeholder="Street, City, and/or Zip"
+          onKeyPress={handleEnterPress}
         ></input>
       </div>
       <div id="filterdiv">
@@ -77,7 +85,7 @@ const Intro = (props) => {
       </div>
       <IntroFilter showFilter={showFilter} chews={chewsenhandler}></IntroFilter>
       <div className="introbuttons">
-        <button className="nextbutton" onClick={chewshandler}>
+        <button id="ichewsbutton" onClick={chewshandler}>
           <img
             className="ibuttons"
             src="/assets/Logos/chewsmymeal.png"
@@ -85,7 +93,7 @@ const Intro = (props) => {
           />
         </button>
         <p id="ortext">OR</p>
-        <button className="nextbutton" onClick={buildhandler}>
+        <button id="ibuildbutton" onClick={buildhandler}>
           <img
             className="ibuttons"
             src="/assets/Logos/buildmyplate.png"

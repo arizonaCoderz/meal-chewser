@@ -68,7 +68,7 @@
   display: inline-block;
 }
 
-.nextbutton {
+#ichewsbutton, #ibuildbutton {
   margin: auto;
   width: 300px;
   border-radius: 5px;

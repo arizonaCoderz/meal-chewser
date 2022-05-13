@@ -20,7 +20,7 @@ const Footer = props => {
                 <p>|</p>
                 <button className="fbutton"  onClick={clickedAbout}>ABOUT US</button>
             </div>
-            <p className="copyright">Copyright 2022 Meal Chewser v1.0</p>
+            <p className="copyright">Copyright 2022 Meal Chewser v1.1</p>
         </div>
     );
 };

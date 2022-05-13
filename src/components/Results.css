@@ -46,8 +46,9 @@
   background-color: white;
   border: 1px solid #d1d1d1;
   border-radius: 10px;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.3rem;
   font-size: 30px;
+  font-family: "Patrick Hand", cursive;
 }
 
 .chooseagain:active {
@@ -90,10 +91,11 @@
   background-color: #5c7cbe;
   border-style: none;
   border-radius: 10px;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.3rem;
   text-decoration: none;
-  padding: 10px;
+  padding: 7px;
   display: block;
+  font-family: "Patrick Hand", cursive;
 }
 
 .golink:visited {
