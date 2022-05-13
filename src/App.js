@@ -64,6 +64,7 @@ function App() {
     return (
       <div className="App">
         <Intro clickedChews={clickedChews} clickedBuild={clickedBuild}></Intro>
+        <Footer clickedHome={clickedHome} clickedAbout={clickedAbout} clickedLogo={clickedLogo}></Footer>
       </div>
     );
   } else {

@@ -2,9 +2,8 @@
   width: 100%;
   height: 160px;
   background-color: #5c7cbe;
-  position: absolute;
-  top: 100vh;
   min-width: 900px;
+  overflow: auto;
 }
 
 .links {

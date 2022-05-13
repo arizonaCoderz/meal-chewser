@@ -206,7 +206,9 @@ const Plate = (props) => {
           renderOverlay={renderOverlay}
         ></Overlay>
       </div>
-      <button className={!custom ? "platenextbutton" : "platepreviousbutton"} onClick={toggleCustom}>{toggleCustomButton}</button>
+      <div className="platetogglebutton">
+        <button className={!custom ? "platenextbutton" : "platepreviousbutton"} onClick={toggleCustom}>{toggleCustomButton}</button>
+      </div>
     </div>
   );
 };

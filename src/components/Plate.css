@@ -1,10 +1,11 @@
 .plate {
   width: 900px;
-  height: 70vh;
-  border-style: none;
+  height: fit-content;
   display: block;
-  margin: 50px auto 0px auto;
+  margin: 0px auto 0px auto;
+  padding-top: 120px;
   position: relative;
+  min-height: 100vh;
 }
 
 .addplatetitle {
@@ -31,7 +32,7 @@
   width: 100%;
   border-style: none;
   margin: 20px auto;
-  height: 90%;
+  height: 600px;
   overflow: auto;
   overflow-x: hidden;
 }
@@ -54,7 +55,7 @@
   width: 100%;
   margin: 20px auto;
   border-style: none;
-  height: 73%;
+  height: 470px;
   overflow: auto;
   overflow-x: hidden;
 }
@@ -111,7 +112,7 @@
   position: absolute;
   width: 80px;
   height: 40px;
-  top: 20px;
+  top: 140px;
   right: 20px;
   color: #5c7cbe;
   background-color: transparent;
@@ -130,19 +131,20 @@
 }
 
 .platenextbutton {
-  margin-top: 40px;
   width: 100px;
   background-color: transparent;
   border: none;
-  position: absolute;
-  right: 0;
+  margin: 20px 0 20px auto;
 }
 
 .platepreviousbutton {
-  margin-top: 40px;
   width: 100px;
   background-color: transparent;
   border: none;
-  position: absolute;
-  left: 0;
+  margin: 20px auto 20px 0;
+}
+
+.platetogglebutton {
+  width: 100%;
+  display: flex;
 }

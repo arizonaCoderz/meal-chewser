@@ -23,7 +23,7 @@ const Content = (props) => {
   useEffect(() => {
     setTimeout(() => {
       setShowContent(!showContent);
-    }, 2000);
+    }, 0);
   }, []);
 
   //Converts Address to Latitude and Longitude-----------------------------------------------------------------------------
