@@ -10,7 +10,7 @@ import Instructions from "./components/Instructions";
 
 function App() {
   //Initialization
-  const [showResults, setShowResults] = useState(true); //Initial states of the Results, Plate, and About pages
+  const [showResults, setShowResults] = useState(false); //Initial states of the Results, Plate, and About pages
   const [showPlate, setShowPlate] = useState(false);
   const [showAbout, setShowAbout] = useState(false);
   const [page, setPage] = useState(0); //2 Possible Pages, Home Page [0] and the Results Page [1]
@@ -24,6 +24,9 @@ function App() {
       setPage(1);
       setInputData([idata[0], idata[1], idata[2], idata[3]]);
     }
+    setShowResults(true);
+    setShowPlate(false);
+    setShowAbout(false);
   };
 
   //Executes when the user clicks Build My Plate button
@@ -68,7 +71,6 @@ function App() {
   const clickedHome = event => {
     setShowHome(true);
     setShowAbout(false);
-    setShowResults(true);
     setPage(0);
   }
 
