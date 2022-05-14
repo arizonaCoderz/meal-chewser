@@ -44,54 +44,106 @@ const Filter = (props) => {
     }
   };
 
-  return (
-    <div className={props.showFilter ? "filter" : "disappear"}>
-      <p>ADDRESS</p>
-      <input
-        id="input"
-        onChange={onAddressChange}
-        placeholder="Street, City, Zip"
-        value={address}
-      ></input>
-
-      <div id="distance">
-        <p style={{ marginRight: "10px" }}>MAX DISTANCE:</p>
-        <p>{sliderV}</p>
-        <p style={{ marginLeft: "5px" }}>MILES</p>
-      </div>
-      <Slider
-        bcolor="#5C7CBE"
-        onSliderChangeC={onSliderChangeP}
-        value={sliderV}
-      />
-
-      <p>PRICE</p>
-      <div id="prices">
-        <PriceButton bstatus={buttonHandler} value={price}></PriceButton>
-      </div>
-
-      <div id="keyworddiv">
-        <p>KEYWORD</p>
+  //Changes styling and buttons for Results and Plate page filters
+  if ((props.filtertype === "Results")) {
+    return (
+      <div className={props.showFilter ? "filter" : "disappear"}>
+        <p>ADDRESS</p>
         <input
-          id="keywordinput"
-          onChange={onKeywordChange}
-          placeholder="dinner, pizza, etc"
-          value={keyword}
+          id="input"
+          onChange={onAddressChange}
+          placeholder="Street, City, Zip"
+          value={address}
         ></input>
-        <p id="note">*If you have multiple keywords, separate by commas</p>
-      </div>
 
-      <div id="chewsbuttondiv">
-        <button id="chewsbutton" onClick={onChewsen}>
-          <img
-            id="mcbutton"
-            src="/assets/Logos/mcbuttoninv.png"
-            alt="this is the meal chewser button"
-          />
-        </button>
+        <div id="distance">
+          <p style={{ marginRight: "10px" }}>MAX DISTANCE:</p>
+          <p>{sliderV}</p>
+          <p style={{ marginLeft: "5px" }}>MILES</p>
+        </div>
+        <Slider
+          bcolor="#5C7CBE"
+          onSliderChangeC={onSliderChangeP}
+          value={sliderV}
+        />
+
+        <p>PRICE</p>
+        <div id="prices">
+          <PriceButton bstatus={buttonHandler} value={price}></PriceButton>
+        </div>
+
+        <div id="keyworddiv">
+          <p>KEYWORD</p>
+          <input
+            id="keywordinput"
+            onChange={onKeywordChange}
+            placeholder="dinner, pizza, etc"
+            value={keyword}
+          ></input>
+          <p id="note">*If you have multiple keywords, separate by commas</p>
+        </div>
+
+        <div id="chewsbuttondiv">
+          <button id="chewsbutton" onClick={onChewsen}>
+            <img
+              id="mcbutton"
+              src="/assets/Logos/mcbuttoninv.png"
+              alt="this is the meal chewser button"
+            />
+          </button>
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div className={props.showFilter ? "filter" : "disappear"}>
+        <p>ADDRESS</p>
+        <input
+          id="input"
+          onChange={onAddressChange}
+          placeholder="Street, City, Zip"
+          value={address}
+        ></input>
+
+        <div id="distance">
+          <p style={{ marginRight: "10px" }}>MAX DISTANCE:</p>
+          <p>{sliderV}</p>
+          <p style={{ marginLeft: "5px" }}>MILES</p>
+        </div>
+        <Slider
+          bcolor="#5C7CBE"
+          onSliderChangeC={onSliderChangeP}
+          value={sliderV}
+        />
+
+        <p>PRICE</p>
+        <div id="prices">
+          <PriceButton bstatus={buttonHandler} value={price}></PriceButton>
+        </div>
+
+        <div id="keyworddiv">
+          <p>KEYWORD</p>
+          <input
+            id="keywordinput"
+            onChange={onKeywordChange}
+            placeholder="dinner, pizza, etc"
+            value={keyword}
+          ></input>
+          <p id="note">*If you have multiple keywords, separate by commas</p>
+        </div>
+
+        <div id="chewsbuttondiv">
+          <button id="buildplatebutton" onClick={onChewsen}>
+            <img
+              id="mcbutton"
+              src="/assets/Logos/buildmyplate.png"
+              alt="this is the build plate button"
+            />
+          </button>
+        </div>
+      </div>
+    );
+  }
 };
 
 export default Filter;

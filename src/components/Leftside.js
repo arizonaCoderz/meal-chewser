@@ -53,7 +53,7 @@ const Leftside = (props) => {
             onClick={clickedChosenTab}
           />
         </div>
-        <Filter chews={onChews} showFilter={showFilter} inputdata={props.inputdata}></Filter> 
+        <Filter chews={onChews} showFilter={showFilter} inputdata={props.inputdata} filtertype="Results"></Filter> 
         <Chosen showChosen={showChosen} chosendata={props.resultsdata} origin={props.origin} clickedChooseAgain={clickedChooseAgain} chosennum={props.chosennum}></Chosen>
       </div>
     );

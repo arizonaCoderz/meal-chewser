@@ -168,6 +168,8 @@ const Content = (props) => {
             resultsdata={searchdata}
             clickedPlateFilter={clickedPlateFilter}
             origin={inputData[0]}
+            inputdata={props.inputdata}
+            inputdataHandler={inputdataHandler}
           ></Plate>
         </div>
       )}

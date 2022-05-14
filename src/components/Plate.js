@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import "./Plate.css";
 import Item from "./Internals/Item";
 import Overlay from "./Overlay";
+import Filter from "./Filter";
 
 const Plate = (props) => {
   //Initialize all Plate variables---------------------------------------------------------------------------------------------------------
@@ -16,6 +17,7 @@ const Plate = (props) => {
   var customlist = []; //array of Item objects in the plate
   var resultslist = []; //array of all Item objects from search data
   var toggleCustomButton = []; //fork and knife icon toggle
+  const [showFilter, setShowFilter] = useState(false);
 
   //Adds or removes item to custom list---------------------------------------------------------------------------------------------------
   const clickedaddlist = (value) => {
@@ -171,18 +173,24 @@ const Plate = (props) => {
     }
   };
 
-  //Go to Intro filter when Filter Button is clicked---------------------------------------------------------------------------------------------
-  const goToFilter = (event) => {
-    props.clickedPlateFilter();
+  //Toggle Filter when Filter Button is clicked-----------------------------------------------------------------------------------------------------
+  const clickedFilter = (event) => {
+    setShowFilter(!showFilter);
   };
+
+  //Updated search parameters are run
+  const onBuildPlate = chewsdata => {
+    props.inputdataHandler(chewsdata);
+  }
 
   return (
     <div className={props.showPlate ? "plate" : "disappear"}>
-      <button className="platefilterbutton" onClick={goToFilter}>
+      <button className="platefilterbutton" onClick={clickedFilter}>
         FILTER
       </button>
-      <div className={!custom ? "addplatepage" : "disappear"}>
-        <p className="addplatetitle">ADD TO PLATE</p>
+      <div className={!custom ? "createplatepage" : "disappear"}>
+        <p className="createplatetitle">CREATE A PLATE</p>
+        <Filter chews={onBuildPlate} showFilter={showFilter} inputdata={props.inputdata} filtertype="Plate"></Filter> 
         <div className="resultslist">{!custom ? resultslist : <div />}</div>
       </div>
       <div className={custom ? "platepage" : "disappear"}>

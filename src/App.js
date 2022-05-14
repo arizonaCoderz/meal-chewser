@@ -79,6 +79,7 @@ function App() {
     setShowInstructions(false);
   }
 
+
   if (page === 0) {
     return (
       <div className="App">

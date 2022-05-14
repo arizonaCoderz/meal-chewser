@@ -55,9 +55,24 @@
   padding: 0;
 }
 
+#buildplatebutton {
+  width: 300px;
+  margin: auto;
+  margin-bottom: 30px;
+  border-style: none;
+  border-radius: 5px;
+  box-shadow: 3px 2px 15px 1px #999999;
+  padding: 0;
+}
+
 #chewsbutton:active {
   transform: scale(0.98);
   box-shadow: 3px 2px 15px 1px #5c7cbe;
+}
+
+#buildplatebutton:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 15px 1px #979797;
 }
 
 #mcbutton {
