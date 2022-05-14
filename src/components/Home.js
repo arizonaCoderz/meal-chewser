@@ -1,4 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import PlacesAutocomplete, {
+  geocodeByAddress,
+  getLatLng,
+} from "react-places-autocomplete";
 
 import "./Home.css";
 import HomeFilter from "./Internals/HomeFilter";
@@ -8,11 +12,7 @@ const Home = (props) => {
   const [address, setAddress] = useState("");
   const [showFilter, setShowFilter] = useState(false);
   const [isEmptyInput, setEmptyInput] = useState(false);
-
-  //Executes when address is input (two way binding)
-  const onAddressChange = (event) => {
-    setAddress(event.target.value);
-  };
+  // const [coordinates, setCoordinates] = useState([]);
 
   //Controls whether additional filters are shown or not
   const filterhandler = (event) => {
@@ -37,8 +37,9 @@ const Home = (props) => {
       setEmptyInput(true);
     } else {
       setEmptyInput(false);
+      props.clickedChews(idata);
+      // props.getCoordinates(coordinates);
     }
-    props.clickedChews(idata);
   };
 
   //Executes when Build My Plate button is clicked
@@ -47,31 +48,81 @@ const Home = (props) => {
       setEmptyInput(true);
     } else {
       setEmptyInput(false);
+      props.clickedBuild(idata);
+      // props.getCoordinates(coordinates);
     }
-    props.clickedBuild(idata);
   };
 
   //Add event listener for enter key press
-  const handleEnterPress = e => {
+  const handleEnterPress = (e) => {
     if (e.code.toString() === "Enter") {
       chewshandler();
     }
+  };
+
+  //Handle google autocomplete -- BROKEN
+  // const handleSelect = async (value) => {
+  //   setAddress(value);
+  //   if (value !== "") {
+  //     const results = await geocodeByAddress(value);
+  //     const latlng = await getLatLng(results[0]);
+  //     setCoordinates(latlng);
+  //   }
+  // };
+
+  //Handle input ternary
+  var inputstyle;
+  if (isEmptyInput) {
+    inputstyle = "homeinputempty";
+  } else {
+    inputstyle = "homeinput";
   }
 
   return (
-    <div className={props.showHome? "home" : "disappear"}>
+    <div className={props.showHome ? "home" : "disappear"}>
       <img
         id="homelogo"
         src="/assets/Logos/MealChewser_Logo7.png"
         alt="this is a big MealChewser Logo"
       />
       <div id="inputdiv">
-        <input
-          id={isEmptyInput ? "homeinputempty" : "homeinput"}
-          onChange={onAddressChange}
-          placeholder="Street, City, and/or Zip"
-          onKeyPress={handleEnterPress}
-        ></input>
+        <PlacesAutocomplete
+          value={address}
+          onChange={setAddress}
+          onSelect={setAddress}
+        >
+          {({
+            getInputProps,
+            suggestions,
+            getSuggestionItemProps,
+            loading,
+          }) => (
+            <div>
+              <input
+                {...getInputProps({
+                  placeholder: "Enter Address",
+                  id: inputstyle,
+                  onKeyDown: handleEnterPress,
+                })}
+              />
+              <div className="autocomplete">
+                {suggestions.map((suggestion) => {
+                  const style = suggestion.active
+                    ? { backgroundColor: "#15B9FF", cursor: "pointer" }
+                    : { backgroundColor: "#ffffff", cursor: "pointer" };
+                  return (
+                    <div
+                      key={suggestion.description}
+                      {...getSuggestionItemProps(suggestion, { style })}
+                    >
+                      {suggestion.description}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+        </PlacesAutocomplete>
       </div>
       <div id="homefilterdiv">
         <button id="filterdropdown" onClick={filterhandler}>

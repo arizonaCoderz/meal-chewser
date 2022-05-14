@@ -97,3 +97,9 @@
   color: white;
   margin: 10px auto 10px auto;
 }
+
+.autocomplete {
+  position: absolute;
+  z-index: 11;
+  width: 750px;
+}

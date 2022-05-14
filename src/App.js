@@ -17,6 +17,7 @@ function App() {
   const [inputdata, setInputData] = useState(["", 0, 0, ""]); //Initialize input data
   const [showInstructions, setShowInstructions] = useState(false);
   const [showHome, setShowHome] = useState(true);
+  // const [coordinates, setCoordinates] = useState([]);
 
   //Executes when the user clicks Chews My Meal button
   const clickedChews = (idata) => {
@@ -78,6 +79,13 @@ function App() {
   const onClickedBackdrop = event => {
     setShowInstructions(false);
   }
+
+  //Get Coordinates from Home page
+  // const getCoordinates = coordinates => {
+  //   setCoordinates(coordinates);
+  // }
+
+  // console.log(coordinates);
 
 
   if (page === 0) {

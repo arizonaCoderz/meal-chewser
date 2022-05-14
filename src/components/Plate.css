@@ -20,7 +20,7 @@
 
 .platetitle {
   font-size: 50px;
-  width: 135px;
+  width: fit-content;
   height: 50px;
   margin: 0 auto;
   font-family: "Patrick Hand", cursive;

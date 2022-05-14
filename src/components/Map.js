@@ -2,7 +2,6 @@ import React from "react";
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 
 import "./Map.css";
-const libraries = ["places"];
 
 const mapContainerStyle = {
   width: "100%",
@@ -21,14 +20,13 @@ const Map = (props) => {
   var location = { lat: temploc[0], lng: temploc[1] }; //used for Map center as well as marker placement
   
   //Load in the Map-----------------------------------------------------------------------------------------
-  const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: process.env.REACT_APP_API_KEY,
-    libraries,
-  });
+  // const { isLoaded, loadError } = useLoadScript({
+  //   googleMapsApiKey: process.env.REACT_APP_API_KEY
+  // });
 
   //Displays when there is an error or while it is loading
-  if (loadError) return "Error loading maps";
-  if (!isLoaded) return "Loading Maps";
+  // if (loadError) return "Error loading maps";
+  // if (!isLoaded) return "Loading Maps";
 
   return (
     <div className="map">
