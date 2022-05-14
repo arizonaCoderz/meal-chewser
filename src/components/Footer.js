@@ -18,11 +18,20 @@ const Footer = (props) => {
     props.clickedHome();
   };
 
+  //Shows Instructions when INSTRUCTIONS is clicked
+  const clickedInstructions = (event) => {
+    props.clickedInstructions();
+  };
+
   return (
     <div className="footer">
       <div className="links">
         <button className="fbutton" onClick={clickedHome}>
           HOME
+        </button>
+        <p>|</p>
+        <button className="fbutton" onClick={clickedInstructions}>
+          INSTRUCTIONS
         </button>
         <p>|</p>
         <button className="fbutton" onClick={clickedResults}>

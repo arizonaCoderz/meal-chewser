@@ -4,6 +4,7 @@
   background-color: #5c7cbe;
   text-align: center;
   overflow: auto;
+  min-width: 900px;
 }
 
 #homelogo {

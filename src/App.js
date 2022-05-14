@@ -6,6 +6,7 @@ import Content from "./components/Content";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import About from "./components/About";
+import Instructions from "./components/Instructions";
 
 function App() {
   //Initialization
@@ -14,6 +15,7 @@ function App() {
   const [showAbout, setShowAbout] = useState(false);
   const [page, setPage] = useState(0); //2 Possible Pages, Home Page [0] and the Results Page [1]
   const [inputdata, setInputData] = useState(["", 0, 0, ""]); //Initialize input data
+  const [showInstructions, setShowInstructions] = useState(false);
 
   //Executes when the user clicks Chews My Meal button
   const clickedChews = (idata) => {
@@ -55,16 +57,27 @@ function App() {
     setShowAbout(true);
   }
 
+  //Shows Instructions
+  const clickedInstructions = event => {
+    setShowInstructions(true);
+  }
+
   //Changes back to Home Page
   const clickedHome = event => {
     setPage(0);
+  }
+
+  //Make instructions disappear when backdrop is clicked
+  const onClickedBackdrop = event => {
+    setShowInstructions(false);
   }
 
   if (page === 0) {
     return (
       <div className="App">
         <Home clickedChews={clickedChews} clickedBuild={clickedBuild}></Home>
-        <Footer clickedResults={clickedResults} clickedAbout={clickedAbout} clickedHome={clickedHome}></Footer>
+        <Footer clickedResults={clickedResults} clickedAbout={clickedAbout} clickedHome={clickedHome} clickedInstructions={clickedInstructions}></Footer>
+        <Instructions showInstructions={showInstructions} onClickedBackdrop={onClickedBackdrop}></Instructions>
       </div>
     );
   } else {
@@ -73,7 +86,8 @@ function App() {
         <Header clickedResults={clickedResults} clickedPlate={clickedPlate} clickedHome={clickedHome}></Header>
         <Content showResults={showResults} showPlate={showPlate} inputdata={inputdata} clickedHome={clickedHome}></Content>
         <About showAbout={showAbout}></About>
-        <Footer clickedResults={clickedResults} clickedAbout={clickedAbout} clickedHome={clickedHome}></Footer>
+        <Footer clickedResults={clickedResults} clickedAbout={clickedAbout} clickedHome={clickedHome} clickedInstructions={clickedInstructions}></Footer>
+        <Instructions showInstructions={showInstructions} onClickedBackdrop={onClickedBackdrop}></Instructions>
       </div>
     );
   }

@@ -1,0 +1,19 @@
+.instructions {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  top: 0;
+}
+
+.instructioncontent {
+  height: fit-content;
+  width: 1000px;
+  margin: 10vh auto;
+  z-index: 11;
+  background: #ffffff;
+  border-radius: 25px;
+  padding: 30px;
+  color: #5c7cbe;
+  text-align: center;
+}
