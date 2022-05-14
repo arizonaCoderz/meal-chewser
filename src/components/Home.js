@@ -59,7 +59,7 @@ const Home = (props) => {
   }
 
   return (
-    <div className="home">
+    <div className={props.showHome? "home" : "disappear"}>
       <img
         id="homelogo"
         src="/assets/Logos/MealChewser_Logo7.png"

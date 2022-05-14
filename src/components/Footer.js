@@ -18,33 +18,63 @@ const Footer = (props) => {
     props.clickedHome();
   };
 
+  //Shows Plate when PLATE is clicked
+  const clickedPlate = (event) => {
+    props.clickedPlate();
+  };
+
   //Shows Instructions when INSTRUCTIONS is clicked
   const clickedInstructions = (event) => {
     props.clickedInstructions();
   };
 
-  return (
-    <div className="footer">
-      <div className="links">
-        <button className="fbutton" onClick={clickedHome}>
-          HOME
-        </button>
-        <p>|</p>
-        <button className="fbutton" onClick={clickedInstructions}>
-          INSTRUCTIONS
-        </button>
-        <p>|</p>
-        <button className="fbutton" onClick={clickedResults}>
-          RESULTS
-        </button>
-        <p>|</p>
-        <button className="fbutton" onClick={clickedAbout}>
-          ABOUT US
-        </button>
+  if (props.page === 0) {
+    return (
+      <div className="footer">
+        <div className="links">
+          <button className="fbutton" onClick={clickedHome}>
+            HOME
+          </button>
+          <p>|</p>
+          <button className="fbutton" onClick={clickedInstructions}>
+            INSTRUCTIONS
+          </button>
+          <p>|</p>
+          <button className="fbutton" onClick={clickedAbout}>
+            ABOUT US
+          </button>
+        </div>
+        <p className="copyright">Copyright 2022 Meal Chewser v1.1</p>
       </div>
-      <p className="copyright">Copyright 2022 Meal Chewser v1.1</p>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div className="footer">
+        <div className="links">
+          <button className="fbutton" onClick={clickedHome}>
+            HOME
+          </button>
+          <p>|</p>
+          <button className="fbutton" onClick={clickedInstructions}>
+            INSTRUCTIONS
+          </button>
+          <p>|</p>
+          <button className="fbutton" onClick={clickedResults}>
+            RESULTS
+          </button>
+          <p>|</p>
+          <button className="fbutton" onClick={clickedPlate}>
+            PLATE
+          </button>
+          <p>|</p>
+          <button className="fbutton" onClick={clickedAbout}>
+            ABOUT US
+          </button>
+        </div>
+        <p className="copyright">Copyright 2022 Meal Chewser v1.1</p>
+      </div>
+    );
+  }
 };
 
 export default Footer;
