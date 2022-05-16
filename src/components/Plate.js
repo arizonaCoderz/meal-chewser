@@ -115,7 +115,7 @@ const Plate = (props) => {
     toggleCustomButton.push(
       <img
         className="custombuttons"
-        src="/assets/Logos/nextbutton.png"
+        src="/assets/Logos/gotoplate.png"
         alt="this is next button"
         key="1"
       />
@@ -124,7 +124,7 @@ const Plate = (props) => {
     toggleCustomButton.push(
       <img
         className="custombuttons"
-        src="/assets/Logos/previousbutton.png"
+        src="/assets/Logos/backbutton.png"
         alt="this is a previous button"
         key="2"
       />
@@ -215,7 +215,7 @@ const Plate = (props) => {
         ></Overlay>
       </div>
       <div className="platetogglebutton">
-        <button className={!custom ? "platenextbutton" : "platepreviousbutton"} onClick={toggleCustom}>{toggleCustomButton}</button>
+        <button className={!custom ? "gotoplatebutton" : "backbutton"} onClick={toggleCustom}>{toggleCustomButton}</button>
       </div>
     </div>
   );

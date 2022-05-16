@@ -130,14 +130,14 @@
   width: 100%;
 }
 
-.platenextbutton {
-  width: 100px;
+.gotoplatebutton {
+  width: 200px;
   background-color: transparent;
   border: none;
   margin: 20px 0 20px auto;
 }
 
-.platepreviousbutton {
+.backbutton {
   width: 100px;
   background-color: transparent;
   border: none;
