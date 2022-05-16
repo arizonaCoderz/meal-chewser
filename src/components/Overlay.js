@@ -42,6 +42,9 @@ const Overlay = (props) => {
       <div className={props.showOverlay ? "plateoverlay" : "disappear"}>
         <div className="backdrop" onClick={clickedBackdrop}></div>
         <div className="overlay">
+          <button className="xbutton" onClick={clickedBackdrop}>
+            <img src="/assets/Logos/xbutton.png" alt="this is an x button" />
+          </button>
           <p className="overlayletseat">LETS EAT!</p>
           <p className="overlayname">{props.overlaydata[0]}</p>
           <div className="overlayrating">
@@ -56,8 +59,17 @@ const Overlay = (props) => {
             <p className="overlayaddress">{props.overlaydata[2]}</p>
           </div>
           <div className="overlaybuttons">
-            <a className="golink" href={placelink} target="_blank" rel="noreferrer">GO</a>
-            <button className="chooseagain" onClick={clickedChooseAgain}>CHOOSE AGAIN</button>
+            <a
+              className="golink"
+              href={placelink}
+              target="_blank"
+              rel="noreferrer"
+            >
+              GO
+            </a>
+            <button className="chooseagain" onClick={clickedChooseAgain}>
+              CHOOSE AGAIN
+            </button>
           </div>
         </div>
       </div>

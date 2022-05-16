@@ -17,6 +17,8 @@
   color: #5c7cbe;
   padding: 40px 50px;
   overflow: auto;
+  position: relative;
+  min-width: 1000px;
 }
 
 .instructionheader {
@@ -39,14 +41,12 @@
 
 .xbutton {
   position: absolute;
-  left: 50vw;
-  transform: translate(420px, 90px);
+  right: 30px;
+  top: 30px;
   z-index: 12;
   width: 25px;
   height: 25px;
-  color: red;
   background-color: transparent;
   border: none;
-  font-size: 40px;
   padding: 0;
 }

@@ -18,6 +18,7 @@
   padding: 30px;
   color: #5c7cbe;
   text-align: center;
+  position: relative;
 }
 
 .overlaylocation {

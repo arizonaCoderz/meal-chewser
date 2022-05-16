@@ -60,10 +60,10 @@ const Instructions = (props) => {
           “ELIMINATE AN OPTION” to remove a random option from the list!
         </p>
         <p className="instructionheader">ENJOY YOUR MEAL!</p>
+        <button className="xbutton" onClick={clickedBackdrop}>
+          <img src="/assets/Logos/xbutton.png" alt="this is an x button" />
+        </button>
       </div>
-      <button className="xbutton" onClick={clickedBackdrop}>
-        <img src="/assets/Logos/xbutton.png" alt="this is an x button"/>
-      </button>
     </div>
   );
 };
