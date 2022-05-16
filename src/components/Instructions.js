@@ -18,8 +18,9 @@ const Instructions = (props) => {
           deciding where to eat run and stress free. All you have to do is
           simply type in your address, city, or zip code, and it will
           automatically choose a restaurant for you. Don’t like the restaurant
-          that it chose? No problem! Just go to “Plate” and choose a couple of
-          restaurants to add to your plate and let it choose from there!
+          that it chose? No problem! Just press choose again! You can also go to
+          “Plate” and build a custom list of restaurants for the randomizer to
+          choose from!
         </p>
         <p className="instructionheader">INSTRUCTIONS</p>
         <p className="instructioncontent">
@@ -55,7 +56,8 @@ const Instructions = (props) => {
         />
         <p className="instructioncontent">
           2. Click “GO TO PLATE” <br></br>
-          3. Click either “CHEWS MY MEAL” to choose your restaurant OR “ELIMINATE AN OPTION” to remove an option from the list!
+          3. Click either “CHEWS MY MEAL” to choose your restaurant OR
+          “ELIMINATE AN OPTION” to remove a random option from the list!
         </p>
         <p className="instructionheader">ENJOY YOUR MEAL!</p>
       </div>
