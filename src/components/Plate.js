@@ -185,11 +185,11 @@ const Plate = (props) => {
 
   return (
     <div className={props.showPlate ? "plate" : "disappear"}>
-      <button className="platefilterbutton" onClick={clickedFilter}>
-        FILTER
-      </button>
       <div className={!custom ? "createplatepage" : "disappear"}>
         <p className="createplatetitle">CREATE A PLATE</p>
+        <button className="platefilterbutton" onClick={clickedFilter}>
+        FILTER
+      </button>
         <Filter chews={onBuildPlate} showFilter={showFilter} inputdata={props.inputdata} filtertype="Plate"></Filter> 
         <div className="resultslist">{!custom ? resultslist : <div />}</div>
       </div>

@@ -46,12 +46,12 @@
 }
 
 #chewsbutton {
-  width: 100%;
+  width: 270px;
   margin: auto;
   margin-bottom: 30px;
   border-style: none;
   border-radius: 5px;
-  /* box-shadow: 5px 5px 0px #5C7CBE; */
+  box-shadow: 1px 1px 5px 1px #5C7CBE;
   padding: 0;
 }
 
@@ -61,7 +61,7 @@
   margin-bottom: 30px;
   border-style: none;
   border-radius: 5px;
-  box-shadow: 3px 2px 15px 1px #999999;
+  box-shadow: 1px 1px 8px 1px #999999;
   padding: 0;
 }
 

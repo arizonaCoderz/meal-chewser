@@ -37,7 +37,7 @@ const Footer = (props) => {
           </button>
           <p>|</p>
           <button className="fbutton" onClick={clickedInstructions}>
-            INSTRUCTIONS
+            INFO
           </button>
           <p>|</p>
           <button className="fbutton" onClick={clickedAbout}>
@@ -56,7 +56,7 @@ const Footer = (props) => {
           </button>
           <p>|</p>
           <button className="fbutton" onClick={clickedInstructions}>
-            INSTRUCTIONS
+            INFO
           </button>
           <p>|</p>
           <button className="fbutton" onClick={clickedResults}>
