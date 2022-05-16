@@ -61,6 +61,9 @@ const Instructions = (props) => {
         </p>
         <p className="instructionheader">ENJOY YOUR MEAL!</p>
       </div>
+      <button className="xbutton" onClick={clickedBackdrop}>
+        <img src="/assets/Logos/addbutton.png" alt="this is an x button"/>
+      </button>
     </div>
   );
 };

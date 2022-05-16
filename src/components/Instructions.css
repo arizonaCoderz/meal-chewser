@@ -36,3 +36,17 @@
   margin: 0 auto;
   margin-bottom: 30px;
 }
+
+.xbutton {
+  position: absolute;
+  left: 50vw;
+  transform: translate(420px, 80px);
+  z-index: 12;
+  width: 25px;
+  height: 25px;
+  color: red;
+  background-color: transparent;
+  border: none;
+  font-size: 40px;
+  padding: 0;
+}
