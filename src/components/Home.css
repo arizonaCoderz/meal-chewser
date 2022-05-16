@@ -98,8 +98,37 @@
   margin: 10px auto 10px auto;
 }
 
-.autocomplete {
-  position: absolute;
-  z-index: 11;
-  width: 750px;
+.pac-container {
+  background-color: #fff;
+  position: absolute!important;
+  z-index: 1000;
+  border-radius: 2px;
+  border-top: 1px solid #d9d9d9;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden
+}
+
+.pac-item {
+  cursor: default;
+  padding: 0 10px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  line-height: 30px;
+  text-align: left;
+  border-top: 1px solid #e6e6e6;
+  font-size: 15px;
+  color: rgb(49, 49, 49);
+}
+
+.pac-suggestion {
+  display: flex;
+}
+
+.pac-matched {
+  font-weight: 700;
+  color: rgb(49, 49, 49);
 }

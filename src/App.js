@@ -16,7 +16,7 @@ function App() {
   const [page, setPage] = useState(0); //2 Possible Pages, Home Page [0] and the Results Page [1]
   const [inputdata, setInputData] = useState(["", 0, 0, ""]); //Initialize input data
   const [showInstructions, setShowInstructions] = useState(false);
-  const [showHome, setShowHome] = useState(true);
+  const [showHome, setShowHome] = useState(true); //Show intro page or not
   // const [coordinates, setCoordinates] = useState([]);
 
   //Executes when the user clicks Chews My Meal button

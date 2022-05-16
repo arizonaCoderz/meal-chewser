@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
-import PlacesAutocomplete, {
-  geocodeByAddress,
-  getLatLng,
-} from "react-places-autocomplete";
+import PlacesAutocomplete from "react-places-autocomplete";
 
 import "./Home.css";
 import HomeFilter from "./Internals/HomeFilter";
@@ -100,22 +97,23 @@ const Home = (props) => {
             <div>
               <input
                 {...getInputProps({
-                  placeholder: "Enter Address",
+                  placeholder: "Enter Address, City, or Zip",
                   id: inputstyle,
                   onKeyDown: handleEnterPress,
                 })}
               />
-              <div className="autocomplete">
+              <div className="pac-container">
                 {suggestions.map((suggestion) => {
                   const style = suggestion.active
-                    ? { backgroundColor: "#15B9FF", cursor: "pointer" }
+                    ? { backgroundColor: "#e4e4e4", cursor: "pointer" }
                     : { backgroundColor: "#ffffff", cursor: "pointer" };
                   return (
                     <div
                       key={suggestion.description}
                       {...getSuggestionItemProps(suggestion, { style })}
+                      className="pac-item"
                     >
-                      {suggestion.description}
+                      <div className="pac-suggestion">{suggestion.description}</div>
                     </div>
                   );
                 })}

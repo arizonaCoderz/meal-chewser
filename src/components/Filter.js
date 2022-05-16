@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PlacesAutocomplete from "react-places-autocomplete";
 
 import "./Filter.css";
 import Slider from "./Internals/Slider";
@@ -44,18 +45,56 @@ const Filter = (props) => {
     }
   };
 
+  //Add event listener for enter key press
+  const handleEnterPress = (e) => {
+    if (e.code.toString() === "Enter") {
+      onChewsen();
+    }
+  };
+
   //Changes styling and buttons for Results and Plate page filters
   if ((props.filtertype === "Results")) {
     return (
       <div className={props.showFilter ? "filter" : "disappear"}>
         <p>ADDRESS</p>
-        <input
-          id="input"
-          onChange={onAddressChange}
-          placeholder="Street, City, Zip"
+        <PlacesAutocomplete
           value={address}
-        ></input>
-
+          onChange={setAddress}
+          onSelect={setAddress}
+        >
+          {({
+            getInputProps,
+            suggestions,
+            getSuggestionItemProps,
+            loading,
+          }) => (
+            <div>
+              <input
+                {...getInputProps({
+                  placeholder: "Enter Address, City, or Zip",
+                  id: "input",
+                  onKeyDown: handleEnterPress,
+                })}
+              />
+              <div className="pac-container">
+                {suggestions.map((suggestion) => {
+                  const style = suggestion.active
+                    ? { backgroundColor: "#e4e4e4", cursor: "pointer" }
+                    : { backgroundColor: "#ffffff", cursor: "pointer" };
+                  return (
+                    <div
+                      key={suggestion.description}
+                      {...getSuggestionItemProps(suggestion, { style })}
+                      className="pac-item"
+                    >
+                      <div className="pac-suggestion">{suggestion.description}</div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+        </PlacesAutocomplete>
         <div id="distance">
           <p style={{ marginRight: "10px" }}>MAX DISTANCE:</p>
           <p>{sliderV}</p>
@@ -98,13 +137,44 @@ const Filter = (props) => {
     return (
       <div className={props.showFilter ? "filter" : "disappear"}>
         <p>ADDRESS</p>
-        <input
-          id="input"
-          onChange={onAddressChange}
-          placeholder="Street, City, Zip"
+        <PlacesAutocomplete
           value={address}
-        ></input>
-
+          onChange={setAddress}
+          onSelect={setAddress}
+        >
+          {({
+            getInputProps,
+            suggestions,
+            getSuggestionItemProps,
+            loading,
+          }) => (
+            <div>
+              <input
+                {...getInputProps({
+                  placeholder: "Enter Address, City, or Zip",
+                  id: "input",
+                  onKeyDown: handleEnterPress,
+                })}
+              />
+              <div className="pac-container">
+                {suggestions.map((suggestion) => {
+                  const style = suggestion.active
+                    ? { backgroundColor: "#e4e4e4", cursor: "pointer" }
+                    : { backgroundColor: "#ffffff", cursor: "pointer" };
+                  return (
+                    <div
+                      key={suggestion.description}
+                      {...getSuggestionItemProps(suggestion, { style })}
+                      className="pac-item"
+                    >
+                      <div className="pac-suggestion">{suggestion.description}</div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+        </PlacesAutocomplete>
         <div id="distance">
           <p style={{ marginRight: "10px" }}>MAX DISTANCE:</p>
           <p>{sliderV}</p>
