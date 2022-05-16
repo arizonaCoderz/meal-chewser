@@ -6,14 +6,33 @@
   top: 0;
 }
 
-.instructioncontent {
-  height: fit-content;
+.instruction {
+  height: 90%;
   width: 1000px;
-  margin: 10vh auto;
+  margin: 5vh auto;
   z-index: 11;
   background: #ffffff;
-  border-radius: 25px;
+  border-radius: 15px;
   padding: 30px;
   color: #5c7cbe;
-  text-align: center;
+  padding: 40px 50px;
+  overflow: auto;
+}
+
+.instructionheader {
+  font-family: "Patrick Hand", cursive;
+  letter-spacing: 0.3rem;
+  font-size: 45px;
+  margin-bottom: 20px;
+}
+
+.instructioncontent {
+  font-size: 20px;
+  margin-bottom: 30px;
+  line-height: 35px;
+}
+
+.infoimg {
+  margin: 0 auto;
+  margin-bottom: 30px;
 }
