@@ -80,7 +80,7 @@ const Chosen = (props) => {
         <p className="addressinfo">
           {props.chosendata[props.chosennum].vicinity}
         </p>
-        <p className="distanceinfo">
+        {/* <p className="distanceinfo">
           {Math.round(
             getDistanceFromLatLngInMiles(
               props.chosendata[props.chosennum].geometry.location.lat,
@@ -90,7 +90,7 @@ const Chosen = (props) => {
             ) * 10
           ) / 10}{" "}
           Miles
-        </p>
+        </p> */}
         <div className="chosenbuttons">
           <a
             href={placelink}
