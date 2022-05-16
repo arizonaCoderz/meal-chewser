@@ -129,15 +129,17 @@ const Content = (props) => {
   };
 
   //Randomizer to choose random restaurant index------------------------------------------------------------------------------------
-  const [refreshcount, setRefreshCount] = useState(0); //counts how many times choose again was pressed
-  var chosennum = 0;
-  if (searchdata.length !== 0) {
-    chosennum = Math.floor(Math.random() * searchdata.length);
-  }
+  const [chosennum, setChosenNum] = useState(Math.random() * searchdata.length);
 
   //Clicked choose again, rerandomizes restaurant index
   const changeChosen = (event) => {
-    setRefreshCount(refreshcount + 1); //reloading the component is enough to pick a new chosennum
+    if (searchdata.length > 1) {
+      var tempchosen = Math.floor(Math.random() * searchdata.length);
+      while (tempchosen === chosennum) {
+        tempchosen = Math.floor(Math.random() * searchdata.length);
+      }
+      setChosenNum(tempchosen);
+    }
   };
 
   //Clicked Filter in plate, takes user back to Intro page
@@ -151,7 +153,6 @@ const Content = (props) => {
       setShowContent(true);
     }, 2000);
   }, [loading]);
-
 
   if (showContent) {
     return (
