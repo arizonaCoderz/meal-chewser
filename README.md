@@ -16,13 +16,21 @@ https://www.cndytrn.com/
 ### `Versions`
 
 v1.0 
+
 Minimum Viable Product
 
 v1.1
+
 -Reorganized Components
+
 -Address Autofill implemented
+
 -Added Instructions/Directions
+
 -fixed some blurry assets
+
 -implemented nonrepetitive choice selection
+
 -enter key now runs search
+
 -temporarily removed distance in Results
