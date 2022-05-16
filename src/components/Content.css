@@ -6,3 +6,8 @@
   padding-top: 70px;
   min-height: 700px;
 }
+
+.loading {
+  margin: auto;
+  font-size: 40px;
+}

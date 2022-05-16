@@ -18,13 +18,7 @@ const Content = (props) => {
   const [loc, setloc] = useState([0, 0]); //Latitude and Longitude of input location
   const [wantSearch, setWantSearch] = useState(false); //makes sure the search goes through when location is changed
   const [searchdata, setSearchData] = useState([]); //Results from the API search
-
-  //Delays the initial render by 1000 ms-----------------------------------------------------------------------------------
-  useEffect(() => {
-    setTimeout(() => {
-      setShowContent(!showContent);
-    }, 0);
-  }, []);
+  const [loading, setLoading] = useState(true); //tells if data is loaded or loading
 
   //Converts Address to Latitude and Longitude-----------------------------------------------------------------------------
   const locURL =
@@ -41,6 +35,8 @@ const Content = (props) => {
       console.log("Places API Call LatLng");
       setWantSearch(true);
     });
+    setLoading(true);
+    setShowContent(false);
   }, [inputData]);
 
   //Search Function----------------------------------------------------------------------------------------------------------
@@ -70,6 +66,7 @@ const Content = (props) => {
         console.log("Places API Call Search");
         setWantSearch(false);
       });
+      setLoading(false);
     }
   }, [baseURL]);
 
@@ -148,33 +145,49 @@ const Content = (props) => {
     props.clickedLogo();
   };
 
-  return (
-    <div>
-      {showContent && (
-        <div>
-          <div className={props.showResults? "results" : "disappear"}>
-            <Leftside
-              inputdataHandler={inputdataHandler}
-              changeChosen={changeChosen}
-              chosennum={chosennum}
-              inputdata={props.inputdata}
+  //Delay rendering of content
+  useEffect(() => {
+    setTimeout(() => {
+      setShowContent(true);
+    }, 2000);
+  }, [loading]);
+
+
+  if (showContent) {
+    return (
+      <div>
+        {showContent && (
+          <div>
+            <div className={props.showResults ? "results" : "disappear"}>
+              <Leftside
+                inputdataHandler={inputdataHandler}
+                changeChosen={changeChosen}
+                chosennum={chosennum}
+                inputdata={props.inputdata}
+                resultsdata={searchdata}
+                origin={[loc[0], loc[1], inputData[0]]}
+              ></Leftside>
+              <Map resultsdata={searchdata} chosennum={chosennum}></Map>
+            </div>
+            <Plate
+              showPlate={props.showPlate}
               resultsdata={searchdata}
-              origin={[loc[0], loc[1], inputData[0]]}
-            ></Leftside>
-            <Map resultsdata={searchdata} chosennum={chosennum}></Map>
+              clickedPlateFilter={clickedPlateFilter}
+              origin={inputData[0]}
+              inputdata={props.inputdata}
+              inputdataHandler={inputdataHandler}
+            ></Plate>
           </div>
-          <Plate
-            showPlate={props.showPlate}
-            resultsdata={searchdata}
-            clickedPlateFilter={clickedPlateFilter}
-            origin={inputData[0]}
-            inputdata={props.inputdata}
-            inputdataHandler={inputdataHandler}
-          ></Plate>
-        </div>
-      )}
-    </div>
-  );
+        )}
+      </div>
+    );
+  } else {
+    return (
+      <div className="results">
+        <p className="loading">Loading...</p>
+      </div>
+    );
+  }
 };
 
 export default Content;
