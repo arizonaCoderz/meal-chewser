@@ -34,7 +34,7 @@ const Instructions = (props) => {
         <img
           className="infoimg"
           src="/assets/Logos/infoimg1.png"
-          alt="this is instruction image 1"
+          alt="this is instruction img 1"
         />
         <p className="instructioncontent">
           4. Click “GO” to get directions to the restaurant! Or click “CHOOSE
@@ -43,7 +43,7 @@ const Instructions = (props) => {
         <img
           className="infoimg"
           src="/assets/Logos/infoimg2.png"
-          alt="this is instruction image 2"
+          alt="this is instruction img 2"
         />
         <p className="instructioncontent">
           If you decide to “BUILD YOUR PLATE”: <br></br>
@@ -52,7 +52,7 @@ const Instructions = (props) => {
         <img
           className="infoimg"
           src="/assets/Logos/infoimg3.png"
-          alt="this is instruction image 3"
+          alt="this is instruction img 3"
         />
         <p className="instructioncontent">
           2. Click “GO TO PLATE” <br></br>
