@@ -10,20 +10,21 @@ const Content = (props) => {
   //Initialize all variables-----------------------------------------------------------------------------------------------
   const [showContent, setShowContent] = useState(false); //show Content or not (boolean)
   const [inputData, setInputData] = useState([
-    props.inputdata[0].trim().replace(/ /g, "%20"),
+    props.inputdata[0],
     props.inputdata[1],
-    props.inputdata[2] * 1609,
+    props.inputdata[2],
     props.inputdata[3],
   ]); //initial filter data
   const [loc, setloc] = useState([0, 0]); //Latitude and Longitude of input location
   const [wantSearch, setWantSearch] = useState(false); //makes sure the search goes through when location is changed
   const [searchdata, setSearchData] = useState([]); //Results from the API search
   const [loading, setLoading] = useState(true); //tells if data is loaded or loading
+  const [chosennum, setChosenNum] = useState(0);
 
   //Converts Address to Latitude and Longitude-----------------------------------------------------------------------------
   const locURL =
     "http://dhlproxyserver.herokuapp.com/?extension=findplacefromtext/json&input=" +
-    inputData[0] +
+    inputData[0].trim().replace(/ /g, "%20") +
     "&inputtype=textquery&fields=formatted_address,geometry"; //Uses a proxy server which then calls the API
 
   useEffect(() => {
@@ -48,7 +49,7 @@ const Content = (props) => {
       "," +
       loc[1].toString() +
       "&radius=" +
-      inputData[2] +
+      inputData[2] * 1609 +
       "&type=restaurant" +
       "&keyword=food,restaurant" +
       inputData[3] +
@@ -120,16 +121,16 @@ const Content = (props) => {
   //Connect Regular Filter to Chosen
   const inputdataHandler = (chewsdata) => {
     setSearchData([]);
-    setInputData([
-      chewsdata[0].trim().replace(/ /g, "%20"),
-      chewsdata[1],
-      chewsdata[2] * 1609,
-      chewsdata[3],
-    ]);
+    setInputData([chewsdata[0], chewsdata[1], chewsdata[2], chewsdata[3]]);
+    setChosenNum(0);
+    setShowContent(false);
+    setLoading(true);
   };
 
   //Randomizer to choose random restaurant index------------------------------------------------------------------------------------
-  const [chosennum, setChosenNum] = useState(Math.random() * searchdata.length);
+  useEffect(() => {
+    setChosenNum(Math.floor(Math.random() * searchdata.length));
+  }, [searchdata]);
 
   //Clicked choose again, rerandomizes restaurant index
   const changeChosen = (event) => {
@@ -164,7 +165,7 @@ const Content = (props) => {
                 inputdataHandler={inputdataHandler}
                 changeChosen={changeChosen}
                 chosennum={chosennum}
-                inputdata={props.inputdata}
+                inputdata={inputData}
                 resultsdata={searchdata}
                 origin={[loc[0], loc[1], inputData[0]]}
               ></Leftside>
@@ -175,7 +176,7 @@ const Content = (props) => {
               resultsdata={searchdata}
               clickedPlateFilter={clickedPlateFilter}
               origin={inputData[0]}
-              inputdata={props.inputdata}
+              inputdata={inputData}
               inputdataHandler={inputdataHandler}
             ></Plate>
           </div>
