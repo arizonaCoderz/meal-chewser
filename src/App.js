@@ -91,7 +91,7 @@ function App() {
   if (page === 0) {
     return (
       <div className="App">
-        <Home clickedChews={clickedChews} clickedBuild={clickedBuild} showHome={showHome}></Home>
+        <Home clickedChews={clickedChews} clickedBuild={clickedBuild} showHome={showHome} clickedInstructions={clickedInstructions}></Home>
         <About showAbout={showAbout}></About>
         <Footer clickedAbout={clickedAbout} clickedHome={clickedHome} clickedInstructions={clickedInstructions} page={page}></Footer>
         <Instructions showInstructions={showInstructions} onClickedBackdrop={onClickedBackdrop}></Instructions>

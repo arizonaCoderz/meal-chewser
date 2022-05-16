@@ -19,11 +19,6 @@ const Filter = (props) => {
     setSliderV(value);
   };
 
-  //Linked to Address input box
-  const onAddressChange = (event) => {
-    setAddress(event.target.value);
-  };
-
   //Price button selection handler
   const buttonHandler = (value) => {
     setPrice(value);

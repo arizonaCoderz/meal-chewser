@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import PlacesAutocomplete from "react-places-autocomplete";
 
 import "./Home.css";
@@ -75,6 +75,11 @@ const Home = (props) => {
     inputstyle = "homeinput";
   }
 
+  //Handles when info button is clicked
+  const clickedInstructions = (event) => {
+    props.clickedInstructions();
+  };
+
   return (
     <div className={props.showHome ? "home" : "disappear"}>
       <img
@@ -82,6 +87,7 @@ const Home = (props) => {
         src="/assets/Logos/MealChewser_Logo7.png"
         alt="this is a big MealChewser Logo"
       />
+      <p id="blurb">CAN'T DECIDE WHERE TO EAT? LET US HELP!</p>
       <div id="inputdiv">
         <PlacesAutocomplete
           value={address}
@@ -113,7 +119,9 @@ const Home = (props) => {
                       {...getSuggestionItemProps(suggestion, { style })}
                       className="pac-item"
                     >
-                      <div className="pac-suggestion">{suggestion.description}</div>
+                      <div className="pac-suggestion">
+                        {suggestion.description}
+                      </div>
                     </div>
                   );
                 })}
@@ -121,6 +129,12 @@ const Home = (props) => {
             </div>
           )}
         </PlacesAutocomplete>
+        <button id="infobutton" onClick={clickedInstructions}>
+          <img
+            src="/assets/Logos/infobutton.png"
+            alt="this is the infobutton"
+          />
+        </button>
       </div>
       <div id="homefilterdiv">
         <button id="filterdropdown" onClick={filterhandler}>
