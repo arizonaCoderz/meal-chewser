@@ -94,7 +94,6 @@ const Home = (props) => {
         src="/assets/Logos/MealChewser_Logo7.png"
         alt="this is a big MealChewser Logo"
       />
-      <p id="blurb">CAN'T DECIDE WHERE TO EAT? LET US HELP!</p>
       <div id="inputdiv">
         <PlacesAutocomplete
           value={address}
@@ -162,7 +161,6 @@ const Home = (props) => {
             alt="this is a Meal Chewser button"
           />
         </button>
-        <p id="homeortext">OR</p>
         <button id="hbuildbutton" onClick={buildhandler}>
           <img
             className="hbuttons"
