@@ -37,6 +37,7 @@ const Plate = (props) => {
       1
     );
     if (customlistindex.length === 1) {
+      setRenderOverlay(true);
       setOverlayData([
         props.resultsdata[customlistindex[0]].name,
         props.resultsdata[customlistindex[0]].price_level,
