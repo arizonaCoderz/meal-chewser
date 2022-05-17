@@ -35,6 +35,8 @@ const Home = (props) => {
     } else {
       setEmptyInput(false);
       props.clickedChews(idata);
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
       // props.getCoordinates(coordinates);
     }
   };
@@ -46,6 +48,8 @@ const Home = (props) => {
     } else {
       setEmptyInput(false);
       props.clickedBuild(idata);
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
       // props.getCoordinates(coordinates);
     }
   };

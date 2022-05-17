@@ -53,7 +53,7 @@
 
 .chooseagain:active {
   transform: scale(0.98);
-  box-shadow: 3px 2px 15px 1px #8b8b8b;
+  box-shadow: 1px 1px 5px 1px #888888;
 }
 
 .nochosen {
@@ -104,5 +104,5 @@
 
 .golink:active {
   transform: scale(0.98);
-  box-shadow: 3px 2px 15px 1px #5c7cbe;
+  box-shadow: 1px 1px 5px 1px #5c7cbe;
 }

@@ -51,7 +51,6 @@
   margin-bottom: 30px;
   border-style: none;
   border-radius: 5px;
-  box-shadow: 1px 1px 5px 1px #5C7CBE;
   padding: 0;
 }
 
@@ -61,18 +60,18 @@
   margin-bottom: 30px;
   border-style: none;
   border-radius: 5px;
-  box-shadow: 1px 1px 8px 1px #999999;
+  box-shadow: 1px 1px 5px 1px #c7c7c7;
   padding: 0;
 }
 
 #chewsbutton:active {
   transform: scale(0.98);
-  box-shadow: 3px 2px 15px 1px #5c7cbe;
+  box-shadow: 1px 1px 5px 1px #888888;
 }
 
 #buildplatebutton:active {
   transform: scale(0.98);
-  box-shadow: 3px 2px 15px 1px #979797;
+  box-shadow: 1px 1px 5px 1px #888888;
 }
 
 #mcbutton {
