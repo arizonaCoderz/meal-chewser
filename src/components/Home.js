@@ -69,10 +69,13 @@ const Home = (props) => {
 
   //Handle input ternary
   var inputstyle;
+  var placeholder;
   if (isEmptyInput) {
     inputstyle = "homeinputempty";
+    placeholder = "Please enter an Address, City, or Zip";
   } else {
     inputstyle = "homeinput";
+    placeholder = "Enter Address, City, or Zip";
   }
 
   //Handles when info button is clicked
@@ -103,7 +106,7 @@ const Home = (props) => {
             <div>
               <input
                 {...getInputProps({
-                  placeholder: "Enter Address, City, or Zip",
+                  placeholder: placeholder,
                   id: inputstyle,
                   onKeyDown: handleEnterPress,
                 })}

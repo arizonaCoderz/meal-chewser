@@ -10,10 +10,11 @@
 #pbutton1,#pbutton2,#pbutton3 {
   width: 60px;
   height: 100%;
-  background-color: white;
+  background-color: transparent;
   border-style: solid;
-  border-color: rgb(150, 150, 150);
+  border-color: black;
   border-width: 1px;
+  filter: invert(75%) sepia(0%) saturate(0%) hue-rotate(154deg) brightness(102%) contrast(84%);
 }
 
 #pbutton1 {

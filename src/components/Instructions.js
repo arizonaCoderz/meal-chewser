@@ -18,18 +18,18 @@ const Instructions = (props) => {
           deciding where to eat run and stress free. All you have to do is
           simply type in your address, city, or zip code, and it will
           automatically choose a restaurant for you. Don’t like the restaurant
-          that it chose? No problem! Just press choose again! You can also go to
+          that it chose? No problem, just press choose again! You can also go to
           “Plate” and build a custom list of restaurants for the randomizer to
-          choose from!
+          choose from.
         </p>
         <p className="instructionheader">INSTRUCTIONS</p>
         <p className="instructioncontent">
-          1. Type in address, city or zip code <br></br>
+          1. Type in address, city or zip code. <br></br>
           2. Edit “FILTERS” to help narrow down the choses to best match your
-          needs <br></br>
+          needs. <br></br>
           3. Click “CHEWS MY MEAL” to choose a random restaurant, or click
           “BUILD MY PLATE” to select a few restaurants for the website to choose
-          from
+          from.
         </p>
         <img
           className="infoimg"
@@ -38,7 +38,7 @@ const Instructions = (props) => {
         />
         <p className="instructioncontent">
           4. Click “GO” to get directions to the restaurant! Or click “CHOOSE
-          AGAIN” to choose another restaurant
+          AGAIN” to choose another restaurant.
         </p>
         <img
           className="infoimg"
@@ -47,7 +47,7 @@ const Instructions = (props) => {
         />
         <p className="instructioncontent">
           If you decide to “BUILD YOUR PLATE”: <br></br>
-          1. Add the restaurants that interest you <br></br>
+          1. Add the restaurants that interest you. <br></br>
         </p>
         <img
           className="infoimg"
@@ -55,7 +55,7 @@ const Instructions = (props) => {
           alt="this is instruction img 3"
         />
         <p className="instructioncontent">
-          2. Click “GO TO PLATE” <br></br>
+          2. Click “GO TO PLATE”. <br></br>
           3. Click either “CHEWS MY MEAL” to choose your restaurant OR
           “ELIMINATE AN OPTION” to remove a random option from the list!
         </p>

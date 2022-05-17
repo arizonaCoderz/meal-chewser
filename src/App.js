@@ -93,7 +93,7 @@ function App() {
       <div className="App">
         <Home clickedChews={clickedChews} clickedBuild={clickedBuild} showHome={showHome} clickedInstructions={clickedInstructions}></Home>
         <About showAbout={showAbout}></About>
-        <Footer clickedAbout={clickedAbout} clickedHome={clickedHome} clickedInstructions={clickedInstructions} page={page}></Footer>
+        <Footer clickedAbout={clickedAbout} clickedHome={clickedHome} clickedInstructions={clickedInstructions}></Footer>
         <Instructions showInstructions={showInstructions} onClickedBackdrop={onClickedBackdrop}></Instructions>
       </div>
     );
@@ -103,7 +103,7 @@ function App() {
         <Header clickedResults={clickedResults} clickedPlate={clickedPlate} clickedHome={clickedHome}></Header>
         <Content showResults={showResults} showPlate={showPlate} inputdata={inputdata} clickedHome={clickedHome}></Content>
         <About showAbout={showAbout}></About>
-        <Footer clickedResults={clickedResults} clickedAbout={clickedAbout} clickedHome={clickedHome} clickedPlate={clickedPlate} clickedInstructions={clickedInstructions} page={page}></Footer>
+        <Footer clickedAbout={clickedAbout} clickedHome={clickedHome} clickedInstructions={clickedInstructions}></Footer>
         <Instructions showInstructions={showInstructions} onClickedBackdrop={onClickedBackdrop}></Instructions>
       </div>
     );
