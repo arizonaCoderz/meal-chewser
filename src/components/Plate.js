@@ -36,6 +36,16 @@ const Plate = (props) => {
       Math.floor(Math.random() * customlistindex.length),
       1
     );
+    if (customlistindex.length === 1) {
+      setOverlayData([
+        props.resultsdata[customlistindex[0]].name,
+        props.resultsdata[customlistindex[0]].price_level,
+        props.resultsdata[customlistindex[0]].vicinity,
+        props.resultsdata[customlistindex[0]].rating,
+        props.resultsdata[customlistindex[0]].place_id,
+      ]);
+      setShowOverlay(true);
+    }
     setReload(true);
   };
 
