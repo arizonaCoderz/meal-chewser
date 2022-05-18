@@ -1,4 +1,9 @@
 .plate {
+  width: 100%;
+  background-color: white;
+}
+
+.platediv {
   width: 900px;
   height: fit-content;
   display: block;

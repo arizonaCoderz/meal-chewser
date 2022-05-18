@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import "./Plate.css";
 import Item from "./Internals/Item";
@@ -18,6 +18,7 @@ const Plate = (props) => {
   var resultslist = []; //array of all Item objects from search data
   var toggleCustomButton = []; //fork and knife icon toggle
   const [showFilter, setShowFilter] = useState(false);
+  const [showChooseAgain, setChooseAgain] = useState(true);
 
   //Adds or removes item to custom list---------------------------------------------------------------------------------------------------
   const clickedaddlist = (value) => {
@@ -154,7 +155,7 @@ const Plate = (props) => {
 
   //choose a random number for the index of the randomized restaurant-------------------------------------------------------------------------------
   const clickedRandomSelect = (event) => {
-    var tempchosen = 0;
+    var tempChosen = chosen;
     if (customlistindex.length === 0) {
       setRenderOverlay(false);
     } else if (customlistindex.length === 1) {
@@ -169,16 +170,16 @@ const Plate = (props) => {
       setShowOverlay(true);
     } else {
       setRenderOverlay(true);
-      while (chosen === tempchosen) {
-        tempchosen = Math.floor(Math.random() * customlistindex.length);
+      while (chosen === tempChosen) {
+        tempChosen = Math.floor(Math.random() * customlistindex.length);
       }
-      setChosen(tempchosen);
+      setChosen(tempChosen);
       setOverlayData([
-        props.resultsdata[customlistindex[chosen]].name,
-        props.resultsdata[customlistindex[chosen]].price_level,
-        props.resultsdata[customlistindex[chosen]].vicinity,
-        props.resultsdata[customlistindex[chosen]].rating,
-        props.resultsdata[customlistindex[chosen]].place_id,
+        props.resultsdata[customlistindex[tempChosen]].name,
+        props.resultsdata[customlistindex[tempChosen]].price_level,
+        props.resultsdata[customlistindex[tempChosen]].vicinity,
+        props.resultsdata[customlistindex[tempChosen]].rating,
+        props.resultsdata[customlistindex[tempChosen]].place_id,
       ]);
       setShowOverlay(true);
     }
@@ -190,43 +191,65 @@ const Plate = (props) => {
   };
 
   //Updated search parameters are run
-  const onBuildPlate = chewsdata => {
+  const onBuildPlate = (chewsdata) => {
     props.inputdataHandler(chewsdata);
-  }
+  };
+
+  //display choose again button in overlay or not----------------------------------------------------------------------------------------------------
+  useEffect(() => {
+    if (customlist.length > 1) {
+      setChooseAgain(true);
+    } else {
+      setChooseAgain(false);
+    }
+  }, [customlist]);
 
   return (
     <div className={props.showPlate ? "plate" : "disappear"}>
-      <div className={!custom ? "createplatepage" : "disappear"}>
-        <p className="createplatetitle">CREATE A PLATE</p>
-        <button className="platefilterbutton" onClick={clickedFilter}>
-        FILTER
-      </button>
-        <Filter chews={onBuildPlate} showFilter={showFilter} inputdata={props.inputdata} filtertype="Plate"></Filter> 
-        <div className="resultslist">{!custom ? resultslist : <div />}</div>
-      </div>
-      <div className={custom ? "platepage" : "disappear"}>
-        <p className="platetitle">PLATE</p>
-        <div className="platebuttons">
-          <button className="platebutton" onClick={clickedRandomSelect}>
-            CHEWS MY MEAL
+      <div className="platediv">
+        <div className={!custom ? "createplatepage" : "disappear"}>
+          <p className="createplatetitle">CREATE A PLATE</p>
+          <button className="platefilterbutton" onClick={clickedFilter}>
+            FILTER
           </button>
-          <p className="or">OR</p>
-          <button className="platebutton" onClick={clickedEliminate}>
-            ELIMINATE AN OPTION
+          <Filter
+            chews={onBuildPlate}
+            showFilter={showFilter}
+            inputdata={props.inputdata}
+            filtertype="Plate"
+          ></Filter>
+          <div className="resultslist">{!custom ? resultslist : <div />}</div>
+        </div>
+        <div className={custom ? "platepage" : "disappear"}>
+          <p className="platetitle">PLATE</p>
+          <div className="platebuttons">
+            <button className="platebutton" onClick={clickedRandomSelect}>
+              CHEWS MY MEAL
+            </button>
+            <p className="or">OR</p>
+            <button className="platebutton" onClick={clickedEliminate}>
+              ELIMINATE AN OPTION
+            </button>
+          </div>
+          <div className="customlist">{customlist}</div>
+          <Overlay
+            showOverlay={showOverlay}
+            onClickedBackdrop={onClickedBackdrop}
+            overlaydata={overlaydata}
+            clickedRandomSelect={clickedRandomSelect}
+            origin={props.origin}
+            renderOverlay={renderOverlay}
+            showChooseAgain={showChooseAgain}
+          ></Overlay>
+        </div>
+        <div className="platetogglebutton">
+          <button
+            className={!custom ? "gotoplatebutton" : "backbutton"}
+            onClick={toggleCustom}
+          >
+            {toggleCustomButton}
           </button>
         </div>
-        <div className="customlist">{customlist}</div>
-        <Overlay
-          showOverlay={showOverlay}
-          onClickedBackdrop={onClickedBackdrop}
-          overlaydata={overlaydata}
-          clickedRandomSelect={clickedRandomSelect}
-          origin={props.origin}
-          renderOverlay={renderOverlay}
-        ></Overlay>
-      </div>
-      <div className="platetogglebutton">
-        <button className={!custom ? "gotoplatebutton" : "backbutton"} onClick={toggleCustom}>{toggleCustomButton}</button>
       </div>
     </div>
   );

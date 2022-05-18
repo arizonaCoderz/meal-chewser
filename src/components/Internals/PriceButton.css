@@ -31,21 +31,21 @@
   width: 60px;
   height: 100%;
   background-color: white;
-  color: #8CB0DD;
+  color: #5C7CBE;
   border-style: solid;
-  border-color: #8CB0DD;
+  border-color: #5C7CBE;
   border-width: 2px 1px;
 }
 
 #pbutton1on {
   border-radius: 7px 0 0 7px;
-  border-color: #8CB0DD;
+  border-color: #5C7CBE;
   border-width: 2px 1px 2px 2px;
 }
 
 #pbutton3on {
   border-radius: 0 7px 7px 0;
-  border-color: #8CB0DD;
+  border-color: #5C7CBE;
   border-width: 2px 2px 2px 1px;
 }
 

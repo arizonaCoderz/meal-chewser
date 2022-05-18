@@ -67,7 +67,7 @@ const Overlay = (props) => {
             >
               GO
             </a>
-            <button className="chooseagain" onClick={clickedChooseAgain}>
+            <button className={props.showChooseAgain ? "chooseagain" : "disappear"} onClick={clickedChooseAgain}>
               CHOOSE AGAIN
             </button>
           </div>
