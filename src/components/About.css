@@ -60,6 +60,10 @@
   margin: 20px auto 20px auto;
 }
 
+.githublink:link {
+  color: white;
+}
+
 .githublink:visited {
   color: white;
 }
