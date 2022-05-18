@@ -1,6 +1,7 @@
 .plate {
   width: 100%;
   background-color: white;
+  min-width: 1000px;
 }
 
 .platediv {
