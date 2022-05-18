@@ -5,6 +5,7 @@
   min-width: 1000px;
   min-height: 900px;
   overflow: auto;
+  position: relative;
 }
 
 .aboutcontainer {
@@ -61,4 +62,16 @@
 
 .githublink:visited {
   color: white;
+}
+
+.aboutback {
+  width: 117px;
+}
+
+.aboutbackbutton {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 50px;
+  left: 50px;
 }

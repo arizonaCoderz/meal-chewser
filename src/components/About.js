@@ -3,8 +3,19 @@ import React from "react";
 import "./About.css";
 
 const About = (props) => {
+  const clickedAboutBack = event => {
+    props.clickedAboutBack();
+  }
+  
   return (
     <div className={props.showAbout ? "about" : "disappear"}>
+      <button className={props.page === 0 ? "aboutbackbutton" : "disappear"} onClick={clickedAboutBack}>
+        <img
+          className="aboutback"
+          src="/assets/Logos/aboutback.png"
+          alt="this is a previous button"
+        />
+      </button>
       <div className="aboutcontainer">
         <img
           className="aboutlogo"
@@ -17,7 +28,7 @@ const About = (props) => {
           based in Phoenix, Arizona. We decided to create this fun little
           project after having a reccuring issue of not being able to choose
           where to eat. Meal Chewser is what we came up with! Whenever you feel
-          indecisive or are looking for a some randomness in your life, let us 
+          indecisive or are looking for a some randomness in your life, let us
           decide your fate! We hope to see you again!
         </p>
         <div className="icons">
@@ -43,7 +54,11 @@ const About = (props) => {
           check out this GitHub link for the code for this website.
         </p>
         <div className="githublinkdiv">
-          <a href="https://github.com/arizonaCoderz/meal-chewser" className="githublink" target="_blank">
+          <a
+            href="https://github.com/arizonaCoderz/meal-chewser"
+            className="githublink"
+            target="_blank"
+          >
             github.com/arizonaCoderz/meal-chewser
           </a>
         </div>
