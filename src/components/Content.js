@@ -66,8 +66,9 @@ const Content = (props) => {
         setSearchData(response.data.results);
         console.log("Places API Call Search");
         setWantSearch(false);
+        setLoading(false);
+        setShowContent(true);
       });
-      setLoading(false);
     }
   }, [baseURL]);
 
@@ -148,12 +149,6 @@ const Content = (props) => {
     props.clickedLogo();
   };
 
-  //Delay rendering of content
-  useEffect(() => {
-    setTimeout(() => {
-      setShowContent(true);
-    }, 2000);
-  }, [loading]);
 
   if (showContent) {
     return (
