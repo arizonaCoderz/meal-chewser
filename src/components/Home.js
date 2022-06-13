@@ -91,7 +91,7 @@ const Home = (props) => {
     <div className={props.showHome ? "home" : "disappear"}>
       <img
         id="homelogo"
-        src="/assets/Logos/MealChewser_Logo7.png"
+        src="/public/assets/Logos/MealChewser_Logo7.png"
         alt="this is a big MealChewser Logo"
       />
       <div id="inputdiv">
