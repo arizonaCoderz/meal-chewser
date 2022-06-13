@@ -102,7 +102,7 @@ const PriceButton = (props) => {
         <div className={!price1 ? "pbuttondollarholder1" : "pbuttondollarholder1on"}>
           <img
             className="pbuttondollar"
-            src="/assets/Logos/dollar.png"
+            src="./assets/Logos/dollar.png"
            alt="this is a dollar icon"
           />
         </div>
@@ -111,12 +111,12 @@ const PriceButton = (props) => {
         <div className={!price2 ? "pbuttondollarholder2" : "pbuttondollarholder2on"}>
           <img
             className="pbuttondollar"
-            src="/assets/Logos/dollar.png"
+            src="./assets/Logos/dollar.png"
            alt="this is a dollar icon"
           />
           <img
             className="pbuttondollar"
-            src="/assets/Logos/dollar.png"
+            src="./assets/Logos/dollar.png"
             alt="this is a dollar icon"
           />
         </div>
@@ -125,17 +125,17 @@ const PriceButton = (props) => {
         <div className={!price3 ? "pbuttondollarholder3" : "pbuttondollarholder3on"}>
           <img
             className="pbuttondollar"
-            src="/assets/Logos/dollar.png"
+            src="./assets/Logos/dollar.png"
            alt="this is a dollar icon"
           />
           <img
             className="pbuttondollar"
-            src="/assets/Logos/dollar.png"
+            src="./assets/Logos/dollar.png"
             alt="this is a dollar icon"
           />
           <img
             className="pbuttondollar"
-            src="/assets/Logos/dollar.png"
+            src="./assets/Logos/dollar.png"
             alt="this is a dollar icon"
           />
         </div>

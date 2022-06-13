@@ -29,7 +29,7 @@ const Overlay = (props) => {
       overlayprice.push(
         <img
           id="dollar"
-          src="/assets/Logos/dollar.png"
+          src="./assets/Logos/dollar.png"
           alt="this is a star icon"
           key={i}
         />
@@ -43,7 +43,7 @@ const Overlay = (props) => {
         <div className="backdrop" onClick={clickedBackdrop}></div>
         <div className="overlay">
           <button className="xbutton" onClick={clickedBackdrop}>
-            <img src="/assets/Logos/xbutton.png" alt="this is an x button" />
+            <img src="./assets/Logos/xbutton.png" alt="this is an x button" />
           </button>
           <p className="overlayletseat">LETS EAT!</p>
           <p className="overlayname">{props.overlaydata[0]}</p>
@@ -51,7 +51,7 @@ const Overlay = (props) => {
             {props.overlaydata[3]}
             <img
               className="overlaystar"
-              src="/assets/Logos/star.png"
+              src="./assets/Logos/star.png"
               alt="this is a star icon"
             />
           </div>

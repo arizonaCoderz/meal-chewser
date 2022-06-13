@@ -33,7 +33,7 @@ const Instructions = (props) => {
         </p>
         <img
           className="infoimg"
-          src="/assets/Logos/infoimg1.png"
+          src="./assets/Logos/infoimg1.png"
           alt="this is instruction img 1"
         />
         <p className="instructioncontent">
@@ -42,7 +42,7 @@ const Instructions = (props) => {
         </p>
         <img
           className="infoimg"
-          src="/assets/Logos/infoimg2.png"
+          src="./assets/Logos/infoimg2.png"
           alt="this is instruction img 2"
         />
         <p className="instructioncontent">
@@ -51,7 +51,7 @@ const Instructions = (props) => {
         </p>
         <img
           className="infoimg"
-          src="/assets/Logos/infoimg3.png"
+          src="./assets/Logos/infoimg3.png"
           alt="this is instruction img 3"
         />
         <p className="instructioncontent">
@@ -61,7 +61,7 @@ const Instructions = (props) => {
         </p>
         <p className="instructionheader">ENJOY YOUR MEAL!</p>
         <button className="xbutton" onClick={clickedBackdrop}>
-          <img src="/assets/Logos/xbutton.png" alt="this is an x button" />
+          <img src="./assets/Logos/xbutton.png" alt="this is an x button" />
         </button>
       </div>
     </div>

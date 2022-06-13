@@ -82,7 +82,7 @@ const HomePB = (props) => {
         <div className={!price1 ? "hpbuttondollarholder1" : "hpbuttondollarholder1on"}>
           <img
             className="hpbuttondollar"
-            src="/assets/Logos/dollar.png"
+            src="./assets/Logos/dollar.png"
            alt="this is a dollar icon"
           />
         </div>
@@ -91,12 +91,12 @@ const HomePB = (props) => {
         <div className={!price2 ? "hpbuttondollarholder2" : "hpbuttondollarholder2on"}>
           <img
             className="hpbuttondollar"
-            src="/assets/Logos/dollar.png"
+            src="./assets/Logos/dollar.png"
            alt="this is a dollar icon"
           />
           <img
             className="hpbuttondollar"
-            src="/assets/Logos/dollar.png"
+            src="./assets/Logos/dollar.png"
             alt="this is a dollar icon"
           />
         </div>
@@ -105,17 +105,17 @@ const HomePB = (props) => {
         <div className={!price3 ? "hpbuttondollarholder3" : "hpbuttondollarholder3on"}>
           <img
             className="hpbuttondollar"
-            src="/assets/Logos/dollar.png"
+            src="./assets/Logos/dollar.png"
            alt="this is a dollar icon"
           />
           <img
             className="hpbuttondollar"
-            src="/assets/Logos/dollar.png"
+            src="./assets/Logos/dollar.png"
             alt="this is a dollar icon"
           />
           <img
             className="hpbuttondollar"
-            src="/assets/Logos/dollar.png"
+            src="./assets/Logos/dollar.png"
             alt="this is a dollar icon"
           />
         </div>

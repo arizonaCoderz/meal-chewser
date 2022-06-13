@@ -12,7 +12,7 @@ const Item = (props) => {
     dollars.push(
       <img
         id="dollar"
-        src="/assets/Logos/dollar.png"
+        src="./assets/Logos/dollar.png"
         alt="this is a dollar icon"
         key={i}
       />
@@ -28,9 +28,9 @@ const Item = (props) => {
   //if selected then invert colors for + button
   var itembutton = [];
   if (selected === false) {
-    itembutton.push(<img src="/assets/Logos/addbutton.png" alt="this is an add button icon" key="1"/>);
+    itembutton.push(<img src="./assets/Logos/addbutton.png" alt="this is an add button icon" key="1"/>);
   } else {
-    itembutton.push(<img src="/assets/Logos/iaddbutton.png" className="invertedadd" alt="this is an add button icon" key="1"/>);
+    itembutton.push(<img src="./assets/Logos/iaddbutton.png" className="invertedadd" alt="this is an add button icon" key="1"/>);
   }
 
   return (
@@ -41,7 +41,7 @@ const Item = (props) => {
       <div className="iteminfo">
         <p className="itemname">{props.name}</p>
         <p className="itemrating">{props.rating}</p>
-        <img id="star" src="/assets/Logos/star.png" alt="this is a star icon" />
+        <img id="star" src="./assets/Logos/star.png" alt="this is a star icon" />
       </div>
       <div>{props.address}</div>
       <div className="alldollars">{dollars}</div>

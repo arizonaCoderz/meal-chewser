@@ -137,7 +137,7 @@ const Home = (props) => {
         </PlacesAutocomplete>
         <button id="infobutton" onClick={clickedInstructions}>
           <img
-            src="/assets/Logos/infobutton.png"
+            src="./assets/Logos/infobutton.png"
             alt="this is the infobutton"
           />
         </button>
@@ -147,7 +147,7 @@ const Home = (props) => {
           <p>FILTERS</p>
           <img
             id="caret"
-            src="/assets/Logos/Caretdown.png"
+            src="./assets/Logos/Caretdown.png"
             alt="this is a caret down icon"
           />
         </button>
@@ -157,14 +157,14 @@ const Home = (props) => {
         <button id="hchewsbutton" onClick={chewshandler}>
           <img
             className="hbuttons"
-            src="/assets/Logos/chewsmymeal.png"
+            src="./assets/Logos/chewsmymeal.png"
             alt="this is a Meal Chewser button"
           />
         </button>
         <button id="hbuildbutton" onClick={buildhandler}>
           <img
             className="hbuttons"
-            src="/assets/Logos/buildmyplate.png"
+            src="./assets/Logos/buildmyplate.png"
             alt="this is a Build a Meal button"
           />
         </button>

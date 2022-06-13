@@ -127,7 +127,7 @@ const Plate = (props) => {
     toggleCustomButton.push(
       <img
         className="custombuttons"
-        src="/assets/Logos/gotoplate.png"
+        src="./assets/Logos/gotoplate.png"
         alt="this is next button"
         key="1"
       />
@@ -136,7 +136,7 @@ const Plate = (props) => {
     toggleCustomButton.push(
       <img
         className="custombuttons"
-        src="/assets/Logos/backbutton.png"
+        src="./assets/Logos/backbutton.png"
         alt="this is a previous button"
         key="2"
       />

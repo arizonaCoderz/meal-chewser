@@ -12,14 +12,14 @@ const About = (props) => {
       <button className={props.page === 0 ? "aboutbackbutton" : "disappear"} onClick={clickedAboutBack}>
         <img
           className="aboutback"
-          src="/assets/Logos/aboutback.png"
+          src="./assets/Logos/aboutback.png"
           alt="this is a previous button"
         />
       </button>
       <div className="aboutcontainer">
         <img
           className="aboutlogo"
-          src="/assets/Logos/MealChewser_Logo1.png"
+          src="./assets/Logos/MealChewser_Logo1.png"
           alt="this is the meal chewser logo"
         />
         <p className="aboutustitle">ABOUT US</p>
@@ -34,17 +34,17 @@ const About = (props) => {
         <div className="icons">
           <img
             className="abouticon"
-            src="/assets/Logos/fast.png"
+            src="./assets/Logos/fast.png"
             alt="this is a fast icon"
           />
           <img
             className="abouticon"
-            src="/assets/Logos/convenient.png"
+            src="./assets/Logos/convenient.png"
             alt="this is a convenient icon"
           />
           <img
             className="abouticon"
-            src="/assets/Logos/fun.png"
+            src="./assets/Logos/fun.png"
             alt="this is a fun icon"
           />
         </div>
