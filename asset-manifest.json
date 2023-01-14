@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/meal-chewser/static/css/main.814019f5.css",
-    "main.js": "/meal-chewser/static/js/main.e92d76de.js",
+    "main.js": "/meal-chewser/static/js/main.f61f1a27.js",
     "static/js/787.622fd7dc.chunk.js": "/meal-chewser/static/js/787.622fd7dc.chunk.js",
     "index.html": "/meal-chewser/index.html",
     "main.814019f5.css.map": "/meal-chewser/static/css/main.814019f5.css.map",
-    "main.e92d76de.js.map": "/meal-chewser/static/js/main.e92d76de.js.map",
+    "main.f61f1a27.js.map": "/meal-chewser/static/js/main.f61f1a27.js.map",
     "787.622fd7dc.chunk.js.map": "/meal-chewser/static/js/787.622fd7dc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.814019f5.css",
-    "static/js/main.e92d76de.js"
+    "static/js/main.f61f1a27.js"
   ]
 }
