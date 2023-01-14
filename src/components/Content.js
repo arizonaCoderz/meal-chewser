@@ -23,10 +23,11 @@ const Content = (props) => {
 
   //Converts Address to Latitude and Longitude-----------------------------------------------------------------------------
   const locURL =
-    "http://dhlproxyserver.herokuapp.com/?extension=findplacefromtext/json&input=" +
+    "https://meal-chewser-proxy.onrender.com/?extension=findplacefromtext/json&input=" +
     inputData[0].trim().replace(/ /g, "%20") +
     "&inputtype=textquery&fields=formatted_address,geometry"; //Uses a proxy server which then calls the API
 
+  
   useEffect(() => {
     axios.get(locURL).then((response) => {
       setloc([
@@ -44,7 +45,7 @@ const Content = (props) => {
   var baseURL;
   if (wantSearch) {
     baseURL =
-      "http://dhlproxyserver.herokuapp.com/?extension=nearbysearch/json&location=" +
+      "https://meal-chewser-proxy.onrender.com/?extension=nearbysearch/json&location=" +
       loc[0].toString() +
       "," +
       loc[1].toString() +
